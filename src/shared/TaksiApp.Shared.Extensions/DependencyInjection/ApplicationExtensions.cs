@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TaksiApp.Shared.Api.Middleware;
 using TaksiApp.Shared.Application.Abstractions;
 
 namespace TaksiApp.Shared.Extensions.DependencyInjection;

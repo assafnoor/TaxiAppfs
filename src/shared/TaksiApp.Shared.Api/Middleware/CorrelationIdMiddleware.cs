@@ -61,7 +61,7 @@ public sealed class CorrelationIdMiddleware
         var tenantId = _tenantIdExtractor?.Invoke(context);
 
         // Create execution context
-        var executionContext = new ExecutionContext(
+        var executionContext = new TaksiApp.Shared.Application.Context.ExecutionContext(
             correlationId,
             userId,
             tenantId);
