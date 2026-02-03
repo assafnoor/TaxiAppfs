@@ -1,0 +1,4406 @@
+====================================================================================================
+PROJECT EXPORT FOR LLMs
+====================================================================================================
+
+PROJECT INFORMATION:
+--------------------------------------------------
+Project Name: FTaksiApp
+Generated On: 2026-02-03 19:04:52 (Europe/Moscow / GMT+03:00)
+Total Files Processed: 44
+Export Tool: Easy Whole Project to Single Text File for LLMs v1.1.0
+Tool Author: Jota / José Guilherme Pandolfi
+
+EXPORT CONFIGURATION:
+--------------------------------------------------
+Language: en
+Max File Size: 1 MB
+Include Hidden Files: false
+Output Format: txt
+Notification Level: minimal
+Custom File Name Pattern: {workspaceName}-output
+
+================================================================================
+PROJECT STRUCTURE
+================================================================================
+└── 📁 src/
+    └── 📁 shared/
+        ├── 📁 TaksiApp.Shared.Api/
+        │   ├── 📁 Constants/
+        │   │   └── 📄 HttpContextConstants.cs (1.2 KB)
+        │   ├── 📁 Controllers/
+        │   │   └── 📄 ApiControllerBase.cs (2.87 KB)
+        │   ├── 📁 Factories/
+        │   │   └── 📄 SharedProblemDetailsFactory.cs (3.06 KB)
+        │   └── 📄 TaksiApp.Shared.Api.csproj (648 B)
+        ├── 📁 TaksiApp.Shared.Application/
+        │   ├── 📁 Abstractions/
+        │   │   ├── 📄 ExecutionContextMetadata.cs (5.16 KB)
+        │   │   ├── 📄 IDateTimeProvider.cs (429 B)
+        │   │   └── 📄 IExecutionContext.cs (1.25 KB)
+        │   ├── 📁 Context/
+        │   │   └── 📄 ExecutionContext.cs (2.13 KB)
+        │   └── 📄 TaksiApp.Shared.Application.csproj (219 B)
+        ├── 📁 TaksiApp.Shared.Extensions/
+        │   ├── 📁 Configuration/
+        │   │   └── 📄 ObservabilityOptions.cs (1.62 KB)
+        │   ├── 📁 DependencyInjection/
+        │   │   ├── 📄 ApplicationExtensions.cs (3.42 KB)
+        │   │   ├── 📄 ExecutionContextExtensions.cs (1.39 KB)
+        │   │   ├── 📄 InfrastructureExtensions.cs (2.35 KB)
+        │   │   ├── 📄 MiddlewareExtensions.cs (3.02 KB)
+        │   │   └── 📄 ObservabilityExtensions.cs (4.12 KB)
+        │   └── 📄 TaksiApp.Shared.Extensions.csproj (660 B)
+        ├── 📁 TaksiApp.Shared.Infrastructure/
+        │   ├── 📁 Time/
+        │   │   └── 📄 UtcDateTimeProvider.cs (219 B)
+        │   └── 📄 TaksiApp.Shared.Infrastructure.csproj (354 B)
+        ├── 📁 TaksiApp.Shared.Kernel/
+        │   ├── 📁 Abstractions/
+        │   │   ├── 📄 IAggregateRoot.cs (616 B)
+        │   │   └── 📄 IDomainEvent.cs (579 B)
+        │   ├── 📁 Common/
+        │   │   ├── 📄 AggregateRoot.cs (651 B)
+        │   │   ├── 📄 Entity.cs (3.04 KB)
+        │   │   └── 📄 ValueObject.cs (3.7 KB)
+        │   ├── 📁 Events/
+        │   │   └── 📄 DomainEventBase.cs (291 B)
+        │   ├── 📁 Guards/
+        │   │   └── 📄 Guard.cs (7.44 KB)
+        │   ├── 📁 Results/
+        │   │   ├── 📄 Error.cs (8.03 KB)
+        │   │   ├── 📄 ErrorType.cs (220 B)
+        │   │   ├── 📄 Result.cs (1.87 KB)
+        │   │   └── 📄 Result{T}.cs (2.65 KB)
+        │   ├── 📁 ValueObjects/
+        │   │   ├── 📄 Email.cs (4.51 KB)
+        │   │   ├── 📄 Money.cs (3.97 KB)
+        │   │   └── 📄 PhoneNumber.cs (4.33 KB)
+        │   └── 📄 TaksiApp.Shared.Kernel.csproj (219 B)
+        ├── 📁 TaksiApp.Shared.Observability/
+        │   ├── 📁 HealthChecks/
+        │   │   └── 📄 ApplicationHealthCheck.cs (1.44 KB)
+        │   ├── 📁 Logging/
+        │   │   └── 📁 Enrichers/
+        │   │       ├── 📄 CorrelationIdEnricher.cs (1.2 KB)
+        │   │       └── 📄 TraceContextEnricher.cs (1.06 KB)
+        │   ├── 📁 Metrics/
+        │   │   ├── 📁 Meters/
+        │   │   │   └── 📄 ApplicationMetrics.cs (6.21 KB)
+        │   │   ├── 📄 MeterProvider.cs (2.55 KB)
+        │   │   └── 📄 MetricsConstants.cs (1.52 KB)
+        │   ├── 📁 Tracing/
+        │   │   ├── 📄 ActivitySourceFactory.cs (1.25 KB)
+        │   │   └── 📄 TracingConstants.cs (954 B)
+        │   ├── 📄 GlobalUsings.cs (292 B)
+        │   └── 📄 TaksiApp.Shared.Observability.csproj (1.22 KB)
+        └── 📄 README.md (25.35 KB)
+
+================================================================================
+PROJECT STATISTICS
+================================================================================
+Total Files: 44
+Total Directories: 28
+Text Files: 38
+Binary Files: 6
+Total Size: 119.13 KB
+
+FILE TYPES DISTRIBUTION:
+------------------------------
+.cs             : 37
+.csproj         : 6
+.md             : 1
+
+================================================================================
+FILE CODE CONTENTS
+================================================================================
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Api/Constants/HttpContextConstants.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 1.2 KB
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Api/Constants/HttpContextConstants.cs
+Relative Path: src/shared/TaksiApp.Shared.Api/Constants
+Created: 2026-02-02 20:00:12 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-02 20:00:15 (Europe/Moscow / GMT+03:00)
+MD5: 1fed29eb0422cf53d3f7052a81ffefb5
+SHA256: b33de3f6e86331b883ff63d19d709b2e36458e99501e74e3d77ec48dfcba268a
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿namespace TaksiApp.Shared.Api.Constants;
+
+/// <summary>
+/// Constants used for HTTP context items and headers across the shared library.
+/// </summary>
+/// <remarks>
+/// Centralizing these constants prevents typos and makes refactoring easier.
+/// All middleware and handlers should reference these constants instead of
+/// defining their own private constants.
+/// </remarks>
+public static class HttpContextConstants
+{
+    /// <summary>
+    /// The HTTP header name for correlation ID.
+    /// </summary>
+    /// <remarks>
+    /// This header is used to track requests across service boundaries.
+    /// Standard convention is "X-Correlation-Id" but some organizations
+    /// may prefer "traceparent" or other W3C Trace Context headers.
+    /// </remarks>
+    public const string CorrelationIdHeaderName = "X-Correlation-Id";
+
+    /// <summary>
+    /// The HttpContext.Items key for storing execution context.
+    /// </summary>
+    /// <remarks>
+    /// The execution context is stored in HttpContext.Items by CorrelationIdMiddleware
+    /// and retrieved by ExecutionContextExtensions and other components.
+    /// </remarks>
+    public const string ExecutionContextKey = "ExecutionContext";
+}
+================================================================================
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Api/Controllers/ApiControllerBase.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 2.87 KB
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Api/Controllers/ApiControllerBase.cs
+Relative Path: src/shared/TaksiApp.Shared.Api/Controllers
+Created: 2026-02-01 12:25:33 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-01 12:26:30 (Europe/Moscow / GMT+03:00)
+MD5: 5457f99b5a95e580d7ae05ab55ded44b
+SHA256: 37b8148f58924feb9d50e2749907b50bc908ef8be34f72b742b1b56580e6958f
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
+using TaksiApp.Shared.Kernel.Results;
+
+namespace TaksiApp.Shared.Api.Controllers;
+
+/// <summary>
+/// Base controller providing Result&lt;T&gt; to ProblemDetails conversion.
+/// All API controllers should inherit from this.
+/// </summary>
+public abstract class ApiControllerBase : ControllerBase
+{
+    /// <summary>
+    /// Converts an Error to a ProblemDetails response with appropriate HTTP status code.
+    /// Automatically includes trace context (TraceId, SpanId) for distributed tracing.
+    /// </summary>
+    /// <param name="error">The error to convert</param>
+    /// <returns>IActionResult with ProblemDetails body</returns>
+    protected IActionResult Problem(Error error)
+    {
+        var statusCode = error.Type switch
+        {
+            ErrorType.Validation => StatusCodes.Status400BadRequest,
+            ErrorType.NotFound => StatusCodes.Status404NotFound,
+            ErrorType.Conflict => StatusCodes.Status409Conflict,
+            ErrorType.Unauthorized => StatusCodes.Status401Unauthorized,
+            ErrorType.Forbidden => StatusCodes.Status403Forbidden,
+            _ => StatusCodes.Status500InternalServerError
+        };
+
+        // Use fully qualified type name to avoid namespace conflict
+        var problemDetails = new Microsoft.AspNetCore.Mvc.ProblemDetails
+        {
+            Status = statusCode,
+            Title = GetTitle(error.Type),
+            Detail = error.Message,
+            Instance = HttpContext.Request.Path,
+            Type = $"https://httpstatuses.com/{statusCode}"
+        };
+
+        // Add trace context for distributed tracing correlation
+        var activity = Activity.Current;
+        if (activity != null)
+        {
+            problemDetails.Extensions["traceId"] = activity.TraceId.ToString();
+            problemDetails.Extensions["spanId"] = activity.SpanId.ToString();
+        }
+
+        // Add custom error metadata
+        problemDetails.Extensions["errorCode"] = error.Code;
+        problemDetails.Extensions["timestamp"] = DateTime.UtcNow;
+
+        // Include error metadata if present
+        if (error.Metadata != null && error.Metadata.Count > 0)
+        {
+            problemDetails.Extensions["metadata"] = error.Metadata;
+        }
+
+        return new ObjectResult(problemDetails)
+        {
+            StatusCode = statusCode
+        };
+    }
+
+    /// <summary>
+    /// Get human-readable title for error type.
+    /// </summary>
+    private static string GetTitle(ErrorType errorType) => errorType switch
+    {
+        ErrorType.Validation => "Validation Error",
+        ErrorType.NotFound => "Resource Not Found",
+        ErrorType.Conflict => "Conflict",
+        ErrorType.Unauthorized => "Unauthorized",
+        ErrorType.Forbidden => "Forbidden",
+        _ => "Server Error"
+    };
+}
+================================================================================
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Api/Factories/SharedProblemDetailsFactory.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 3.06 KB
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Api/Factories/SharedProblemDetailsFactory.cs
+Relative Path: src/shared/TaksiApp.Shared.Api/Factories
+Created: 2026-02-01 12:25:33 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-02 19:17:46 (Europe/Moscow / GMT+03:00)
+MD5: 282804fb11c4e34196ceda2381206201
+SHA256: b771553c1b43b9367e5ee15fe1498fe6508b03058c951e8839380b191c21be97
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System.Diagnostics;
+
+namespace TaksiApp.Shared.Api.Factories;
+
+/// <summary>
+/// Factory for creating ProblemDetails responses with trace context.
+/// Allows configurable ProblemDetails Type URLs.
+/// </summary>
+public sealed class SharedProblemDetailsFactory : ProblemDetailsFactory
+{
+    private readonly Func<int, string>? _typeUrlFactory;
+
+    public SharedProblemDetailsFactory(Func<int, string>? typeUrlFactory = null)
+    {
+        _typeUrlFactory = typeUrlFactory;
+    }
+
+    public override ProblemDetails CreateProblemDetails(
+        HttpContext httpContext,
+        int? statusCode = null,
+        string? title = null,
+        string? type = null,
+        string? detail = null,
+        string? instance = null)
+    {
+        statusCode ??= StatusCodes.Status500InternalServerError;
+
+        var problemDetails = new ProblemDetails
+        {
+            Status = statusCode,
+            Title = title,
+            Type = type
+                ?? _typeUrlFactory?.Invoke(statusCode.Value)
+                ?? $"https://httpstatuses.com/{statusCode}",
+            Detail = detail,
+            Instance = instance ?? httpContext.Request.Path
+        };
+
+        ApplyProblemDetailsDefaults(httpContext, problemDetails, statusCode.Value);
+
+        return problemDetails;
+    }
+
+    public override ValidationProblemDetails CreateValidationProblemDetails(
+        HttpContext httpContext,
+        ModelStateDictionary modelStateDictionary,
+        int? statusCode = null,
+        string? title = null,
+        string? type = null,
+        string? detail = null,
+        string? instance = null)
+    {
+        statusCode ??= StatusCodes.Status400BadRequest;
+
+        var problemDetails = new ValidationProblemDetails(modelStateDictionary)
+        {
+            Status = statusCode,
+            Title = title ?? "One or more validation errors occurred.",
+            Type = type
+                ?? _typeUrlFactory?.Invoke(statusCode.Value)
+                ?? $"https://httpstatuses.com/{statusCode}",
+            Detail = detail,
+            Instance = instance ?? httpContext.Request.Path
+        };
+
+        ApplyProblemDetailsDefaults(httpContext, problemDetails, statusCode.Value);
+
+        return problemDetails;
+    }
+
+    private static void ApplyProblemDetailsDefaults(
+        HttpContext httpContext,
+        ProblemDetails problemDetails,
+        int statusCode)
+    {
+        problemDetails.Status ??= statusCode;
+
+        var activity = Activity.Current;
+        if (activity != null)
+        {
+            problemDetails.Extensions["traceId"] = activity.TraceId.ToString();
+            problemDetails.Extensions["spanId"] = activity.SpanId.ToString();
+        }
+        else
+        {
+            problemDetails.Extensions["traceId"] = httpContext.TraceIdentifier;
+        }
+
+        problemDetails.Extensions["timestamp"] = DateTime.UtcNow;
+    }
+}
+
+================================================================================
+
+
+================================================================================
+BINARY/EXCLUDED FILES (not included in text content)
+================================================================================
+- src/shared/TaksiApp.Shared.Api/TaksiApp.Shared.Api.csproj
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Application/Abstractions/ExecutionContextMetadata.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 5.16 KB
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Application/Abstractions/ExecutionContextMetadata.cs
+Relative Path: src/shared/TaksiApp.Shared.Application/Abstractions
+Created: 2026-01-31 21:35:13 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-02 19:01:28 (Europe/Moscow / GMT+03:00)
+MD5: 101a362e580f83551dfc180f1826b274
+SHA256: 5beacdb4d2e6ce9455adc5b093efda64b357ad4af8bc5e06e66313d4b3559069
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+using System.Collections.Immutable;
+
+namespace TaksiApp.Shared.Application.Abstractions;
+
+/// <summary>
+/// Strongly-typed immutable metadata container for execution context.
+/// </summary>
+/// <remarks>
+/// <para>
+/// This class provides a thread-safe, immutable way to store arbitrary metadata
+/// associated with an execution context. It uses ImmutableDictionary internally
+/// to ensure that metadata cannot be modified after creation.
+/// </para>
+/// <para>
+/// <strong>IMPORTANT:</strong> This is for technical context only (debugging, correlation, diagnostics).
+/// Never store business data or domain information in metadata.
+/// </para>
+/// <para>
+/// Examples of appropriate metadata:
+/// - Request IDs for correlation
+/// - Client information for debugging
+/// - API versions for compatibility tracking
+/// - Diagnostic flags
+/// </para>
+/// <para>
+/// Examples of inappropriate metadata (use proper domain objects instead):
+/// - Business rules or decisions
+/// - User preferences or settings
+/// - Entity state or domain data
+/// - Authorization decisions
+/// </para>
+/// </remarks>
+public sealed class ExecutionContextMetadata
+{
+    private readonly ImmutableDictionary<string, object> _dictionary;
+
+    /// <summary>
+    /// Creates a new metadata instance from an optional dictionary.
+    /// </summary>
+    /// <param name="dictionary">Initial metadata values. If null, an empty dictionary is created.</param>
+    public ExecutionContextMetadata(Dictionary<string, object>? dictionary = null)
+    {
+        _dictionary = (dictionary ?? new Dictionary<string, object>()).ToImmutableDictionary();
+    }
+
+    /// <summary>
+    /// Creates a new metadata instance from an immutable dictionary (internal use).
+    /// </summary>
+    private ExecutionContextMetadata(ImmutableDictionary<string, object> dictionary)
+    {
+        _dictionary = dictionary;
+    }
+
+    /// <summary>
+    /// Returns a read-only view of the metadata as a dictionary.
+    /// </summary>
+    /// <remarks>
+    /// This method is provided for backward compatibility with code that expects
+    /// IReadOnlyDictionary. Prefer using strongly-typed methods like GetValue and WithValue.
+    /// </remarks>
+    public IReadOnlyDictionary<string, object> AsDictionary() => _dictionary;
+
+    /// <summary>
+    /// Safely retrieves a value by key with type conversion.
+    /// </summary>
+    /// <typeparam name="T">The expected type of the value.</typeparam>
+    /// <param name="key">The metadata key.</param>
+    /// <returns>
+    /// The value if found and convertible to T; otherwise, default(T).
+    /// </returns>
+    /// <remarks>
+    /// This method attempts to convert the stored value to the requested type.
+    /// If the conversion fails, default(T) is returned (null for reference types,
+    /// zero/false for value types).
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// var requestId = metadata.GetValue&lt;string&gt;("RequestId");
+    /// var apiVersion = metadata.GetValue&lt;int&gt;("ApiVersion");
+    /// </code>
+    /// </example>
+    public T? GetValue<T>(string key)
+    {
+        if (!_dictionary.TryGetValue(key, out var value))
+            return default;
+
+        if (value is T typedValue)
+            return typedValue;
+
+        try
+        {
+            return (T)Convert.ChangeType(value, typeof(T));
+        }
+        catch
+        {
+            return default;
+        }
+    }
+
+    /// <summary>
+    /// Returns a new metadata instance with an added or updated value.
+    /// </summary>
+    /// <typeparam name="T">The type of the value to store.</typeparam>
+    /// <param name="key">The metadata key.</param>
+    /// <param name="value">The value to store.</param>
+    /// <returns>A new ExecutionContextMetadata instance with the updated value.</returns>
+    /// <remarks>
+    /// This method does not modify the current instance. Instead, it returns a new
+    /// instance with the updated value, following immutability principles.
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// var newMetadata = metadata
+    ///     .WithValue("RequestId", "req-12345")
+    ///     .WithValue("ApiVersion", "v2");
+    /// </code>
+    /// </example>
+    public ExecutionContextMetadata WithValue<T>(string key, T value)
+    {
+        ArgumentNullException.ThrowIfNull(key);
+        ArgumentNullException.ThrowIfNull(value);
+
+        var newDict = _dictionary.SetItem(key, value);
+        return new ExecutionContextMetadata(newDict);
+    }
+
+    /// <summary>
+    /// Checks if a key exists in the metadata.
+    /// </summary>
+    /// <param name="key">The key to check.</param>
+    /// <returns>True if the key exists; otherwise, false.</returns>
+    public bool ContainsKey(string key) => _dictionary.ContainsKey(key);
+
+    /// <summary>
+    /// Gets all metadata keys.
+    /// </summary>
+    public IEnumerable<string> Keys => _dictionary.Keys;
+
+    /// <summary>
+    /// Gets all metadata values.
+    /// </summary>
+    public IEnumerable<object> Values => _dictionary.Values;
+
+    /// <summary>
+    /// Gets the number of metadata entries.
+    /// </summary>
+    public int Count => _dictionary.Count;
+}
+================================================================================
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Application/Abstractions/IDateTimeProvider.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 429 B
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Application/Abstractions/IDateTimeProvider.cs
+Relative Path: src/shared/TaksiApp.Shared.Application/Abstractions
+Created: 2026-01-31 21:19:15 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-01 12:12:22 (Europe/Moscow / GMT+03:00)
+MD5: aaa09449547e3cfb1d358a95a3197151
+SHA256: 022589e90b14ee6e115e07c719528b8b769a53a646879afb4a9516825a0af453
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿// TaksiApp.Shared.Application/Abstractions/IDateTimeProvider.cs
+namespace TaksiApp.Shared.Application.Abstractions;
+
+/// <summary>
+/// Abstraction for getting current time.
+/// Enables time-travel testing.
+/// </summary>
+public interface IDateTimeProvider
+{
+    /// <summary>
+    /// Current UTC time.
+    /// Always use UTC for consistency across time zones.
+    /// </summary>
+    DateTime UtcNow { get; }
+}
+
+================================================================================
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Application/Abstractions/IExecutionContext.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 1.25 KB
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Application/Abstractions/IExecutionContext.cs
+Relative Path: src/shared/TaksiApp.Shared.Application/Abstractions
+Created: 2026-01-31 21:33:37 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-01 12:12:02 (Europe/Moscow / GMT+03:00)
+MD5: 99f4b2deb09b68be30e0b543420a8eb0
+SHA256: 835f729ab915f42ddca12f2d641c7923a2c08dc51b69c004824131307d03d8fc
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿namespace TaksiApp.Shared.Application.Abstractions;
+// TaksiApp.Shared.Application/Abstractions/IExecutionContext.cs
+/// <summary>
+/// Provides context about the current execution environment.
+/// Injected as scoped to maintain per-request state.
+/// </summary>
+public interface IExecutionContext
+{
+    /// <summary>
+    /// Correlation ID for distributed tracing.
+    /// Should flow across service boundaries.
+    /// </summary>
+    string CorrelationId { get; }
+
+    /// <summary>
+    /// User ID of the authenticated user, if any.
+    /// </summary>
+    string? UserId { get; }
+
+    /// <summary>
+    /// Tenant ID for multi-tenant systems.
+    /// </summary>
+    string? TenantId { get; }
+
+    /// <summary>
+    /// Additional contextual metadata.
+    /// For backward compatibility, returns dictionary interface.
+    /// Use ExecutionContext.Metadata property for strongly-typed access.
+    /// </summary>
+    IReadOnlyDictionary<string, object> Metadata { get; }
+
+    /// <summary>
+    /// Validates that current execution context can access a resource belonging to specified tenant.
+    /// Throws UnauthorizedAccessException if cross-tenant access attempted.
+    /// </summary>
+    void EnsureTenantAccess(string? resourceTenantId);
+}
+================================================================================
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Application/Context/ExecutionContext.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 2.13 KB
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Application/Context/ExecutionContext.cs
+Relative Path: src/shared/TaksiApp.Shared.Application/Context
+Created: 2026-01-31 21:34:45 (Europe/Moscow / GMT+03:00)
+Modified: 2026-01-31 21:40:06 (Europe/Moscow / GMT+03:00)
+MD5: 7976560805734b6ff6a4b9294715e386
+SHA256: a05949bf24245667f78dfc66ac30681c253a9b7f3c06346881f8c60d86ef109e
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿using TaksiApp.Shared.Application.Abstractions;
+
+namespace TaksiApp.Shared.Application.Context;
+
+/// <summary>
+/// Immutable execution context for a request or background job.
+/// </summary>
+public sealed class ExecutionContext : IExecutionContext
+{
+    private readonly ExecutionContextMetadata _metadata;
+
+    public string CorrelationId { get; }
+    public string? UserId { get; }
+    public string? TenantId { get; }
+
+    /// <summary>
+    /// Strongly-typed metadata access.
+    /// </summary>
+    public ExecutionContextMetadata Metadata => _metadata;
+
+    /// <summary>
+    /// Dictionary-based metadata for backward compatibility.
+    /// </summary>
+    IReadOnlyDictionary<string, object> IExecutionContext.Metadata => _metadata.AsDictionary();
+
+    public ExecutionContext(
+        string correlationId,
+        string? userId = null,
+        string? tenantId = null,
+        Dictionary<string, object>? metadata = null)
+    {
+        CorrelationId = correlationId ?? throw new ArgumentNullException(nameof(correlationId));
+        UserId = userId;
+        TenantId = tenantId;
+        _metadata = new ExecutionContextMetadata(metadata);
+    }
+
+    /// <summary>
+    /// Returns a new ExecutionContext with updated metadata.
+    /// </summary>
+    public ExecutionContext WithMetadata(ExecutionContextMetadata newMetadata)
+    {
+        return new ExecutionContext(
+            correlationId: this.CorrelationId,
+            userId: this.UserId,
+            tenantId: this.TenantId,
+            metadata: newMetadata.AsDictionary() as Dictionary<string, object>);
+    }
+    public void EnsureTenantAccess(string? resourceTenantId)
+    {
+        // System context (no tenant) can access anything
+        if (TenantId == null) return;
+
+        // Null resource tenant = shared resource
+        if (resourceTenantId == null) return;
+
+        // Cross-tenant access denied
+        if (resourceTenantId != TenantId)
+        {
+            throw new UnauthorizedAccessException(
+                $"Cross-tenant access violation. User tenant: {TenantId}, Resource tenant: {resourceTenantId}");
+        }
+    }
+}
+
+================================================================================
+
+
+================================================================================
+BINARY/EXCLUDED FILES (not included in text content)
+================================================================================
+- src/shared/TaksiApp.Shared.Application/TaksiApp.Shared.Application.csproj
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Extensions/Configuration/ObservabilityOptions.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 1.62 KB
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Extensions/Configuration/ObservabilityOptions.cs
+Relative Path: src/shared/TaksiApp.Shared.Extensions/Configuration
+Created: 2026-01-31 21:06:22 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-02 19:58:56 (Europe/Moscow / GMT+03:00)
+MD5: 644a1b0f8f8ac7073bfbe1fb979c9142
+SHA256: ba3061ea4bdeb57c0e99d41f9256fc1283cc6ec417cf99e030a9f63730ac05fa
+Encoding: ASCII
+
+FILE CONTENT:
+----------------------------------------
+namespace TaksiApp.Shared.Extensions.Configuration;
+
+/// <summary>
+/// Configuration options for OpenTelemetry observability features.
+/// </summary>
+/// <remarks>
+/// These options control the behavior of tracing, metrics, and logging exporters.
+/// Typically loaded from appsettings.json under the "Observability" section.
+/// </remarks>
+public sealed class ObservabilityOptions
+{
+    /// <summary>
+    /// Gets or sets the OTLP (OpenTelemetry Protocol) endpoint URL.
+    /// </summary>
+    /// <value>
+    /// Default is "http://localhost:4317" for local development.
+    /// In production, this should point to your observability backend (e.g., Jaeger, Grafana Tempo).
+    /// </value>
+    public string OtlpEndpoint { get; set; } = "http://localhost:4317";
+
+    /// <summary>
+    /// Gets or sets a value indicating whether distributed tracing is enabled.
+    /// </summary>
+    /// <value>Default is <c>true</c>.</value>
+    public bool EnableTracing { get; set; } = true;
+
+    /// <summary>
+    /// Gets or sets a value indicating whether metrics collection is enabled.
+    /// </summary>
+    /// <value>Default is <c>true</c>.</value>
+    public bool EnableMetrics { get; set; } = true;
+
+    /// <summary>
+    /// Gets or sets a value indicating whether structured logging is enabled.
+    /// </summary>
+    /// <value>Default is <c>true</c>.</value>
+    public bool EnableLogging { get; set; } = true;
+
+    /// <summary>
+    /// Gets or sets the service version reported in telemetry.
+    /// </summary>
+    /// <value>Default is "1.0.0".</value>
+    public string ServiceVersion { get; set; } = "1.0.0";
+}
+================================================================================
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Extensions/DependencyInjection/ApplicationExtensions.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 3.42 KB
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Extensions/DependencyInjection/ApplicationExtensions.cs
+Relative Path: src/shared/TaksiApp.Shared.Extensions/DependencyInjection
+Created: 2026-01-31 21:21:48 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-02 20:00:29 (Europe/Moscow / GMT+03:00)
+MD5: c04d8f525b9ea03cea53c9b6401aa3d6
+SHA256: 6e015791e49be12f731281aabc683b8673e24ee6d7cabbd54bc2c1a5aef51b6b
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using TaksiApp.Shared.Application.Abstractions;
+
+namespace TaksiApp.Shared.Extensions.DependencyInjection;
+
+/// <summary>
+/// Extension methods for registering Application layer contracts and services.
+/// </summary>
+/// <remarks>
+/// <para>
+/// This extension class registers only application-layer abstractions and their
+/// implementations that don't depend on infrastructure concerns.
+/// </para>
+/// <para>
+/// <strong>IMPORTANT:</strong> This does NOT register IDateTimeProvider.
+/// Infrastructure implementations should be registered separately using
+/// AddSharedInfrastructure() to maintain proper layer separation.
+/// </para>
+/// </remarks>
+public static class ApplicationExtensions
+{
+    /// <summary>
+    /// Registers core application layer services and contracts.
+    /// </summary>
+    /// <param name="services">The service collection.</param>
+    /// <param name="configuration">The application configuration.</param>
+    /// <returns>The service collection for chaining.</returns>
+    /// <remarks>
+    /// <para>
+    /// This method registers:
+    /// - IHttpContextAccessor (required for execution context)
+    /// - IExecutionContext (scoped, extracted from HTTP context)
+    /// </para>
+    /// <para>
+    /// Call this method before AddMediatR or other application service registrations.
+    /// </para>
+    /// <para>
+    /// <strong>Layer separation:</strong> This method only registers application-layer
+    /// contracts. Infrastructure implementations (like IDateTimeProvider) should be
+    /// registered using AddSharedInfrastructure().
+    /// </para>
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// // In Program.cs or Startup.cs
+    /// services
+    ///     .AddSharedApplication(configuration)
+    ///     .AddSharedInfrastructure() // Separate call for infrastructure
+    ///     .AddSharedObservability(configuration, "MyService");
+    /// </code>
+    /// </example>
+    public static IServiceCollection AddSharedApplication(
+        this IServiceCollection services,
+        IConfiguration configuration)
+    {
+        ArgumentNullException.ThrowIfNull(services);
+        ArgumentNullException.ThrowIfNull(configuration);
+
+        // Required for accessing HTTP context in middleware and handlers
+        services.AddHttpContextAccessor();
+
+        // Register execution context as scoped - extracted from HTTP context
+        // Falls back to anonymous context if no HTTP context is available (e.g., background jobs)
+        services.AddScoped<IExecutionContext>(sp =>
+        {
+            var httpContextAccessor = sp.GetService<IHttpContextAccessor>();
+
+            // Try to get execution context from current HTTP request
+            if (httpContextAccessor?.HttpContext != null)
+            {
+                var context = httpContextAccessor.HttpContext.GetExecutionContext();
+                if (context != null)
+                    return context;
+            }
+
+            // Fallback: create anonymous execution context
+            // This happens in background jobs or when middleware hasn't run yet
+            return new Application.Context.ExecutionContext(
+                correlationId: Guid.NewGuid().ToString(),
+                userId: null,
+                tenantId: null);
+        });
+
+        return services;
+    }
+}
+================================================================================
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Extensions/DependencyInjection/ExecutionContextExtensions.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 1.39 KB
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Extensions/DependencyInjection/ExecutionContextExtensions.cs
+Relative Path: src/shared/TaksiApp.Shared.Extensions/DependencyInjection
+Created: 2026-01-31 21:37:36 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-02 19:59:15 (Europe/Moscow / GMT+03:00)
+MD5: f5f898c8952bb761a5627aeae2f15cb3
+SHA256: c867fc570904096d9d7e98e7556f6dcbf0d1efd77138bd089c74da72907ab2bd
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿using Microsoft.AspNetCore.Http;
+using TaksiApp.Shared.Application.Abstractions;
+
+namespace TaksiApp.Shared.Extensions.DependencyInjection;
+
+/// <summary>
+/// Extension methods for retrieving execution context from HTTP context.
+/// </summary>
+public static class ExecutionContextExtensions
+{
+    private const string ExecutionContextKey = "ExecutionContext";
+
+    /// <summary>
+    /// Retrieves the execution context for the current HTTP request.
+    /// </summary>
+    /// <param name="context">The HTTP context.</param>
+    /// <returns>
+    /// The execution context if found; otherwise, a new anonymous execution context
+    /// with a generated correlation ID.
+    /// </returns>
+    /// <remarks>
+    /// This method should be called after CorrelationIdMiddleware has executed.
+    /// If called before middleware runs, it returns a fallback anonymous context.
+    /// </remarks>
+    public static IExecutionContext GetExecutionContext(this HttpContext context)
+    {
+        if (context.Items.TryGetValue(ExecutionContextKey, out var value) &&
+            value is IExecutionContext executionContext)
+        {
+            return executionContext;
+        }
+
+        // Fallback: create anonymous execution context
+        return new Application.Context.ExecutionContext(
+            Guid.NewGuid().ToString(),
+            userId: null,
+            tenantId: null);
+    }
+}
+================================================================================
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Extensions/DependencyInjection/InfrastructureExtensions.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 2.35 KB
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Extensions/DependencyInjection/InfrastructureExtensions.cs
+Relative Path: src/shared/TaksiApp.Shared.Extensions/DependencyInjection
+Created: 2026-02-02 18:58:53 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-02 19:02:21 (Europe/Moscow / GMT+03:00)
+MD5: 1d9e1dae29a0270ee2ffb127a2e150d4
+SHA256: 08a69af2fae1b7dd1c670b0622328149c3fddb3481b8f39ef65f633c56c3e9a6
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿using Microsoft.Extensions.DependencyInjection;
+using TaksiApp.Shared.Application.Abstractions;
+using TaksiApp.Shared.Infrastructure.Time;
+
+namespace TaksiApp.Shared.Extensions.DependencyInjection;
+
+/// <summary>
+/// Extension methods for registering shared infrastructure services.
+/// </summary>
+/// <remarks>
+/// <para>
+/// This class registers infrastructure implementations of application contracts.
+/// It maintains proper layer separation by keeping infrastructure concerns
+/// separate from application contracts.
+/// </para>
+/// <para>
+/// Currently registers:
+/// - IDateTimeProvider → UtcDateTimeProvider
+/// </para>
+/// <para>
+/// Future infrastructure services should be added here (e.g., file storage,
+/// email providers, SMS services) as long as they remain generic and reusable
+/// across multiple domains.
+/// </para>
+/// </remarks>
+public static class InfrastructureExtensions
+{
+    /// <summary>
+    /// Registers shared infrastructure services.
+    /// </summary>
+    /// <param name="services">The service collection.</param>
+    /// <returns>The service collection for chaining.</returns>
+    /// <remarks>
+    /// <para>
+    /// Call this method after AddSharedApplicationContracts() to ensure
+    /// application contracts are registered first.
+    /// </para>
+    /// <para>
+    /// <strong>Thread safety:</strong> All registered services are designed to be
+    /// thread-safe when registered as singleton (like IDateTimeProvider).
+    /// </para>
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// // In Program.cs or Startup.cs
+    /// services
+    ///     .AddSharedApplicationContracts(configuration)
+    ///     .AddSharedInfrastructure() // Infrastructure services
+    ///     .AddSharedObservability(configuration, "MyService");
+    /// </code>
+    /// </example>
+    public static IServiceCollection AddSharedInfrastructure(
+        this IServiceCollection services)
+    {
+        ArgumentNullException.ThrowIfNull(services);
+
+        // Date/time provider - singleton as it's stateless
+        services.AddSingleton<IDateTimeProvider, UtcDateTimeProvider>();
+
+        // Future infrastructure services can be added here:
+        // services.AddSingleton<IFileStorage, LocalFileStorage>();
+        // services.AddTransient<IEmailSender, SmtpEmailSender>();
+
+        return services;
+    }
+}
+================================================================================
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Extensions/DependencyInjection/MiddlewareExtensions.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 3.02 KB
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Extensions/DependencyInjection/MiddlewareExtensions.cs
+Relative Path: src/shared/TaksiApp.Shared.Extensions/DependencyInjection
+Created: 2026-02-01 12:16:05 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-02 19:01:07 (Europe/Moscow / GMT+03:00)
+MD5: 856bb47904905f7e350af8c44ad16484
+SHA256: 9ba8d1ace9bbc939710df529711ead14693d18bdd7eedefabe5099caaf8a1327
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using TaksiApp.Shared.Api.Middleware;
+
+namespace TaksiApp.Shared.Extensions.DependencyInjection;
+
+/// <summary>
+/// Extension methods for registering shared middleware components.
+/// </summary>
+public static class MiddlewareExtensions
+{
+    /// <summary>
+    /// Adds correlation ID middleware to the application pipeline.
+    /// </summary>
+    /// <param name="app">The application builder.</param>
+    /// <param name="userIdExtractor">
+    /// Optional function to extract user ID from HttpContext.
+    /// Default implementation extracts from HttpContext.User.Identity.Name.
+    /// </param>
+    /// <param name="tenantIdExtractor">
+    /// Optional function to extract tenant ID from HttpContext.
+    /// Default implementation extracts from "tenant_id" claim.
+    /// </param>
+    /// <returns>The application builder for chaining.</returns>
+    /// <remarks>
+    /// <para>
+    /// The default extractors assume:
+    /// - User ID: HttpContext.User.Identity.Name
+    /// - Tenant ID: "tenant_id" claim in the user principal
+    /// </para>
+    /// <para>
+    /// Override these for custom authentication schemes:
+    /// <code>
+    /// app.UseCorrelationId(
+    ///     userIdExtractor: ctx => ctx.User.FindFirst("sub")?.Value,
+    ///     tenantIdExtractor: ctx => ctx.User.FindFirst("organization_id")?.Value
+    /// );
+    /// </code>
+    /// </para>
+    /// </remarks>
+    public static IApplicationBuilder UseCorrelationId(
+        this IApplicationBuilder app,
+        Func<HttpContext, string?>? userIdExtractor = null,
+        Func<HttpContext, string?>? tenantIdExtractor = null)
+    {
+        // Use default extractors if not provided
+        userIdExtractor ??= ctx => ctx.User?.Identity?.Name;
+        tenantIdExtractor ??= ctx => ctx.User?.FindFirst("tenant_id")?.Value;
+
+        return app.UseMiddleware<CorrelationIdMiddleware>(
+            userIdExtractor,
+            tenantIdExtractor);
+    }
+
+    /// <summary>
+    /// Adds correlation ID propagation handler to an HTTP client builder.
+    /// </summary>
+    /// <param name="builder">The HTTP client builder.</param>
+    /// <returns>The HTTP client builder for chaining.</returns>
+    /// <remarks>
+    /// This handler ensures that correlation IDs flow from incoming requests
+    /// to outgoing HTTP calls, enabling distributed tracing.
+    /// 
+    /// The handler requires IHttpContextAccessor to be registered in DI.
+    /// This is automatically handled by AddSharedApplicationContracts().
+    /// </remarks>
+    public static IHttpClientBuilder AddCorrelationIdHandler(
+        this IHttpClientBuilder builder)
+    {
+        // Register handler as singleton (it's stateless and thread-safe)
+        builder.Services.TryAddSingleton<CorrelationIdDelegatingHandler>();
+
+        return builder.AddHttpMessageHandler<CorrelationIdDelegatingHandler>();
+    }
+}
+================================================================================
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Extensions/DependencyInjection/ObservabilityExtensions.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 4.12 KB
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Extensions/DependencyInjection/ObservabilityExtensions.cs
+Relative Path: src/shared/TaksiApp.Shared.Extensions/DependencyInjection
+Created: 2026-01-31 21:06:22 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-02 19:31:13 (Europe/Moscow / GMT+03:00)
+MD5: e718df3508539d03e5f916e1d3f57018
+SHA256: e942d199129812db384c788ce69b0fcf73a495d36a72af5909a390d638c44951
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using OpenTelemetry;
+using OpenTelemetry.Exporter;
+using OpenTelemetry.Metrics;
+using OpenTelemetry.Resources;
+using OpenTelemetry.Trace;
+using Serilog.Core;
+using TaksiApp.Shared.Extensions.Configuration;
+using TaksiApp.Shared.Observability.HealthChecks;
+using TaksiApp.Shared.Observability.Logging.Enrichers;
+using TaksiApp.Shared.Observability.Metrics;
+using TaksiApp.Shared.Observability.Tracing;
+using MeterProvider = TaksiApp.Shared.Observability.Metrics.MeterProvider;
+
+namespace TaksiApp.Shared.Extensions.DependencyInjection;
+
+public static class ObservabilityExtensions
+{
+    public static IServiceCollection AddSharedObservability(
+        this IServiceCollection services,
+        IConfiguration configuration,
+        string serviceName,
+        string? serviceVersion = null,
+        Action<OpenTelemetryBuilder>? configureOtel = null)
+    {
+        var options = configuration
+            .GetSection("Observability")
+            .Get<ObservabilityOptions>() ?? new ObservabilityOptions();
+
+        // Activity Source
+        services.AddSingleton(sp =>
+            ActivitySourceFactory.Create(serviceName, serviceVersion));
+
+        // Meter
+        var meterProvider = new MeterProvider(
+            serviceName,
+            serviceVersion);
+        services.AddSingleton(meterProvider);
+        services.AddSingleton(meterProvider.Meter);
+
+        // Application Metrics
+        services.AddSingleton<ApplicationMetrics>(sp =>
+            new ApplicationMetrics(serviceName, serviceVersion));
+
+        // OpenTelemetry
+        var otelBuilder = services.AddOpenTelemetry();
+
+        otelBuilder.ConfigureResource(resource => resource
+                .AddService(
+                    serviceName: serviceName,
+                    serviceVersion: serviceVersion ?? "1.0.0")
+                .AddAttributes(new Dictionary<string, object>
+                {
+                    ["deployment.environment"] =
+                        configuration["Environment"] ?? "Development"
+                }))
+            .WithTracing(tracing => tracing
+                .AddSource(serviceName)
+                .AddAspNetCoreInstrumentation(opts =>
+                {
+                    //TODO: further enrich as needed
+                    opts.RecordException = true;
+                    opts.EnrichWithHttpRequest = (activity, request) =>
+                    {
+                        activity.SetTag("http.request.size",
+                            request.ContentLength ?? 0);
+                    };
+                })
+                .AddHttpClientInstrumentation()
+                .AddEntityFrameworkCoreInstrumentation(opts =>
+                {
+                    opts.SetDbStatementForText = true;
+                    opts.EnrichWithIDbCommand = (activity, command) =>
+                    {
+                        activity.SetTag("db.statement", command.CommandText);
+                    };
+                })
+                .AddOtlpExporter(opts =>
+                {
+                    opts.Endpoint = new Uri(options.OtlpEndpoint);
+                    opts.Protocol = OtlpExportProtocol.Grpc;
+                }))
+            .WithMetrics(metrics => metrics
+                .AddMeter(serviceName)
+                .AddRuntimeInstrumentation()
+                .AddAspNetCoreInstrumentation()
+                .AddHttpClientInstrumentation()
+                .AddPrometheusExporter()
+                .AddOtlpExporter(opts =>
+                {
+                    opts.Endpoint = new Uri(options.OtlpEndpoint);
+                    opts.Protocol = OtlpExportProtocol.Grpc;
+                }));
+        if (configureOtel != null)
+        {
+            configureOtel(otelBuilder);
+        }
+        // Health Checks
+        services.AddHealthChecks()
+            .AddCheck<ApplicationHealthCheck>("application");
+
+        // Log Enrichers
+        services.AddSingleton<ILogEventEnricher, TraceContextEnricher>();
+        services.AddScoped<ILogEventEnricher, CorrelationIdEnricher>();
+
+        return services;
+    }
+}
+================================================================================
+
+
+================================================================================
+BINARY/EXCLUDED FILES (not included in text content)
+================================================================================
+- src/shared/TaksiApp.Shared.Extensions/TaksiApp.Shared.Extensions.csproj
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Infrastructure/Time/UtcDateTimeProvider.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 219 B
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Infrastructure/Time/UtcDateTimeProvider.cs
+Relative Path: src/shared/TaksiApp.Shared.Infrastructure/Time
+Created: 2026-01-31 21:19:30 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-02 20:30:11 (Europe/Moscow / GMT+03:00)
+MD5: 90a2fc8d462ab6465592235ef8e2ed10
+SHA256: 8b768728b3770b95cca049afaa26d74ecaa5160e425fad83f2515cbd50ba71b8
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿using TaksiApp.Shared.Application.Abstractions;
+
+namespace TaksiApp.Shared.Infrastructure.Time;
+
+public sealed class UtcDateTimeProvider : IDateTimeProvider
+{
+    public DateTime UtcNow => DateTime.UtcNow;
+}
+
+================================================================================
+
+
+================================================================================
+BINARY/EXCLUDED FILES (not included in text content)
+================================================================================
+- src/shared/TaksiApp.Shared.Infrastructure/TaksiApp.Shared.Infrastructure.csproj
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Kernel/Abstractions/IAggregateRoot.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 616 B
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Kernel/Abstractions/IAggregateRoot.cs
+Relative Path: src/shared/TaksiApp.Shared.Kernel/Abstractions
+Created: 2026-02-01 12:23:19 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-01 12:23:27 (Europe/Moscow / GMT+03:00)
+MD5: 989d1fc2d1aaa860e6907ec12c2fb741
+SHA256: abaa5425edcb6fd1f68f9dfc238cff5b44c4d64a9f7d65be64496b2286766cfa
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿// TaksiApp.Shared.Kernel/Abstractions/IAggregateRoot.cs
+namespace TaksiApp.Shared.Kernel.Abstractions;
+
+/// <summary>
+/// Marker interface for aggregate roots that can raise domain events.
+/// Used by infrastructure to collect and publish events.
+/// </summary>
+public interface IAggregateRoot
+{
+    /// <summary>
+    /// Domain events raised by this aggregate.
+    /// </summary>
+    IReadOnlyList<IDomainEvent> DomainEvents { get; }
+
+    /// <summary>
+    /// Clear all domain events after publishing.
+    /// Called by infrastructure only.
+    /// </summary>
+    void ClearDomainEvents();
+}
+================================================================================
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Kernel/Abstractions/IDomainEvent.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 579 B
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Kernel/Abstractions/IDomainEvent.cs
+Relative Path: src/shared/TaksiApp.Shared.Kernel/Abstractions
+Created: 2026-02-01 12:23:19 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-01 12:23:27 (Europe/Moscow / GMT+03:00)
+MD5: 6c240ca4ad4f4e59efbc4bffca558a03
+SHA256: 6e7aaa1240d649d8ead703ea9a5151c15f1fa226dced09952c0d74ad8ba735d0
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿namespace TaksiApp.Shared.Kernel.Abstractions;
+// TaksiApp.Shared.Kernel/Events/IDomainEvent.cs
+/// <summary>
+/// Marker interface for domain events.
+/// Domain events represent something that happened in the domain
+/// that domain experts care about.
+/// </summary>
+public interface IDomainEvent
+{
+    /// <summary>
+    /// Unique identifier for this event instance.
+    /// </summary>
+    Guid EventId { get; }
+
+    /// <summary>
+    /// When the event occurred in the domain (not when published).
+    /// </summary>
+    DateTime OccurredOnUtc { get; }
+}
+
+================================================================================
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Kernel/Common/AggregateRoot.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 651 B
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Kernel/Common/AggregateRoot.cs
+Relative Path: src/shared/TaksiApp.Shared.Kernel/Common
+Created: 2026-02-01 12:23:19 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-01 12:23:27 (Europe/Moscow / GMT+03:00)
+MD5: af6e40af1994afdcacba9ed1bc4da78e
+SHA256: 43f3ba353df1d7562066310377ffb5e223f88d28ab4513e736d096a1eb077d98
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿using TaksiApp.Shared.Kernel.Abstractions;
+
+namespace TaksiApp.Shared.Kernel.Common;
+
+/// <summary>
+/// Base class for aggregate roots.
+/// </summary>
+public abstract class AggregateRoot<TId> : Entity<TId>, IAggregateRoot
+{
+    private readonly List<IDomainEvent> _domainEvents = new();
+
+    public IReadOnlyList<IDomainEvent> DomainEvents => _domainEvents.AsReadOnly();
+
+
+    protected void RaiseDomainEvent(IDomainEvent domainEvent)
+    {
+        ArgumentNullException.ThrowIfNull(domainEvent);
+        _domainEvents.Add(domainEvent);
+    }
+
+    public void ClearDomainEvents()
+    {
+        _domainEvents.Clear();
+    }
+}
+================================================================================
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Kernel/Common/Entity.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 3.04 KB
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Kernel/Common/Entity.cs
+Relative Path: src/shared/TaksiApp.Shared.Kernel/Common
+Created: 2026-02-01 12:23:19 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-01 12:23:27 (Europe/Moscow / GMT+03:00)
+MD5: e27f014a0746855e0923ac35bd93cc24
+SHA256: 2b9df1e8b665ec6182b5366dbbbfbefc7a46ec995cdc6493fe6e45e4b74f3251
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿// TaksiApp.Shared.Kernel/Common/Entity.cs
+namespace TaksiApp.Shared.Kernel.Common;
+
+/// <summary>
+/// Base class for all entities in the domain.
+/// Entities have identity and are compared by their ID.
+/// </summary>
+/// <typeparam name="TId">Type of the entity's identifier (Guid, int, string, etc.)</typeparam>
+public abstract class Entity<TId> : IEquatable<Entity<TId>>
+{
+    /// <summary>
+    /// Unique identifier for this entity.
+    /// Once set, cannot be changed (immutable).
+    /// </summary>
+    public TId Id { get; protected init; } = default!;
+
+    /// <summary>
+    /// Parameterless constructor for ORM frameworks.
+    /// </summary>
+    protected Entity() { }
+
+    /// <summary>
+    /// Constructor with ID validation.
+    /// </summary>
+    protected Entity(TId id)
+    {
+        // Handle both reference types (null check) and value types (default check)
+        if (id is null || EqualityComparer<TId>.Default.Equals(id, default(TId)))
+            throw new ArgumentException("Entity ID cannot be null or default value", nameof(id));
+
+        Id = id;
+    }
+
+    /// <summary>
+    /// Entities are equal if they have the same ID and are the same type.
+    /// Handles EF Core proxy types correctly.
+    /// </summary>
+    public override bool Equals(object? obj)
+    {
+        if (obj is not Entity<TId> other)
+            return false;
+
+        // Same reference = same entity
+        if (ReferenceEquals(this, other))
+            return true;
+
+        // Different types = not equal (even with same ID)
+        if (GetUnproxiedType(this) != GetUnproxiedType(other))
+            return false;
+
+        // Transient entities (no ID yet) are never equal
+        // Use EqualityComparer for consistent comparison across all types
+        if (EqualityComparer<TId>.Default.Equals(Id, default(TId)) ||
+            EqualityComparer<TId>.Default.Equals(other.Id, default(TId)))
+            return false;
+
+        // Compare by ID
+        return EqualityComparer<TId>.Default.Equals(Id, other.Id);
+    }
+
+    public bool Equals(Entity<TId>? other) => Equals((object?)other);
+
+    public static bool operator ==(Entity<TId>? a, Entity<TId>? b)
+    {
+        if (a is null && b is null) return true;
+        if (a is null || b is null) return false;
+        return a.Equals(b);
+    }
+
+    public static bool operator !=(Entity<TId>? a, Entity<TId>? b) => !(a == b);
+
+    public override int GetHashCode() =>
+        HashCode.Combine(GetUnproxiedType(this).ToString(), Id);
+
+    /// <summary>
+    /// Handle EF Core dynamic proxies (Castle.Proxies).
+    /// Returns the actual entity type, not the proxy type.
+    /// </summary>
+    private static Type GetUnproxiedType(object obj)
+    {
+        var type = obj.GetType();
+
+        // EF Core proxies have "Castle.Proxies" in their name
+        if (type.ToString().Contains("Castle.Proxies", StringComparison.Ordinal))
+            return type.BaseType!;
+
+        return type;
+    }
+
+    public override string ToString() => $"{GetType().Name} [Id={Id}]";
+}
+================================================================================
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Kernel/Common/ValueObject.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 3.7 KB
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Kernel/Common/ValueObject.cs
+Relative Path: src/shared/TaksiApp.Shared.Kernel/Common
+Created: 2026-02-01 12:23:19 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-01 12:23:27 (Europe/Moscow / GMT+03:00)
+MD5: 0fd89fb4dcbdba4e4fea091d3f85475e
+SHA256: 12df64049ca84000751dcd0e76ea842a806f726052c37c30eb775e510a6e0534
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿// TaksiApp.Shared.Kernel/Common/ValueObject.cs
+namespace TaksiApp.Shared.Kernel.Common;
+
+/// <summary>
+/// Base class for value objects in DDD.
+/// Value objects:
+/// 1. Have no identity (compared by value, not ID)
+/// 2. Are immutable
+/// 3. Are self-validating
+/// 4. Are side-effect free
+/// </summary>
+public abstract class ValueObject : IEquatable<ValueObject>
+{
+    /// <summary>
+    /// Override to return all components that determine equality.
+    /// ORDER MATTERS: ["Street", "City"] != ["City", "Street"]
+    /// </summary>
+    /// <example>
+    /// <code>
+    /// protected override IEnumerable&lt;object?&gt; GetEqualityComponents()
+    /// {
+    ///     yield return Street;
+    ///     yield return City;
+    ///     yield return ZipCode;
+    /// }
+    /// </code>
+    /// </example>
+    protected abstract IEnumerable<object?> GetEqualityComponents();
+
+    public override bool Equals(object? obj)
+    {
+        if (obj is null)
+            return false;
+
+        if (GetType() != obj.GetType())
+            return false;
+
+        var valueObject = (ValueObject)obj;
+
+        return GetEqualityComponents()
+            .SequenceEqual(valueObject.GetEqualityComponents());
+    }
+
+    public bool Equals(ValueObject? other) => Equals((object?)other);
+
+    public override int GetHashCode()
+    {
+        // Use HashCode.Combine for better distribution and collision resistance
+        // XOR can cause collisions (e.g., a ^ b ^ c == c ^ b ^ a)
+        var components = GetEqualityComponents().ToArray();
+        if (components.Length == 0)
+            return 0;
+
+        // For single component, use its hash code directly
+        if (components.Length == 1)
+            return components[0]?.GetHashCode() ?? 0;
+
+        // For multiple components, use HashCode.Combine (available in .NET Core 2.1+)
+        var hash = new HashCode();
+        foreach (var component in components)
+        {
+            hash.Add(component);
+        }
+        return hash.ToHashCode();
+    }
+
+    public static bool operator ==(ValueObject? left, ValueObject? right)
+    {
+        if (left is null && right is null) return true;
+        if (left is null || right is null) return false;
+        return left.Equals(right);
+    }
+
+    public static bool operator !=(ValueObject? left, ValueObject? right) =>
+        !(left == right);
+
+    /// <summary>
+    /// Create a shallow copy of this value object using MemberwiseClone.
+    /// 
+    /// WARNING: This method performs a SHALLOW COPY only.
+    /// - Value types and strings are copied by value (safe)
+    /// - Reference types are copied by reference (shared between original and copy)
+    /// 
+    /// IMPORTANT: Since value objects should be immutable and contain only value types/immutable types,
+    /// this method should work correctly for typical value object implementations.
+    /// However, if your value object contains mutable reference types, this copy will share those references.
+    /// 
+    /// RECOMMENDATION: For value objects with complex structures, consider implementing
+    /// a custom copy method that performs deep cloning if needed.
+    /// 
+    /// This method is useful for creating modified versions of immutable value objects
+    /// in a functional programming style.
+    /// </summary>
+    /// <typeparam name="T">Type of value object (must be the same type or derived)</typeparam>
+    /// <returns>Shallow copy of this value object</returns>
+    /// <example>
+    /// var newAddress = address.Copy&lt;Address&gt;();
+    /// // Modify newAddress properties if needed (though value objects should be immutable)
+    /// </example>
+    protected T Copy<T>() where T : ValueObject => (T)MemberwiseClone();
+}
+================================================================================
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Kernel/Events/DomainEventBase.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 291 B
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Kernel/Events/DomainEventBase.cs
+Relative Path: src/shared/TaksiApp.Shared.Kernel/Events
+Created: 2026-02-01 12:23:19 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-01 12:23:27 (Europe/Moscow / GMT+03:00)
+MD5: cc617835a7fac5232457f6336e72fcc4
+SHA256: 601865721f9329cc1b1ac39c5f7bbbdab4ad4f536fca6cfcf8539e0b6e8bbc00
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿using TaksiApp.Shared.Kernel.Abstractions;
+
+namespace TaksiApp.Shared.Kernel.Events;
+
+// Base implementation
+public abstract record DomainEventBase : IDomainEvent
+{
+    public Guid EventId { get; } = Guid.NewGuid();
+    public DateTime OccurredOnUtc { get; } = DateTime.UtcNow;
+}
+================================================================================
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Kernel/Guards/Guard.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 7.44 KB
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Kernel/Guards/Guard.cs
+Relative Path: src/shared/TaksiApp.Shared.Kernel/Guards
+Created: 2026-02-01 12:23:19 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-02 19:00:10 (Europe/Moscow / GMT+03:00)
+MD5: 6c8c8bacd57ed5c6273fe15080391cec
+SHA256: 58b877b636b951aa1182a4dc39b8ddcbe3a16e4fd6aaf9c2c826661a3b7409f7
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
+
+namespace TaksiApp.Shared.Kernel.Guards;
+
+/// <summary>
+/// Provides guard clause methods for validating method arguments and preconditions.
+/// Throws exceptions when validation fails.
+/// </summary>
+/// <remarks>
+/// Guard clauses are defensive programming techniques that validate inputs at the
+/// beginning of methods. This class provides common validation patterns.
+/// 
+/// Usage:
+/// <code>
+/// Guard.NotNull(customer, nameof(customer));
+/// Guard.Require&lt;ArgumentException&gt;(amount > 0, "Amount must be positive");
+/// Guard.InRange(age, 0, 120, nameof(age));
+/// </code>
+/// </remarks>
+public static class Guard
+{
+    /// <summary>
+    /// Throws <typeparamref name="TException"/> if the condition is FALSE.
+    /// </summary>
+    /// <typeparam name="TException">Type of exception to throw. Must have a constructor accepting (string message).</typeparam>
+    /// <param name="condition">The condition to validate. Exception is thrown if FALSE.</param>
+    /// <param name="message">The exception message.</param>
+    /// <exception cref="TException">Thrown when condition is false.</exception>
+    /// <exception cref="InvalidOperationException">Thrown if TException cannot be instantiated.</exception>
+    /// <example>
+    /// <code>
+    /// Guard.Require&lt;ArgumentException&gt;(value >= 0, "Value cannot be negative");
+    /// Guard.Require&lt;InvalidOperationException&gt;(isInitialized, "Object not initialized");
+    /// </code>
+    /// </example>
+    public static void Require<TException>(bool condition, string message)
+        where TException : Exception
+    {
+        if (!condition)
+        {
+            var exception = Activator.CreateInstance(typeof(TException), message) as TException;
+            if (exception == null)
+            {
+                throw new InvalidOperationException(
+                    $"Failed to create exception of type {typeof(TException).Name}. " +
+                    $"Ensure it has a constructor accepting (string message).");
+            }
+            throw exception;
+        }
+    }
+
+    /// <summary>
+    /// Throws <see cref="ArgumentNullException"/> if the value is null.
+    /// </summary>
+    /// <typeparam name="T">The reference type being validated.</typeparam>
+    /// <param name="value">The value to check for null.</param>
+    /// <param name="paramName">The name of the parameter (automatically captured via CallerArgumentExpression).</param>
+    /// <exception cref="ArgumentNullException">Thrown when value is null.</exception>
+    /// <example>
+    /// <code>
+    /// Guard.NotNull(customer); // paramName is automatically "customer"
+    /// Guard.NotNull(order, "customOrderName"); // Override parameter name
+    /// </code>
+    /// </example>
+    public static void NotNull<T>(
+        [NotNull] T? value,
+        [CallerArgumentExpression(nameof(value))] string? paramName = null)
+        where T : class
+    {
+        ArgumentNullException.ThrowIfNull(value, paramName);
+    }
+
+    /// <summary>
+    /// Throws <see cref="ArgumentException"/> if the string is null, empty, or whitespace.
+    /// </summary>
+    /// <param name="value">The string to validate.</param>
+    /// <param name="paramName">The name of the parameter (automatically captured via CallerArgumentExpression).</param>
+    /// <exception cref="ArgumentException">Thrown when value is null, empty, or whitespace.</exception>
+    /// <example>
+    /// <code>
+    /// Guard.NotNullOrEmpty(name); // Validates name is not null/empty/whitespace
+    /// </code>
+    /// </example>
+    public static void NotNullOrEmpty(
+        [NotNull] string? value,
+        [CallerArgumentExpression(nameof(value))] string? paramName = null)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            throw new ArgumentException("Value cannot be null, empty, or whitespace", paramName);
+        }
+    }
+
+    /// <summary>
+    /// Throws <see cref="ArgumentOutOfRangeException"/> if value is not greater than the minimum.
+    /// </summary>
+    /// <typeparam name="T">The type of value being compared (must implement IComparable).</typeparam>
+    /// <param name="value">The value to validate.</param>
+    /// <param name="min">The exclusive minimum value.</param>
+    /// <param name="paramName">The name of the parameter (automatically captured via CallerArgumentExpression).</param>
+    /// <exception cref="ArgumentOutOfRangeException">Thrown when value &lt;= min.</exception>
+    /// <example>
+    /// <code>
+    /// Guard.GreaterThan(age, 0); // age must be > 0
+    /// Guard.GreaterThan(price, 0.0m); // price must be > 0
+    /// </code>
+    /// </example>
+    public static void GreaterThan<T>(
+        T value,
+        T min,
+        [CallerArgumentExpression(nameof(value))] string? paramName = null)
+        where T : IComparable<T>
+    {
+        if (value.CompareTo(min) <= 0)
+        {
+            throw new ArgumentOutOfRangeException(
+                paramName,
+                value,
+                $"Value must be greater than {min}");
+        }
+    }
+
+    /// <summary>
+    /// Throws <see cref="ArgumentOutOfRangeException"/> if value is not greater than or equal to the minimum.
+    /// </summary>
+    /// <typeparam name="T">The type of value being compared (must implement IComparable).</typeparam>
+    /// <param name="value">The value to validate.</param>
+    /// <param name="min">The inclusive minimum value.</param>
+    /// <param name="paramName">The name of the parameter (automatically captured via CallerArgumentExpression).</param>
+    /// <exception cref="ArgumentOutOfRangeException">Thrown when value &lt; min.</exception>
+    /// <example>
+    /// <code>
+    /// Guard.GreaterThanOrEqual(count, 0); // count must be >= 0
+    /// </code>
+    /// </example>
+    public static void GreaterThanOrEqual<T>(
+        T value,
+        T min,
+        [CallerArgumentExpression(nameof(value))] string? paramName = null)
+        where T : IComparable<T>
+    {
+        if (value.CompareTo(min) < 0)
+        {
+            throw new ArgumentOutOfRangeException(
+                paramName,
+                value,
+                $"Value must be greater than or equal to {min}");
+        }
+    }
+
+    /// <summary>
+    /// Throws <see cref="ArgumentOutOfRangeException"/> if value is outside the specified range (inclusive).
+    /// </summary>
+    /// <typeparam name="T">The type of value being compared (must implement IComparable).</typeparam>
+    /// <param name="value">The value to validate.</param>
+    /// <param name="min">The inclusive minimum value.</param>
+    /// <param name="max">The inclusive maximum value.</param>
+    /// <param name="paramName">The name of the parameter (automatically captured via CallerArgumentExpression).</param>
+    /// <exception cref="ArgumentOutOfRangeException">Thrown when value &lt; min or value &gt; max.</exception>
+    /// <example>
+    /// <code>
+    /// Guard.InRange(age, 0, 120); // age must be between 0 and 120 inclusive
+    /// Guard.InRange(percentage, 0.0, 100.0); // percentage must be between 0 and 100
+    /// </code>
+    /// </example>
+    public static void InRange<T>(
+        T value,
+        T min,
+        T max,
+        [CallerArgumentExpression(nameof(value))] string? paramName = null)
+        where T : IComparable<T>
+    {
+        if (value.CompareTo(min) < 0 || value.CompareTo(max) > 0)
+        {
+            throw new ArgumentOutOfRangeException(
+                paramName,
+                value,
+                $"Value must be between {min} and {max} (inclusive)");
+        }
+    }
+}
+================================================================================
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Kernel/Results/Error.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 8.03 KB
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Kernel/Results/Error.cs
+Relative Path: src/shared/TaksiApp.Shared.Kernel/Results
+Created: 2026-02-01 12:23:19 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-02 19:02:40 (Europe/Moscow / GMT+03:00)
+MD5: ca05cfc7f90e598996e976368cbe9a95
+SHA256: c0d16ade71669031c5ee67765ed3f365ffbcb697f8e7550f312882f517b43d82
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿using System.Collections.ObjectModel;
+
+namespace TaksiApp.Shared.Kernel.Results;
+
+/// <summary>
+/// Represents an error in the Result pattern.
+/// </summary>
+/// <remarks>
+/// <para>
+/// Errors are immutable and serialization-safe. They provide structured information
+/// about failures in a type-safe way, avoiding exception-driven control flow.
+/// </para>
+/// <para>
+/// <strong>Design principle:</strong> Errors should represent business rule violations
+/// or technical failures, not exceptions. Use Result&lt;T&gt; to return errors as
+/// first-class values instead of throwing exceptions.
+/// </para>
+/// <para>
+/// Metadata is intentionally limited to string values for safe serialization across
+/// service boundaries. If you need complex error context, consider creating specific
+/// error types instead of relying on metadata.
+/// </para>
+/// </remarks>
+public readonly struct Error : IEquatable<Error>
+{
+    /// <summary>
+    /// Gets the error code (should be unique and machine-readable).
+    /// </summary>
+    /// <remarks>
+    /// Error codes should follow a consistent naming convention:
+    /// - Domain.Operation.Reason (e.g., "Order.Create.InvalidQuantity")
+    /// - Category.Reason (e.g., "Validation.Required", "NotFound.Customer")
+    /// 
+    /// Avoid generic codes like "Error", "Failed", "Invalid".
+    /// </remarks>
+    public string Code { get; }
+
+    /// <summary>
+    /// Gets the human-readable error message.
+    /// </summary>
+    /// <remarks>
+    /// Messages should be clear and actionable. Avoid technical jargon
+    /// unless the audience is developers.
+    /// </remarks>
+    public string Message { get; }
+
+    /// <summary>
+    /// Gets the error type (determines HTTP status code mapping in APIs).
+    /// </summary>
+    public ErrorType Type { get; }
+
+    /// <summary>
+    /// Gets optional metadata providing additional error context.
+    /// </summary>
+    /// <remarks>
+    /// <para>
+    /// Metadata is limited to string values for safe serialization.
+    /// Use metadata for debugging information, not for business logic decisions.
+    /// </para>
+    /// <para>
+    /// Examples of good metadata:
+    /// - Field names for validation errors
+    /// - Entity IDs for not found errors
+    /// - Attempted values for validation errors
+    /// </para>
+    /// <para>
+    /// Examples of bad metadata (use specific error types instead):
+    /// - Complex objects
+    /// - Business rules
+    /// - Large data structures
+    /// </para>
+    /// </remarks>
+    public IReadOnlyDictionary<string, string>? Metadata { get; }
+
+    private Error(
+        string code,
+        string message,
+        ErrorType type,
+        Dictionary<string, string>? metadata = null)
+    {
+        Code = code ?? throw new ArgumentNullException(nameof(code));
+        Message = message ?? throw new ArgumentNullException(nameof(message));
+        Type = type;
+        Metadata = metadata != null
+            ? new ReadOnlyDictionary<string, string>(metadata)
+            : null;
+    }
+
+    /// <summary>
+    /// Creates a validation error.
+    /// </summary>
+    /// <param name="code">Error code (e.g., "Validation.Required").</param>
+    /// <param name="message">Human-readable error message.</param>
+    /// <param name="metadata">Optional metadata (e.g., field names, attempted values).</param>
+    /// <returns>A validation error.</returns>
+    /// <remarks>
+    /// Validation errors typically map to HTTP 400 Bad Request.
+    /// Use for client input validation failures.
+    /// </remarks>
+    public static Error Validation(
+        string code,
+        string message,
+        Dictionary<string, string>? metadata = null) =>
+        new(code, message, ErrorType.Validation, metadata);
+
+    /// <summary>
+    /// Creates a not found error.
+    /// </summary>
+    /// <param name="code">Error code (e.g., "NotFound.Customer").</param>
+    /// <param name="message">Human-readable error message.</param>
+    /// <returns>A not found error.</returns>
+    /// <remarks>
+    /// Not found errors typically map to HTTP 404 Not Found.
+    /// Use when a requested resource doesn't exist.
+    /// </remarks>
+    public static Error NotFound(string code, string message) =>
+        new(code, message, ErrorType.NotFound);
+
+    /// <summary>
+    /// Creates a conflict error.
+    /// </summary>
+    /// <param name="code">Error code (e.g., "Conflict.DuplicateEmail").</param>
+    /// <param name="message">Human-readable error message.</param>
+    /// <returns>A conflict error.</returns>
+    /// <remarks>
+    /// Conflict errors typically map to HTTP 409 Conflict.
+    /// Use for business rule violations or duplicate resource errors.
+    /// </remarks>
+    public static Error Conflict(string code, string message) =>
+        new(code, message, ErrorType.Conflict);
+
+    /// <summary>
+    /// Creates a general failure error.
+    /// </summary>
+    /// <param name="code">Error code (e.g., "Failure.DatabaseTimeout").</param>
+    /// <param name="message">Human-readable error message.</param>
+    /// <returns>A failure error.</returns>
+    /// <remarks>
+    /// Failure errors typically map to HTTP 500 Internal Server Error.
+    /// Use for unexpected technical failures.
+    /// </remarks>
+    public static Error Failure(string code, string message) =>
+        new(code, message, ErrorType.Failure);
+
+    /// <summary>
+    /// Creates an unauthorized error.
+    /// </summary>
+    /// <param name="code">Error code (e.g., "Unauthorized.InvalidToken").</param>
+    /// <param name="message">Human-readable error message.</param>
+    /// <returns>An unauthorized error.</returns>
+    /// <remarks>
+    /// Unauthorized errors typically map to HTTP 401 Unauthorized.
+    /// Use when authentication is required but missing or invalid.
+    /// </remarks>
+    public static Error Unauthorized(string code, string message) =>
+        new(code, message, ErrorType.Unauthorized);
+
+    /// <summary>
+    /// Creates a forbidden error.
+    /// </summary>
+    /// <param name="code">Error code (e.g., "Forbidden.InsufficientPermissions").</param>
+    /// <param name="message">Human-readable error message.</param>
+    /// <returns>A forbidden error.</returns>
+    /// <remarks>
+    /// Forbidden errors typically map to HTTP 403 Forbidden.
+    /// Use when user is authenticated but lacks required permissions.
+    /// </remarks>
+    public static Error Forbidden(string code, string message) =>
+        new(code, message, ErrorType.Forbidden);
+
+    /// <summary>
+    /// Represents the absence of an error (success state).
+    /// </summary>
+    /// <remarks>
+    /// This is rarely needed in practice. Prefer using Result.Success() instead.
+    /// </remarks>
+    public static Error None => new("Error.None", "No error", ErrorType.Failure);
+
+    /// <summary>
+    /// Represents a null value error (use for guard clauses).
+    /// </summary>
+    public static Error NullValue =>
+        new("Error.NullValue", "A required value was null", ErrorType.Validation);
+
+    /// <summary>
+    /// Determines whether two errors are equal based on code and type.
+    /// </summary>
+    /// <remarks>
+    /// Errors are considered equal if they have the same code and type,
+    /// regardless of message or metadata. This allows for error comparison
+    /// in tests and business logic.
+    /// </remarks>
+    public bool Equals(Error other) =>
+        Code == other.Code && Type == other.Type;
+
+    /// <inheritdoc/>
+    public override bool Equals(object? obj) =>
+        obj is Error error && Equals(error);
+
+    /// <inheritdoc/>
+    public override int GetHashCode() => HashCode.Combine(Code, Type);
+
+    /// <summary>
+    /// Determines whether two errors are equal.
+    /// </summary>
+    public static bool operator ==(Error left, Error right) => left.Equals(right);
+
+    /// <summary>
+    /// Determines whether two errors are not equal.
+    /// </summary>
+    public static bool operator !=(Error left, Error right) => !(left == right);
+
+    /// <summary>
+    /// Returns a string representation of the error.
+    /// </summary>
+    /// <returns>A formatted string containing error type, code, and message.</returns>
+    public override string ToString() => $"[{Type}] {Code}: {Message}";
+}
+================================================================================
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Kernel/Results/ErrorType.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 220 B
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Kernel/Results/ErrorType.cs
+Relative Path: src/shared/TaksiApp.Shared.Kernel/Results
+Created: 2026-02-01 12:23:19 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-01 12:23:27 (Europe/Moscow / GMT+03:00)
+MD5: 9a28a4a2fe0d4b3514f2e0bbc4f2aa0b
+SHA256: 0f87cc2d78f66a9583ddd44bf160d00c703959472a7ff94796a1bcc190f18c52
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿// TaksiApp.Shared.Kernel/Results/ErrorType.cs
+namespace TaksiApp.Shared.Kernel.Results;
+
+public enum ErrorType
+{
+    Validation,
+    NotFound,
+    Conflict,
+    Failure,
+    Unauthorized,
+    Forbidden
+}
+
+================================================================================
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Kernel/Results/Result.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 1.87 KB
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Kernel/Results/Result.cs
+Relative Path: src/shared/TaksiApp.Shared.Kernel/Results
+Created: 2026-02-01 12:23:19 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-01 12:23:27 (Europe/Moscow / GMT+03:00)
+MD5: 2c2c4f9fbea7ea82cf963c3a933a6c4e
+SHA256: bdb120a036193e4a602ff95ef9ff27145fcbdc71c4e488e2e24efbf5c7483993
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿// TaksiApp.Shared.Kernel/Results/Result.cs
+namespace TaksiApp.Shared.Kernel.Results;
+
+public readonly struct Result
+{
+    private readonly Error? _error;
+
+    public bool IsSuccess { get; }
+    public bool IsFailure => !IsSuccess;
+
+    public Error Error => IsSuccess
+        ? throw new InvalidOperationException("Cannot access Error on success result")
+        : _error!.Value;
+
+    private Result(bool isSuccess, Error? error = null)
+    {
+        if (isSuccess && error.HasValue)
+            throw new ArgumentException("Success result cannot have error");
+        if (!isSuccess && !error.HasValue)
+            throw new ArgumentException("Failure result must have error");
+
+        IsSuccess = isSuccess;
+        _error = error;
+    }
+
+    public static Result Success() => new(true);
+    public static Result Failure(Error error) => new(false, error);
+
+    public static Result<T> Success<T>(T value) => Result<T>.Success(value);
+    public static Result<T> Failure<T>(Error error) => Result<T>.Failure(error);
+
+    // Pattern matching
+    public TResult Match<TResult>(
+        Func<TResult> onSuccess,
+        Func<Error, TResult> onFailure) =>
+        IsSuccess ? onSuccess() : onFailure(Error);
+
+    public void Match(Action onSuccess, Action<Error> onFailure)
+    {
+        if (IsSuccess)
+            onSuccess();
+        else
+            onFailure(Error);
+    }
+    public Result Tap(Action action)
+    {
+        if (IsSuccess)
+            action();
+        return this;
+    }
+
+    public async Task<Result> TapAsync(Func<Task> action)
+    {
+        if (IsSuccess)
+            await action().ConfigureAwait(false);
+        return this;
+    }
+    // Ensure
+    public Result Ensure(Func<bool> predicate, Error error)
+    {
+        if (IsFailure)
+            return this;
+
+        return predicate() ? Success() : Failure(error);
+    }
+}
+
+================================================================================
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Kernel/Results/Result{T}.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 2.65 KB
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Kernel/Results/Result{T}.cs
+Relative Path: src/shared/TaksiApp.Shared.Kernel/Results
+Created: 2026-02-01 12:23:19 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-01 12:23:27 (Europe/Moscow / GMT+03:00)
+MD5: 76660ab43534028e7c1e1f1b4534004c
+SHA256: fdb1d5fa72142bba67c752fb5c513ed73f0824bff6116816f549a90ca08d3e97
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿
+// TaksiApp.Shared.Kernel/Results/Result{T}.cs
+namespace TaksiApp.Shared.Kernel.Results;
+
+public readonly struct Result<T>
+{
+    private readonly T? _value;
+    private readonly Error? _error;
+
+    public bool IsSuccess { get; }
+    public bool IsFailure => !IsSuccess;
+
+    public T Value => IsSuccess
+        ? _value!
+        : throw new InvalidOperationException("Cannot access Value on failure result");
+
+    public Error Error => IsSuccess
+        ? throw new InvalidOperationException("Cannot access Error on success result")
+        : _error!.Value;
+
+    private Result(bool isSuccess, T? value = default, Error? error = null)
+    {
+        if (isSuccess && error.HasValue)
+            throw new ArgumentException("Success result cannot have error");
+        if (!isSuccess && !error.HasValue)
+            throw new ArgumentException("Failure result must have error");
+        
+        // Note: We don't check for null here because:
+        // 1. For nullable types (T?), null is a valid value
+        // 2. For non-nullable reference types, the compiler will warn
+        // 3. For value types, null is not possible
+        // If null is passed for a non-nullable type, it's a programming error
+        // that should be caught at compile time with nullable reference types enabled
+
+        IsSuccess = isSuccess;
+        _value = value;
+        _error = error;
+    }
+
+    public static Result<T> Success(T value) => new(true, value);
+    public static Result<T> Failure(Error error) => new(false, default, error);
+
+    // Implicit conversion from T
+    public static implicit operator Result<T>(T value) => Success(value);
+
+    // Pattern matching
+    public TResult Match<TResult>(
+        Func<T, TResult> onSuccess,
+        Func<Error, TResult> onFailure) =>
+        IsSuccess ? onSuccess(Value) : onFailure(Error);
+
+    public void Match(Action<T> onSuccess, Action<Error> onFailure)
+    {
+        if (IsSuccess)
+            onSuccess(Value);
+        else
+            onFailure(Error);
+    }
+
+    // Monadic operations
+    public Result<TNext> Bind<TNext>(Func<T, Result<TNext>> func) =>
+        IsSuccess ? func(Value) : Result<TNext>.Failure(Error);
+
+    public Result<TNext> Map<TNext>(Func<T, TNext> func) =>
+        IsSuccess ? Result<TNext>.Success(func(Value)) : Result<TNext>.Failure(Error);
+
+    public Result<T> Tap(Action<T> action)
+    {
+        if (IsSuccess)
+            action(Value);
+        return this;
+    }
+
+    public Result<T> Ensure(Func<T, bool> predicate, Error error)
+    {
+        if (IsFailure)
+            return this;
+
+        return predicate(Value) ? this : Failure(error);
+    }
+}
+================================================================================
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Kernel/ValueObjects/Email.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 4.51 KB
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Kernel/ValueObjects/Email.cs
+Relative Path: src/shared/TaksiApp.Shared.Kernel/ValueObjects
+Created: 2026-02-01 12:23:19 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-02 20:23:35 (Europe/Moscow / GMT+03:00)
+MD5: c004271bfd76fe10b18089f6bfd20ca5
+SHA256: d9b55126b84b4e88878ea5879116444d9c8ae2d10d6679576f2c6923229caa6f
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿using System.Text.RegularExpressions;
+using TaksiApp.Shared.Kernel.Common;
+using TaksiApp.Shared.Kernel.Results;
+
+namespace TaksiApp.Shared.Kernel.ValueObjects;
+
+/// <summary>
+/// Represents a validated email address as a ValueObject.
+/// </summary>
+public sealed class Email : ValueObject
+{
+    private static readonly Regex EmailRegex = new(
+        @"^[^@\s]+@[^@\s]+\.[^@\s]+$",
+        RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
+    public string Value { get; }
+
+    private Email(string value)
+    {
+        Value = value;
+    }
+
+    /// <summary>
+    /// Create email from string with validation.
+    /// </summary>
+    /// <param name="email">Email address to validate</param>
+    /// <returns>Success with Email or Failure with validation error</returns>
+    /// <remarks>
+    /// Validation rules:
+    /// - Email must not be null or whitespace
+    /// - Email must match basic format: local-part@domain.tld
+    /// - Email is normalized to lowercase
+    /// 
+    /// NOTE: This uses a basic regex pattern for format validation.
+    /// The regex pattern: ^[^@\s]+@[^@\s]+\.[^@\s]+$
+    /// 
+    /// Limitations:
+    /// - Does not validate against RFC 5322 fully
+    /// - Does not check if domain exists or is valid
+    /// - Does not validate local-part length limits (64 chars) or domain length limits (255 chars)
+    /// - Does not handle quoted strings or comments in email addresses
+    /// - Does not validate internationalized domain names (IDN)
+    /// 
+    /// For production use requiring strict validation, consider:
+    /// - Using a library like MailKit's MimeKit for RFC-compliant validation
+    /// - Performing domain MX record lookup for existence verification
+    /// - Implementing length checks (local-part: max 64 chars, domain: max 255 chars)
+    /// </remarks>
+    public static Result<Email> Create(string? email)
+    {
+        var trimmed = email?.Trim() ?? string.Empty;
+
+        if (string.IsNullOrWhiteSpace(trimmed))
+            return Result.Failure<Email>(
+                Error.Validation(
+                    "Email.Empty",
+                    "Email address is required"));
+
+        // Length validation (RFC 5321: local-part max 64, @ symbol, domain max 255 = total max 320)
+        if (trimmed.Length > 320)
+            return Result.Failure<Email>(
+                Error.Validation(
+                    "Email.TooLong",
+                    $"Email address exceeds maximum length of 320 characters: {trimmed.Length} characters"));
+
+        // Basic format validation
+        if (!EmailRegex.IsMatch(trimmed))
+            return Result.Failure<Email>(
+                Error.Validation(
+                    "Email.InvalidFormat",
+                    $"Email address '{trimmed}' has invalid format. Expected format: local-part@domain.tld"));
+
+        // Additional validation: ensure @ appears only once
+        var atIndex = trimmed.IndexOf('@');
+        if (atIndex <= 0 || atIndex >= trimmed.Length - 1)
+            return Result.Failure<Email>(
+                Error.Validation(
+                    "Email.InvalidFormat",
+                    $"Email address '{trimmed}' has invalid format. @ symbol must be between local-part and domain"));
+
+        // Validate local-part and domain are not empty
+        var localPart = trimmed.Substring(0, atIndex);
+        var domain = trimmed.Substring(atIndex + 1);
+
+        if (string.IsNullOrWhiteSpace(localPart))
+            return Result.Failure<Email>(
+                Error.Validation(
+                    "Email.EmptyLocalPart",
+                    "Email address local-part cannot be empty"));
+
+        if (string.IsNullOrWhiteSpace(domain))
+            return Result.Failure<Email>(
+                Error.Validation(
+                    "Email.EmptyDomain",
+                    "Email address domain cannot be empty"));
+
+        // Validate domain contains at least one dot (for TLD)
+        if (!domain.Contains('.'))
+            return Result.Failure<Email>(
+                Error.Validation(
+                    "Email.InvalidDomain",
+                    $"Email address domain '{domain}' must contain at least one dot (TLD required)"));
+
+        return Result.Success(new Email(trimmed.ToLowerInvariant()));
+    }
+
+    protected override IEnumerable<object?> GetEqualityComponents()
+    {
+        yield return Value;
+    }
+
+    public override string ToString() => Value;
+
+    // Implicit conversion for convenience
+    public static implicit operator string(Email email) => email.Value;
+}
+
+================================================================================
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Kernel/ValueObjects/Money.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 3.97 KB
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Kernel/ValueObjects/Money.cs
+Relative Path: src/shared/TaksiApp.Shared.Kernel/ValueObjects
+Created: 2026-02-01 12:23:19 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-02 18:52:18 (Europe/Moscow / GMT+03:00)
+MD5: 7376e98b065ffbfbfafbbab0970718a2
+SHA256: 17bb7725d7a1f2dd4021273728330373e5d5a4b0a9009f78e77b3439adfee345
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿// TaksiApp.Shared.Kernel/ValueObjects/Money.cs
+using System.Linq;
+using TaksiApp.Shared.Kernel.Common;
+using TaksiApp.Shared.Kernel.Results;
+
+namespace TaksiApp.Shared.Kernel.ValueObjects;
+
+public sealed class Money : ValueObject
+{
+    public decimal Amount { get; }
+    public string Currency { get; }
+
+    private Money(decimal amount, string currency)
+    {
+        Amount = amount;
+        Currency = currency;
+    }
+
+    /// <summary>
+    /// Creates a Money value object with validation.
+    /// </summary>
+    /// <param name="amount">Monetary amount (must be non-negative)</param>
+    /// <param name="currency">ISO 4217 currency code (3 uppercase letters, e.g., "USD", "EUR")</param>
+    /// <returns>Success with Money or Failure with validation error</returns>
+    /// <remarks>
+    /// Validation rules:
+    /// - Amount must be non-negative
+    /// - Currency code must be exactly 3 characters (ISO 4217 format)
+    /// - Currency code is converted to uppercase
+    /// 
+    /// NOTE: This method validates format only. It does not verify against
+    /// the official ISO 4217 currency list. Invalid currency codes (e.g., "XXX")
+    /// will be accepted if they meet the format requirements.
+    /// For production use, consider validating against a known currency list.
+    /// </remarks>
+    public static Result<Money> Create(decimal amount, string? currency)
+    {
+        var curr = currency?.Trim().ToUpperInvariant() ?? string.Empty;
+
+        // Validate amount
+        if (amount < 0)
+            return Result.Failure<Money>(
+                Error.Validation("Money.NegativeAmount",
+                    $"Amount cannot be negative: {amount}"));
+
+        // Check for overflow (decimal max value is very large, but document the limit)
+        if (amount > 999_999_999_999_999.99m)
+            return Result.Failure<Money>(
+                Error.Validation("Money.AmountTooLarge",
+                    $"Amount exceeds maximum allowed value: {amount}"));
+
+        // Validate currency code presence
+        if (string.IsNullOrWhiteSpace(curr))
+            return Result.Failure<Money>(
+                Error.Validation("Money.EmptyCurrency", "Currency code is required"));
+
+        // Validate currency code format (ISO 4217: exactly 3 uppercase letters)
+        if (curr.Length != 3)
+            return Result.Failure<Money>(
+                Error.Validation("Money.InvalidCurrencyLength",
+                    $"Currency code '{curr}' must be exactly 3 characters (ISO 4217 format)"));
+
+        // Validate currency code contains only letters
+        if (!System.Linq.Enumerable.All(curr, char.IsLetter))
+            return Result.Failure<Money>(
+                Error.Validation("Money.InvalidCurrencyFormat",
+                    $"Currency code '{curr}' must contain only letters (ISO 4217 format)"));
+
+        return Result.Success(new Money(amount, curr));
+    }
+
+    // Arithmetic operators
+    public static Money operator +(Money left, Money right)
+    {
+        if (left.Currency != right.Currency)
+            throw new InvalidOperationException(
+                $"Cannot add money in different currencies: {left.Currency} and {right.Currency}");
+
+        return new Money(left.Amount + right.Amount, left.Currency);
+    }
+
+    public static Money operator -(Money left, Money right)
+    {
+        if (left.Currency != right.Currency)
+            throw new InvalidOperationException(
+                $"Cannot subtract money in different currencies: {left.Currency} and {right.Currency}");
+
+        return new Money(left.Amount - right.Amount, left.Currency);
+    }
+
+    public static Money operator *(Money money, decimal multiplier)
+    {
+        return new Money(money.Amount * multiplier, money.Currency);
+    }
+
+    protected override IEnumerable<object?> GetEqualityComponents()
+    {
+        yield return Amount;
+        yield return Currency;
+    }
+
+    public override string ToString() => $"{Amount:N2} {Currency}";
+}
+================================================================================
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Kernel/ValueObjects/PhoneNumber.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 4.33 KB
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Kernel/ValueObjects/PhoneNumber.cs
+Relative Path: src/shared/TaksiApp.Shared.Kernel/ValueObjects
+Created: 2026-02-01 12:23:19 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-01 12:23:27 (Europe/Moscow / GMT+03:00)
+MD5: dfefd6ed78a16b408f77c714970531bf
+SHA256: adc375e9f705f3e5d7ba8822f8b535461bad2291f63ebc40f9560d51fdc0b8e2
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿// TaksiApp.Shared.Kernel/ValueObjects/PhoneNumber.cs
+using System.Text.RegularExpressions;
+using TaksiApp.Shared.Kernel.Common;
+using TaksiApp.Shared.Kernel.Results;
+
+namespace TaksiApp.Shared.Kernel.ValueObjects;
+
+public sealed class PhoneNumber : ValueObject
+{
+    private static readonly Regex CountryCodeRegex = new(@"^\d{1,3}$", RegexOptions.Compiled);
+    private static readonly Regex NumberRegex = new(@"^\d{6,15}$", RegexOptions.Compiled);
+
+    public string CountryCode { get; }
+    public string Number { get; }
+    public string FullNumber => $"+{CountryCode}{Number}";
+
+    private PhoneNumber(string countryCode, string number)
+    {
+        CountryCode = countryCode;
+        Number = number;
+    }
+
+    /// <summary>
+    /// Creates a PhoneNumber value object with validation.
+    /// </summary>
+    /// <param name="countryCode">Country calling code (1-3 digits, e.g., "1" for US, "44" for UK)</param>
+    /// <param name="number">Phone number without country code (6-15 digits)</param>
+    /// <returns>Success with PhoneNumber or Failure with validation error</returns>
+    /// <remarks>
+    /// Validation rules:
+    /// - Country code: 1-3 digits (ITU-T E.164 format)
+    /// - Phone number: 6-15 digits (ITU-T E.164 format)
+    /// - Both parts are required and cannot be empty
+    /// 
+    /// NOTE: This uses basic format validation only.
+    /// 
+    /// Limitations:
+    /// - Does not validate against actual country code registry (ITU-T E.164)
+    /// - Does not verify if country code and number combination is valid for that country
+    /// - Does not handle extensions or special formatting
+    /// - Does not validate against country-specific number length rules
+    /// - Does not handle internationalized phone numbers (non-digit characters)
+    /// 
+    /// For production use requiring strict validation, consider:
+    /// - Using a library like libphonenumber (Google's phone number library)
+    /// - Validating against ITU-T E.164 country code registry
+    /// - Implementing country-specific validation rules
+    /// - Supporting internationalized phone numbers if needed
+    /// </remarks>
+    public static Result<PhoneNumber> Create(string? countryCode, string? number)
+    {
+        var cc = countryCode?.Trim() ?? string.Empty;
+        var num = number?.Trim() ?? string.Empty;
+
+        // Validate country code presence
+        if (string.IsNullOrWhiteSpace(cc))
+            return Result.Failure<PhoneNumber>(
+                Error.Validation("PhoneNumber.CountryCodeEmpty", "Country code is required"));
+
+        // Validate phone number presence
+        if (string.IsNullOrWhiteSpace(num))
+            return Result.Failure<PhoneNumber>(
+                Error.Validation("PhoneNumber.NumberEmpty", "Phone number is required"));
+
+        // Validate country code format (1-3 digits, ITU-T E.164)
+        if (!CountryCodeRegex.IsMatch(cc))
+            return Result.Failure<PhoneNumber>(
+                Error.Validation("PhoneNumber.InvalidCountryCode",
+                    $"Country code '{cc}' must be 1-3 digits (ITU-T E.164 format)"));
+
+        // Validate phone number format (6-15 digits, ITU-T E.164)
+        if (!NumberRegex.IsMatch(num))
+            return Result.Failure<PhoneNumber>(
+                Error.Validation("PhoneNumber.InvalidNumber",
+                    $"Phone number '{num}' must be 6-15 digits (ITU-T E.164 format)"));
+
+        // Additional validation: country code should not start with 0
+        if (cc.StartsWith("0"))
+            return Result.Failure<PhoneNumber>(
+                Error.Validation("PhoneNumber.InvalidCountryCode",
+                    $"Country code '{cc}' cannot start with 0"));
+
+        // Additional validation: total length should not exceed 15 digits (E.164 max)
+        var totalLength = cc.Length + num.Length;
+        if (totalLength > 15)
+            return Result.Failure<PhoneNumber>(
+                Error.Validation("PhoneNumber.TooLong",
+                    $"Total phone number length ({totalLength} digits) exceeds maximum of 15 digits (ITU-T E.164)"));
+
+        return Result.Success(new PhoneNumber(cc, num));
+    }
+
+    protected override IEnumerable<object?> GetEqualityComponents()
+    {
+        yield return CountryCode;
+        yield return Number;
+    }
+
+    public override string ToString() => FullNumber;
+}
+
+
+================================================================================
+
+
+================================================================================
+BINARY/EXCLUDED FILES (not included in text content)
+================================================================================
+- src/shared/TaksiApp.Shared.Kernel/TaksiApp.Shared.Kernel.csproj
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Observability/HealthChecks/ApplicationHealthCheck.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 1.44 KB
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Observability/HealthChecks/ApplicationHealthCheck.cs
+Relative Path: src/shared/TaksiApp.Shared.Observability/HealthChecks
+Created: 2026-01-31 21:01:43 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-01 12:12:02 (Europe/Moscow / GMT+03:00)
+MD5: 38748d0b7abbd865cb224992b357309b
+SHA256: 69672f82fe65733cdfc24e476998687d955e8a0c854055b7a48fee621e894bd8
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿
+using TaksiApp.Shared.Application.Abstractions;
+
+namespace TaksiApp.Shared.Observability.HealthChecks;
+// TaksiApp.Shared.Observability/HealthChecks/ApplicationHealthCheck.cs
+public sealed class ApplicationHealthCheck : IHealthCheck
+{
+    private readonly ILogger<ApplicationHealthCheck> _logger;
+    private readonly IDateTimeProvider _dateTimeProvider;
+
+    public ApplicationHealthCheck(
+        ILogger<ApplicationHealthCheck> logger,
+        IDateTimeProvider dateTimeProvider)
+    {
+        _logger = logger;
+        _dateTimeProvider = dateTimeProvider;
+    }
+
+    public Task<HealthCheckResult> CheckHealthAsync(
+        HealthCheckContext context,
+        CancellationToken cancellationToken = default)
+    {
+        try
+        {
+            var now = _dateTimeProvider.UtcNow;
+            var data = new Dictionary<string, object>
+            {
+                ["timestamp"] = now,
+                ["status"] = "operational"
+            };
+
+            return Task.FromResult(
+                HealthCheckResult.Healthy(
+                    "Application core services are healthy",
+                    data));
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Application health check failed");
+            return Task.FromResult(
+                HealthCheckResult.Unhealthy(
+                    "Application core services are unhealthy",
+                    ex));
+        }
+    }
+}
+================================================================================
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Observability/Logging/Enrichers/CorrelationIdEnricher.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 1.2 KB
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Observability/Logging/Enrichers/CorrelationIdEnricher.cs
+Relative Path: src/shared/TaksiApp.Shared.Observability/Logging/Enrichers
+Created: 2026-01-31 21:01:43 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-01 12:12:03 (Europe/Moscow / GMT+03:00)
+MD5: b228126094601e591f74e870da661190
+SHA256: 8142680bcc893fdcc43bb7e0d450ba4a1259efe993a72e80b05cd278952c7e27
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿
+
+using TaksiApp.Shared.Application.Abstractions;
+
+namespace TaksiApp.Shared.Observability.Logging.Enrichers;
+// TaksiApp.Shared.Observability/Logging/Enrichers/CorrelationIdEnricher.cs
+public sealed class CorrelationIdEnricher : ILogEventEnricher
+{
+    private readonly IExecutionContext _executionContext;
+
+    public CorrelationIdEnricher(IExecutionContext executionContext)
+    {
+        _executionContext = executionContext;
+    }
+
+    public void Enrich(LogEvent logEvent, ILogEventPropertyFactory propertyFactory)
+    {
+        logEvent.AddPropertyIfAbsent(
+            propertyFactory.CreateProperty(
+                "correlation_id",
+                _executionContext.CorrelationId));
+
+        if (_executionContext.UserId != null)
+        {
+            logEvent.AddPropertyIfAbsent(
+                propertyFactory.CreateProperty(
+                    "user_id",
+                    _executionContext.UserId));
+        }
+
+        if (_executionContext.TenantId != null)
+        {
+            logEvent.AddPropertyIfAbsent(
+                propertyFactory.CreateProperty(
+                    "tenant_id",
+                    _executionContext.TenantId));
+        }
+    }
+
+
+}
+================================================================================
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Observability/Logging/Enrichers/TraceContextEnricher.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 1.06 KB
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Observability/Logging/Enrichers/TraceContextEnricher.cs
+Relative Path: src/shared/TaksiApp.Shared.Observability/Logging/Enrichers
+Created: 2026-01-31 21:01:43 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-01 12:12:03 (Europe/Moscow / GMT+03:00)
+MD5: 0e22560d2a7cc39771125545c279683d
+SHA256: 74705ec8ef7f3e97ca6c22ad9a30af861f80437ef3698cd8ddedd9e46ab77632
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿
+using TaksiApp.Shared.Observability.Tracing;
+
+namespace TaksiApp.Shared.Observability.Logging.Enrichers;
+// TaksiApp.Shared.Observability/Logging/Enrichers/TraceContextEnricher.cs
+public sealed class TraceContextEnricher : ILogEventEnricher
+{
+    public void Enrich(LogEvent logEvent, ILogEventPropertyFactory propertyFactory)
+    {
+        var activity = Activity.Current;
+        if (activity == null)
+            return;
+
+        logEvent.AddPropertyIfAbsent(
+            propertyFactory.CreateProperty(
+                TracingConstants.TRACE_ID_KEY,
+                activity.TraceId.ToString()));
+
+        logEvent.AddPropertyIfAbsent(
+            propertyFactory.CreateProperty(
+                TracingConstants.SPAN_ID_KEY,
+                activity.SpanId.ToString()));
+
+        if (activity.ParentSpanId != default)
+        {
+            logEvent.AddPropertyIfAbsent(
+                propertyFactory.CreateProperty(
+                    TracingConstants.PARENT_ID_KEY,
+                    activity.ParentSpanId.ToString()));
+        }
+    }
+}
+
+
+================================================================================
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Observability/Metrics/Meters/ApplicationMetrics.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 6.21 KB
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Observability/Metrics/Meters/ApplicationMetrics.cs
+Relative Path: src/shared/TaksiApp.Shared.Observability/Metrics/Meters
+Created: 2026-01-31 21:01:43 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-02 19:01:53 (Europe/Moscow / GMT+03:00)
+MD5: d460ef8faece3bdee0137e6086b2f2c3
+SHA256: 566bd37c4fe0777d98db865c010afeb7dc5a6e1ae0ac7f655c4bbff76dd89d57
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿namespace TaksiApp.Shared.Observability.Metrics;
+
+/// <summary>
+/// Provides generic application-level metrics for errors and active requests.
+/// </summary>
+/// <remarks>
+/// <para>
+/// This class is intentionally minimal to avoid becoming a dumping ground for
+/// domain-specific metrics. It provides only universally applicable metrics:
+/// - Error tracking (by type and optional operation)
+/// - Active request tracking
+/// </para>
+/// <para>
+/// <strong>Design principle:</strong> Keep this class focused on generic infrastructure concerns.
+/// Domain-specific metrics (commands, queries, business operations) should be created
+/// in individual services using their own Meter instances.
+/// </para>
+/// <para>
+/// Thread-safe singleton - uses Interlocked for concurrent access.
+/// Register as singleton in DI container.
+/// </para>
+/// </remarks>
+/// <example>
+/// <code>
+/// // DI Registration
+/// services.AddSingleton(sp => new ApplicationMetrics("MyService", "1.0.0"));
+/// 
+/// // Usage
+/// public class MyService
+/// {
+///     private readonly ApplicationMetrics _metrics;
+///     
+///     public async Task ProcessAsync()
+///     {
+///         using var _ = _metrics.TrackActiveRequest();
+///         try
+///         {
+///             // Process...
+///         }
+///         catch (ValidationException ex)
+///         {
+///             _metrics.RecordError("ValidationError", "ProcessAsync");
+///             throw;
+///         }
+///     }
+/// }
+/// </code>
+/// </example>
+public sealed class ApplicationMetrics : IDisposable
+{
+    private readonly Meter _meter;
+    private readonly Counter<long> _errorCount;
+    private readonly ObservableGauge<int> _activeRequests;
+
+    private int _activeRequestsCount;
+    private bool _disposed;
+
+    /// <summary>
+    /// Initializes a new instance of ApplicationMetrics.
+    /// </summary>
+    /// <param name="serviceName">The name of the service (used as meter name).</param>
+    /// <param name="version">Optional version of the service (defaults to "1.0.0").</param>
+    public ApplicationMetrics(string serviceName, string? version = null)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(serviceName);
+
+        _meter = new Meter(serviceName, version ?? "1.0.0");
+
+        _errorCount = _meter.CreateCounter<long>(
+            "app.error.count",
+            unit: "errors",
+            description: "Total number of errors encountered by the application");
+
+        _activeRequests = _meter.CreateObservableGauge(
+            "app.active_requests",
+            () => _activeRequestsCount,
+            unit: "requests",
+            description: "Number of requests currently being processed");
+    }
+
+    /// <summary>
+    /// Records an error occurrence.
+    /// </summary>
+    /// <param name="errorType">
+    /// The type or category of error (e.g., "ValidationError", "DatabaseError", "ExternalServiceError").
+    /// Keep these categories consistent for effective monitoring.
+    /// </param>
+    /// <param name="operation">
+    /// Optional operation name where the error occurred (e.g., method name, endpoint).
+    /// If null, only the error type will be tagged.
+    /// </param>
+    /// <remarks>
+    /// Error types should be consistent across the application for effective monitoring.
+    /// Avoid using exception type names directly; use semantic categories instead.
+    /// 
+    /// Good error types: "ValidationError", "DatabaseTimeout", "PaymentGatewayFailure"
+    /// Poor error types: "System.ArgumentException", "Exception", "Error"
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// _metrics.RecordError("ValidationError", "CreateOrder");
+    /// _metrics.RecordError("DatabaseTimeout", "GetCustomer");
+    /// _metrics.RecordError("ExternalServiceError"); // operation is optional
+    /// </code>
+    /// </example>
+    public void RecordError(string errorType, string? operation = null)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(errorType);
+
+        var tags = new TagList { { "error.type", errorType } };
+
+        if (!string.IsNullOrWhiteSpace(operation))
+        {
+            tags.Add("operation", operation);
+        }
+
+        _errorCount.Add(1, tags);
+    }
+
+    /// <summary>
+    /// Tracks an active request. Increments the active request counter and returns
+    /// a disposable that decrements the counter when disposed.
+    /// </summary>
+    /// <returns>
+    /// A disposable that decrements the active request counter when disposed.
+    /// Always dispose this within a using statement or using declaration.
+    /// </returns>
+    /// <remarks>
+    /// This method uses Interlocked operations for thread-safe increment/decrement.
+    /// The returned disposable is lightweight and can be used in high-throughput scenarios.
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// public async Task HandleRequestAsync()
+    /// {
+    ///     using var _ = _metrics.TrackActiveRequest();
+    ///     
+    ///     // Request processing...
+    ///     // Counter is automatically decremented when method exits
+    /// }
+    /// </code>
+    /// </example>
+    public IDisposable TrackActiveRequest()
+    {
+        Interlocked.Increment(ref _activeRequestsCount);
+        return new DisposableAction(() => Interlocked.Decrement(ref _activeRequestsCount));
+    }
+
+    /// <summary>
+    /// Disposes the underlying Meter.
+    /// </summary>
+    public void Dispose()
+    {
+        if (_disposed)
+            return;
+
+        _meter.Dispose();
+        _disposed = true;
+    }
+
+    /// <summary>
+    /// Lightweight disposable wrapper for executing an action on disposal.
+    /// </summary>
+    private sealed class DisposableAction : IDisposable
+    {
+        private readonly Action _action;
+        private int _disposed;
+
+        public DisposableAction(Action action)
+        {
+            _action = action ?? throw new ArgumentNullException(nameof(action));
+        }
+
+        public void Dispose()
+        {
+            // Ensure action is only called once even if Dispose is called multiple times
+            if (Interlocked.CompareExchange(ref _disposed, 1, 0) == 0)
+            {
+                _action();
+            }
+        }
+    }
+}
+================================================================================
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Observability/Metrics/MeterProvider.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 2.55 KB
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Observability/Metrics/MeterProvider.cs
+Relative Path: src/shared/TaksiApp.Shared.Observability/Metrics
+Created: 2026-01-31 21:01:43 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-02 20:22:35 (Europe/Moscow / GMT+03:00)
+MD5: 1ed72e8919838d852fecc22c8784281f
+SHA256: fc636f0c7f7b4a56d63884b3316b1c11756d78589bad8e6bf2eea38a7a7d9be4
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿namespace TaksiApp.Shared.Observability.Metrics;
+
+/// <summary>
+/// Provides access to OpenTelemetry meters for creating custom metrics.
+/// </summary>
+/// <remarks>
+/// Register as singleton in DI container. All metrics created from this provider
+/// will use the same service name and version.
+/// </remarks>
+public sealed class MeterProvider
+{
+    private readonly Meter _meter;
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="MeterProvider"/> class.
+    /// </summary>
+    /// <param name="serviceName">The name of the service producing metrics.</param>
+    /// <param name="version">Optional service version. Defaults to "1.0.0".</param>
+    public MeterProvider(string serviceName, string? version = null)
+    {
+        _meter = new Meter(serviceName, version ?? "1.0.0");
+    }
+
+    /// <summary>
+    /// Gets the underlying <see cref="Meter"/> instance used to create metrics.
+    /// </summary>
+    public Meter Meter => _meter;
+
+    /// <summary>
+    /// Creates a counter metric that can be incremented by a value of type <typeparamref name="T"/>.
+    /// </summary>
+    /// <typeparam name="T">The numeric type for the counter (e.g., int, long, double).</typeparam>
+    /// <param name="name">The name of the counter metric.</param>
+    /// <param name="unit">Optional unit of measurement (e.g., "requests").</param>
+    /// <param name="description">Optional description of the counter metric.</param>
+    /// <returns>An OpenTelemetry <see cref="Counter{T}"/> instance.</returns>
+    public Counter<T> CreateCounter<T>(
+        string name,
+        string? unit = null,
+        string? description = null) where T : struct
+    {
+        return _meter.CreateCounter<T>(name, unit, description);
+    }
+
+    /// <summary>
+    /// Creates a histogram metric that records a distribution of values of type <typeparamref name="T"/>.
+    /// </summary>
+    /// <typeparam name="T">The numeric type for the histogram (e.g., int, long, double).</typeparam>
+    /// <param name="name">The name of the histogram metric.</param>
+    /// <param name="unit">Optional unit of measurement (e.g., "ms" for milliseconds).</param>
+    /// <param name="description">Optional description of the histogram metric.</param>
+    /// <returns>An OpenTelemetry <see cref="Histogram{T}"/> instance.</returns>
+    public Histogram<T> CreateHistogram<T>(
+        string name,
+        string? unit = null,
+        string? description = null) where T : struct
+    {
+        return _meter.CreateHistogram<T>(name, unit, description);
+    }
+}
+
+================================================================================
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Observability/Metrics/MetricsConstants.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 1.52 KB
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Observability/Metrics/MetricsConstants.cs
+Relative Path: src/shared/TaksiApp.Shared.Observability/Metrics
+Created: 2026-01-31 21:01:43 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-02 19:19:20 (Europe/Moscow / GMT+03:00)
+MD5: dc7cbee5abddee461a34cd71086214ae
+SHA256: b4fd58ea9a81d503f2a3c34b41cfc642c9841fa1f27e373710e4014a0e1fa265
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿namespace TaksiApp.Shared.Observability.Metrics;
+
+/// <summary>
+/// Defines standard metric names used across services.
+/// These constants follow OpenTelemetry semantic conventions
+/// and provide consistency for metrics aggregation and dashboards.
+/// </summary>
+public static class MetricsConstants
+{
+    /// <summary>
+    /// The name of the OpenTelemetry meter used by application services.
+    /// </summary>
+    public const string METER_NAME = "TaksiApp.Services.Metrics";
+
+    /// <summary>
+    /// Measures the duration of incoming HTTP requests.
+    /// Expected unit: milliseconds.
+    /// </summary>
+    public const string HTTP_REQUEST_DURATION = "http.server.request.duration";
+
+    /// <summary>
+    /// Counts the total number of HTTP requests processed by the server.
+    /// </summary>
+    public const string HTTP_REQUEST_COUNT = "http.server.request.count";
+
+    /// <summary>
+    /// Measures the duration of database client operations.
+    /// Expected unit: milliseconds.
+    /// </summary>
+    public const string DB_OPERATION_DURATION = "db.client.operation.duration";
+
+    /// <summary>
+    /// Measures the execution duration of application commands.
+    /// Expected unit: milliseconds.
+    /// </summary>
+    public const string COMMAND_DURATION = "app.command.duration";
+
+    /// <summary>
+    /// Measures the execution duration of application queries.
+    /// Expected unit: milliseconds.
+    /// </summary>
+    public const string QUERY_DURATION = "app.query.duration";
+}
+
+================================================================================
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Observability/Tracing/ActivitySourceFactory.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 1.25 KB
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Observability/Tracing/ActivitySourceFactory.cs
+Relative Path: src/shared/TaksiApp.Shared.Observability/Tracing
+Created: 2026-01-31 21:01:43 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-02 19:59:49 (Europe/Moscow / GMT+03:00)
+MD5: 08cfbf68bb95baae0c858b8eb00ce3c0
+SHA256: 9a1f50d509c3ebe70cd16a9f0aa897a17666b4df0944cf9976687a436cd20a2a
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿namespace TaksiApp.Shared.Observability.Tracing;
+
+/// <summary>
+/// Factory for creating OpenTelemetry ActivitySource instances.
+/// </summary>
+/// <remarks>
+/// ActivitySource is used to create and manage distributed tracing spans.
+/// Register the created ActivitySource as a singleton in the DI container.
+/// </remarks>
+public static class ActivitySourceFactory
+{
+    /// <summary>
+    /// Creates a new ActivitySource with the specified service name and version.
+    /// </summary>
+    /// <param name="serviceName">The name of the service (required).</param>
+    /// <param name="version">Optional version string (defaults to "1.0.0").</param>
+    /// <returns>A new ActivitySource instance.</returns>
+    /// <exception cref="ArgumentNullException">Thrown when serviceName is null.</exception>
+    /// <remarks>
+    /// The caller is responsible for disposing the ActivitySource when the application shuts down.
+    /// Typically registered as a singleton in DI, which handles disposal automatically.
+    /// </remarks>
+    public static ActivitySource Create(string serviceName, string? version = null)
+    {
+        ArgumentNullException.ThrowIfNull(serviceName);
+        return new ActivitySource(serviceName, version ?? "1.0.0");
+    }
+}
+================================================================================
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Observability/Tracing/TracingConstants.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 954 B
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Observability/Tracing/TracingConstants.cs
+Relative Path: src/shared/TaksiApp.Shared.Observability/Tracing
+Created: 2026-01-31 21:01:43 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-02 19:19:35 (Europe/Moscow / GMT+03:00)
+MD5: 3493f8dfd132be42df8c70e293599cf2
+SHA256: 2257717799bbab6c053c187f19f7dc9ef982ddc5af7d1094a563b46e254c218f
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿namespace TaksiApp.Shared.Observability.Tracing;
+
+/// <summary>
+/// Defines constants used for distributed tracing across services.
+/// These values ensure consistent trace correlation between logs,
+/// metrics, and traces.
+/// </summary>
+public static class TracingConstants
+{
+    /// <summary>
+    /// The name of the ActivitySource used for creating spans.
+    /// </summary>
+    public const string ACTIVITY_SOURCE_NAME = "TaksiApp.Services";
+
+    /// <summary>
+    /// Key used to store the trace identifier in structured logs.
+    /// </summary>
+    public const string TRACE_ID_KEY = "trace_id";
+
+    /// <summary>
+    /// Key used to store the span identifier in structured logs.
+    /// </summary>
+    public const string SPAN_ID_KEY = "span_id";
+
+    /// <summary>
+    /// Key used to store the parent span identifier in structured logs.
+    /// </summary>
+    public const string PARENT_ID_KEY = "parent_id";
+}
+
+================================================================================
+
+
+================================================================================
+FILE: src/shared/TaksiApp.Shared.Observability/GlobalUsings.cs
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 292 B
+Extension: .cs
+Language: csharp
+Location: src/shared/TaksiApp.Shared.Observability/GlobalUsings.cs
+Relative Path: src/shared/TaksiApp.Shared.Observability
+Created: 2026-01-31 21:01:43 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-03 18:59:25 (Europe/Moscow / GMT+03:00)
+MD5: 834eea8795e4dc9499c489e626d7c830
+SHA256: ae61df31df1c0cdcb2a69acf46acb19a4563906dd300a7bdb525a4d2dd5633fc
+Encoding: UTF-8 (with BOM)
+
+FILE CONTENT:
+----------------------------------------
+﻿// TaksiApp.Shared.Observability/GlobalUsings.cs
+global using Microsoft.Extensions.Diagnostics.HealthChecks;
+global using Microsoft.Extensions.Logging;
+global using Serilog.Core;
+global using Serilog.Events;
+global using System.Diagnostics;
+global using System.Diagnostics.Metrics;
+
+================================================================================
+
+
+================================================================================
+BINARY/EXCLUDED FILES (not included in text content)
+================================================================================
+- src/shared/TaksiApp.Shared.Observability/TaksiApp.Shared.Observability.csproj
+
+
+================================================================================
+FILE: src/shared/README.md
+================================================================================
+
+FILE INFORMATION:
+----------------------------------------
+Size: 25.35 KB
+Extension: .md
+Language: text
+Location: src/shared/README.md
+Relative Path: src/shared
+Created: 2026-02-02 20:31:11 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-03 19:04:51 (Europe/Moscow / GMT+03:00)
+MD5: ca0c32a05067380d5365af51a75f6216
+SHA256: e690bd8e7c83aa8faa0ee98d88da801acbb3b9dd2b1c2d63a320b8609a4eaefc
+Encoding: UTF-8
+
+FILE CONTENT:
+----------------------------------------
+# TaksiApp.Shared - Foundation Library for ASP.NET Core Microservices
+
+[![.NET](https://img.shields.io/badge/.NET-10.0-blue)](https://dotnet.microsoft.com/)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![Version](https://img.shields.io/badge/version-1.0.0-orange)](CHANGELOG.md)
+
+A production-ready, domain-agnostic foundation library for building ASP.NET Core microservices with Clean Architecture, DDD patterns, and comprehensive observability.
+
+## 📋 Table of Contents
+
+- [Overview](#-overview)
+- [Key Principles](#-key-principles)
+- [Features](#-features)
+- [Getting Started](#-getting-started)
+- [Installation](#-installation)
+- [Quick Start](#-quick-start)
+- [Usage Guide](#-usage-guide)
+- [Configuration](#-configuration)
+- [Best Practices](#-best-practices)
+- [FAQ](#-faq)
+- [Contributing](#-contributing)
+
+---
+
+## 🎯 Overview
+
+**TaksiApp.Shared** is a comprehensive foundation library designed to accelerate microservice development while enforcing best practices. It provides battle-tested abstractions for domain modeling, cross-cutting concerns, and observability—all without introducing domain-specific logic.
+
+### What This Library Does
+
+- **Standardizes** domain modeling with DDD building blocks (Entities, Value Objects, Aggregate Roots)
+- **Simplifies** error handling with the Result pattern (no exception-driven control flow)
+- **Ensures** request traceability with correlation IDs and distributed tracing
+- **Provides** comprehensive observability (OpenTelemetry metrics, logging, health checks)
+- **Enforces** Clean Architecture principles across services
+
+### Why Use This Library?
+
+✅ **Accelerate Development** - Skip boilerplate and focus on business logic  
+✅ **Production-Ready** - Built with real-world microservice patterns  
+✅ **Domain-Agnostic** - Reusable across any business domain  
+✅ **Testable** - All components injectable via DI, no static dependencies  
+✅ **Observable** - Full OpenTelemetry integration out of the box  
+✅ **Type-Safe** - Leverage C#'s type system for safer code  
+
+---
+
+## 🔑 Key Principles
+
+This library is built on four core principles:
+
+1. **Reusability** - Works across multiple services and domains without modification
+2. **Stability** - Low churn, semantic versioning, no breaking changes without migration guides
+3. **Domain-Agnostic** - Contains zero business logic or domain-specific code
+4. **Production-Ready** - Tested patterns suitable for enterprise microservices
+
+---
+
+## ✨ Features
+
+### 🧱 Kernel Layer
+
+**Domain Building Blocks (DDD)**
+
+- **Entity<TId>** - Base class for entities with identity-based equality
+- **AggregateRoot<TId>** - Base class for aggregate roots with domain event support
+- **ValueObject** - Base class for value objects with value-based equality
+- **IDomainEvent** - Marker interface for domain events
+- **DomainEventBase** - Base implementation for domain events
+
+**Error Handling**
+
+- **Result / Result<T>** - Railway-oriented programming for explicit error handling
+- **Error** - Strongly-typed error representation with metadata
+- **ErrorType** - Standard error categories (Validation, NotFound, Conflict, etc.)
+
+**Validation**
+
+- **Guard** - Fluent guard clauses for parameter validation
+- **Email, Money, PhoneNumber** - Built-in value objects with validation
+
+### 🔌 Application Layer
+
+**Execution Context**
+
+- **IExecutionContext** - Provides correlation ID, user ID, tenant ID per request
+- **ExecutionContextMetadata** - Immutable metadata container for technical context
+- **IDateTimeProvider** - Time abstraction for testability
+
+### 🌐 API Infrastructure
+
+**Controllers & Error Handling**
+
+- **ApiControllerBase** - Base controller with Result → ProblemDetails conversion
+- **SharedProblemDetailsFactory** - Consistent error responses with trace context
+
+**Middleware & Handlers**
+
+- **CorrelationIdMiddleware** - Extracts/generates correlation IDs per request
+- **CorrelationIdDelegatingHandler** - Propagates correlation IDs to HttpClient calls
+- **HttpContextConstants** - Centralized constants for headers and keys
+
+### 📊 Observability
+
+**Tracing (OpenTelemetry)**
+
+- **ActivitySourceFactory** - Creates activity sources for distributed tracing
+- **TracingConstants** - Standard trace context keys
+
+**Metrics (OpenTelemetry)**
+
+- **ApplicationMetrics** - Generic error and active request tracking
+- **MeterProvider** - Factory for creating custom meters
+- **MetricsConstants** - Standard metric names following OpenTelemetry conventions
+
+**Logging (Serilog)**
+
+- **CorrelationIdEnricher** - Adds correlation ID to all log events
+- **TraceContextEnricher** - Adds trace/span IDs to log events
+
+**Health Checks**
+
+- **ApplicationHealthCheck** - Generic health check for core services
+
+### 🏗️ Infrastructure
+
+- **UtcDateTimeProvider** - Production implementation of IDateTimeProvider
+- **InfrastructureExtensions** - DI registration for infrastructure services
+
+### ⚙️ Extensions
+
+- **ApplicationExtensions** - Registers application layer contracts
+- **MiddlewareExtensions** - Registers middleware components
+- **ObservabilityExtensions** - Configures OpenTelemetry stack
+- **ExecutionContextExtensions** - HttpContext helpers for execution context
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- .NET 10.0 SDK or later
+- ASP.NET Core application project
+
+### Installation
+
+#### Via NuGet (Recommended)
+
+```bash
+# Install all packages
+dotnet add package TaksiApp.Shared.Kernel
+dotnet add package TaksiApp.Shared.Application
+dotnet add package TaksiApp.Shared.Api
+dotnet add package TaksiApp.Shared.Infrastructure
+dotnet add package TaksiApp.Shared.Observability
+dotnet add package TaksiApp.Shared.Extensions
+```
+
+#### Via Project Reference
+
+```xml
+<ItemGroup>
+  <ProjectReference Include="..\shared\TaksiApp.Shared.Kernel\TaksiApp.Shared.Kernel.csproj" />
+  <ProjectReference Include="..\shared\TaksiApp.Shared.Application\TaksiApp.Shared.Application.csproj" />
+  <ProjectReference Include="..\shared\TaksiApp.Shared.Api\TaksiApp.Shared.Api.csproj" />
+  <ProjectReference Include="..\shared\TaksiApp.Shared.Infrastructure\TaksiApp.Shared.Infrastructure.csproj" />
+  <ProjectReference Include="..\shared\TaksiApp.Shared.Observability\TaksiApp.Shared.Observability.csproj" />
+  <ProjectReference Include="..\shared\TaksiApp.Shared.Extensions\TaksiApp.Shared.Extensions.csproj" />
+</ItemGroup>
+```
+
+---
+
+## ⚡ Quick Start
+
+### Minimal Setup
+
+**Program.cs**
+
+```csharp
+using TaksiApp.Shared.Extensions.DependencyInjection;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Register shared services
+builder.Services
+    .AddSharedApplication(builder.Configuration)      // Application contracts
+    .AddSharedInfrastructure()                        // Infrastructure implementations
+    .AddSharedObservability(                          // OpenTelemetry stack
+        builder.Configuration,
+        serviceName: "MyService",
+        serviceVersion: "1.0.0");
+
+builder.Services.AddControllers();
+
+var app = builder.Build();
+
+// Add correlation ID middleware (must be early in pipeline)
+app.UseCorrelationId();
+
+app.MapControllers();
+app.MapHealthChecks("/health");
+
+app.Run();
+```
+
+**appsettings.json**
+
+```json
+{
+  "Observability": {
+    "OtlpEndpoint": "http://localhost:4317",
+    "EnableTracing": true,
+    "EnableMetrics": true,
+    "EnableLogging": true,
+    "ServiceVersion": "1.0.0"
+  }
+}
+```
+
+That's it! Your service now has:
+- ✅ Correlation ID tracking
+- ✅ Distributed tracing
+- ✅ Metrics collection
+- ✅ Structured logging enrichment
+- ✅ Health checks
+
+---
+
+## 📖 Usage Guide
+
+### Working with Value Objects
+
+```csharp
+using TaksiApp.Shared.Kernel.ValueObjects;
+using TaksiApp.Shared.Kernel.Results;
+
+// Create and validate email
+var emailResult = Email.Create("user@example.com");
+if (emailResult.IsFailure)
+{
+    // Handle validation error
+    var error = emailResult.Error;
+    Console.WriteLine($"{error.Code}: {error.Message}");
+    return;
+}
+
+var email = emailResult.Value;
+Console.WriteLine(email.Value); // "user@example.com"
+
+// Create money with currency
+var moneyResult = Money.Create(99.99m, "USD");
+var money = moneyResult.Value;
+
+// Arithmetic operations (same currency only)
+var total = money + Money.Create(10.00m, "USD").Value;
+Console.WriteLine(total); // "109.99 USD"
+
+// Phone number validation
+var phoneResult = PhoneNumber.Create("1", "5551234567");
+var phone = phoneResult.Value;
+Console.WriteLine(phone.FullNumber); // "+15551234567"
+```
+
+### Using the Result Pattern
+
+```csharp
+using TaksiApp.Shared.Kernel.Results;
+
+public class OrderService
+{
+    public Result<Order> CreateOrder(CreateOrderRequest request)
+    {
+        // Validate input
+        if (request.Quantity <= 0)
+        {
+            return Result.Failure<Order>(
+                Error.Validation(
+                    "Order.InvalidQuantity",
+                    "Quantity must be greater than zero"));
+        }
+
+        // Business logic
+        var order = new Order(request);
+        
+        return Result.Success(order);
+    }
+}
+
+// Usage
+var result = orderService.CreateOrder(request);
+
+result.Match(
+    onSuccess: order => Console.WriteLine($"Created order {order.Id}"),
+    onFailure: error => Console.WriteLine($"Failed: {error.Message}")
+);
+
+// Or use pattern matching
+if (result.IsSuccess)
+{
+    var order = result.Value;
+    // Use order
+}
+else
+{
+    var error = result.Error;
+    // Handle error
+}
+```
+
+### API Controllers with Result Pattern
+
+```csharp
+using TaksiApp.Shared.Api.Controllers;
+using TaksiApp.Shared.Kernel.Results;
+
+[ApiController]
+[Route("api/[controller]")]
+public class OrdersController : ApiControllerBase
+{
+    private readonly OrderService _orderService;
+
+    public OrdersController(OrderService orderService)
+    {
+        _orderService = orderService;
+    }
+
+    [HttpPost]
+    public IActionResult CreateOrder(CreateOrderRequest request)
+    {
+        var result = _orderService.CreateOrder(request);
+
+        // Automatically converts Result to ProblemDetails on failure
+        return result.Match(
+            onSuccess: order => Ok(order),
+            onFailure: error => Problem(error)
+        );
+    }
+}
+```
+
+**Error response example:**
+
+```json
+{
+  "type": "https://httpstatuses.com/400",
+  "title": "Validation Error",
+  "status": 400,
+  "detail": "Quantity must be greater than zero",
+  "instance": "/api/orders",
+  "errorCode": "Order.InvalidQuantity",
+  "timestamp": "2026-02-02T20:30:00Z",
+  "traceId": "00-abc123...",
+  "spanId": "def456..."
+}
+```
+
+### Working with Execution Context
+
+```csharp
+using TaksiApp.Shared.Application.Abstractions;
+
+public class OrderService
+{
+    private readonly IExecutionContext _executionContext;
+    private readonly ILogger<OrderService> _logger;
+
+    public OrderService(IExecutionContext executionContext, ILogger<OrderService> logger)
+    {
+        _executionContext = executionContext;
+        _logger = logger;
+    }
+
+    public void ProcessOrder(Order order)
+    {
+        // Access correlation ID (always available)
+        _logger.LogInformation(
+            "Processing order {OrderId} with correlation {CorrelationId}",
+            order.Id,
+            _executionContext.CorrelationId);
+
+        // Access user context (if authenticated)
+        if (_executionContext.UserId != null)
+        {
+            _logger.LogInformation("User {UserId} placed order", _executionContext.UserId);
+        }
+
+        // Multi-tenancy support
+        if (_executionContext.TenantId != null)
+        {
+            // Ensure order belongs to user's tenant
+            _executionContext.EnsureTenantAccess(order.TenantId);
+        }
+    }
+}
+```
+
+### Customizing Middleware User/Tenant Extraction
+
+```csharp
+// Program.cs
+app.UseCorrelationId(
+    userIdExtractor: ctx => ctx.User.FindFirst("sub")?.Value,
+    tenantIdExtractor: ctx => ctx.User.FindFirst("organization_id")?.Value
+);
+```
+
+### Recording Custom Metrics
+
+```csharp
+using TaksiApp.Shared.Observability.Metrics;
+
+public class PaymentService
+{
+    private readonly ApplicationMetrics _metrics;
+
+    public PaymentService(ApplicationMetrics metrics)
+    {
+        _metrics = metrics;
+    }
+
+    public async Task ProcessPaymentAsync(Payment payment)
+    {
+        using var _ = _metrics.TrackActiveRequest();
+        
+        try
+        {
+            await ProcessAsync(payment);
+        }
+        catch (PaymentGatewayException ex)
+        {
+            _metrics.RecordError("PaymentGatewayFailure", "ProcessPayment");
+            throw;
+        }
+    }
+}
+```
+
+### Creating Custom Metrics
+
+```csharp
+using TaksiApp.Shared.Observability.Metrics;
+
+public class CustomMetrics
+{
+    private readonly Counter<long> _orderCount;
+    private readonly Histogram<double> _orderValue;
+
+    public CustomMetrics(MeterProvider meterProvider)
+    {
+        _orderCount = meterProvider.CreateCounter<long>(
+            "orders.created.count",
+            unit: "orders",
+            description: "Total orders created");
+
+        _orderValue = meterProvider.CreateHistogram<double>(
+            "orders.value",
+            unit: "USD",
+            description: "Order value distribution");
+    }
+
+    public void RecordOrder(decimal value)
+    {
+        _orderCount.Add(1);
+        _orderValue.Record((double)value);
+    }
+}
+```
+
+### Domain Events
+
+```csharp
+using TaksiApp.Shared.Kernel.Abstractions;
+using TaksiApp.Shared.Kernel.Common;
+using TaksiApp.Shared.Kernel.Events;
+
+// Define domain event
+public sealed record OrderPlacedEvent(Guid OrderId, decimal TotalAmount) : DomainEventBase;
+
+// Aggregate root raises events
+public class Order : AggregateRoot<Guid>
+{
+    public Order(Guid id, decimal totalAmount)
+    {
+        Id = id;
+        TotalAmount = totalAmount;
+
+        // Raise domain event
+        RaiseDomainEvent(new OrderPlacedEvent(id, totalAmount));
+    }
+
+    public decimal TotalAmount { get; private set; }
+}
+
+// Collect and publish events (typically in infrastructure layer)
+public class OrderRepository
+{
+    public async Task SaveAsync(Order order)
+    {
+        await _dbContext.SaveChangesAsync();
+
+        // Publish domain events
+        foreach (var domainEvent in order.DomainEvents)
+        {
+            await _eventBus.PublishAsync(domainEvent);
+        }
+
+        order.ClearDomainEvents();
+    }
+}
+```
+
+### Using Guard Clauses
+
+```csharp
+using TaksiApp.Shared.Kernel.Guards;
+
+public class Order
+{
+    public Order(string customerName, decimal totalAmount)
+    {
+        Guard.NotNullOrEmpty(customerName); // Automatically uses parameter name
+        Guard.GreaterThan(totalAmount, 0m);
+
+        CustomerName = customerName;
+        TotalAmount = totalAmount;
+    }
+
+    public string CustomerName { get; }
+    public decimal TotalAmount { get; }
+}
+
+// Advanced guards
+public void ProcessOrder(Order order, int quantity)
+{
+    Guard.NotNull(order);
+    Guard.InRange(quantity, 1, 1000);
+    Guard.Require<InvalidOperationException>(
+        order.Status == OrderStatus.Pending,
+        "Order must be pending to process"
+    );
+}
+```
+
+### HttpClient with Correlation ID Propagation
+
+```csharp
+// Program.cs - Register HttpClient with correlation ID handler
+builder.Services
+    .AddHttpClient<IPaymentGateway, PaymentGatewayClient>()
+    .AddCorrelationIdHandler(); // Automatically propagates X-Correlation-Id
+
+// Usage (correlation ID automatically added to requests)
+public class PaymentGatewayClient : IPaymentGateway
+{
+    private readonly HttpClient _httpClient;
+
+    public PaymentGatewayClient(HttpClient httpClient)
+    {
+        _httpClient = httpClient;
+    }
+
+    public async Task<PaymentResult> ProcessAsync(Payment payment)
+    {
+        // X-Correlation-Id header automatically added
+        var response = await _httpClient.PostAsJsonAsync("/payments", payment);
+        return await response.Content.ReadFromJsonAsync<PaymentResult>();
+    }
+}
+```
+
+---
+
+## ⚙️ Configuration
+
+### Observability Settings
+
+Configure OpenTelemetry exporters in **appsettings.json**:
+
+```json
+{
+  "Observability": {
+    "OtlpEndpoint": "http://jaeger:4317",
+    "EnableTracing": true,
+    "EnableMetrics": true,
+    "EnableLogging": true,
+    "ServiceVersion": "1.2.0"
+  }
+}
+```
+
+### Custom OpenTelemetry Configuration
+
+```csharp
+builder.Services.AddSharedObservability(
+    builder.Configuration,
+    serviceName: "OrderService",
+    serviceVersion: "2.0.0",
+    configureOtel: otel =>
+    {
+        // Add custom instrumentation
+        otel.WithTracing(tracing => tracing
+            .AddRedisInstrumentation()
+            .AddMongoDBInstrumentation());
+    });
+```
+
+### Custom ProblemDetails Type URLs
+
+```csharp
+using TaksiApp.Shared.Api.Factories;
+
+builder.Services.AddSingleton<ProblemDetailsFactory>(
+    new SharedProblemDetailsFactory(
+        typeUrlFactory: statusCode => $"https://docs.myapi.com/errors/{statusCode}"
+    ));
+```
+
+### Disabling Features
+
+```csharp
+// Disable observability entirely (not recommended for production)
+// Simply don't call AddSharedObservability()
+
+// Or disable specific features in appsettings.json
+{
+  "Observability": {
+    "EnableTracing": false,  // Disable tracing only
+    "EnableMetrics": true,
+    "EnableLogging": true
+  }
+}
+```
+
+---
+
+## 🎯 Best Practices
+
+### Microservice Integration
+
+1. **Register services in correct order:**
+   ```csharp
+   builder.Services
+       .AddSharedApplication(configuration)     // 1. Contracts first
+       .AddSharedInfrastructure()               // 2. Infrastructure second
+       .AddSharedObservability(...)             // 3. Observability third
+       .AddMediatR(...)                         // 4. Your application services last
+   ```
+
+2. **Add middleware early in pipeline:**
+   ```csharp
+   app.UseCorrelationId();    // Must be early
+   app.UseAuthentication();
+   app.UseAuthorization();
+   app.MapControllers();
+   ```
+
+3. **Always use Result pattern for business operations:**
+   ```csharp
+   // ❌ BAD - Exceptions for control flow
+   public Order CreateOrder(CreateOrderRequest request)
+   {
+       if (request.Quantity <= 0)
+           throw new ValidationException("Invalid quantity");
+       // ...
+   }
+
+   // ✅ GOOD - Result pattern
+   public Result<Order> CreateOrder(CreateOrderRequest request)
+   {
+       if (request.Quantity <= 0)
+           return Result.Failure<Order>(
+               Error.Validation("Order.InvalidQuantity", "Quantity must be positive"));
+       // ...
+   }
+   ```
+
+### Observability Best Practices
+
+1. **Use correlation IDs consistently:**
+   - Middleware automatically generates/extracts them
+   - Propagates via HttpClient handlers
+   - Enriches all logs automatically
+
+2. **Create semantic error codes:**
+   ```csharp
+   // ✅ GOOD - Clear and hierarchical
+   Error.Validation("Order.Quantity.TooLow", "Quantity must be at least 1")
+   Error.NotFound("Customer.NotFound", "Customer with ID {id} not found")
+
+   // ❌ BAD - Generic and unhelpful
+   Error.Validation("Invalid", "Error")
+   ```
+
+3. **Record errors with context:**
+   ```csharp
+   catch (PaymentException ex)
+   {
+       _metrics.RecordError("PaymentFailure", "ProcessOrder");
+       _logger.LogError(ex, "Payment failed for order {OrderId}", orderId);
+       throw;
+   }
+   ```
+
+### Multi-Tenancy
+
+```csharp
+public class OrderService
+{
+    private readonly IExecutionContext _context;
+    private readonly OrderRepository _repository;
+
+    public async Task<Result<Order>> GetOrderAsync(Guid orderId)
+    {
+        var order = await _repository.GetByIdAsync(orderId);
+        if (order == null)
+            return Result.Failure<Order>(Error.NotFound("Order.NotFound", "Order not found"));
+
+        // Automatically throws if cross-tenant access attempted
+        _context.EnsureTenantAccess(order.TenantId);
+
+        return Result.Success(order);
+    }
+}
+```
+
+### Testing with Time Abstraction
+
+```csharp
+// Production code
+public class OrderService
+{
+    private readonly IDateTimeProvider _dateTimeProvider;
+
+    public Order CreateOrder()
+    {
+        var order = new Order
+        {
+            CreatedAt = _dateTimeProvider.UtcNow
+        };
+        return order;
+    }
+}
+
+// Test code
+public class FakeDateTimeProvider : IDateTimeProvider
+{
+    public DateTime UtcNow { get; set; } = new DateTime(2026, 1, 1);
+}
+
+[Fact]
+public void CreateOrder_SetsCorrectTimestamp()
+{
+    var fakeTime = new FakeDateTimeProvider { UtcNow = new DateTime(2026, 2, 2) };
+    var service = new OrderService(fakeTime);
+
+    var order = service.CreateOrder();
+
+    Assert.Equal(new DateTime(2026, 2, 2), order.CreatedAt);
+}
+```
+
+---
+
+## ❓ FAQ
+
+### Is this library production-ready?
+
+Yes. This library is built with real-world microservice patterns and is designed for production use. It follows Clean Architecture principles and includes comprehensive observability.
+
+### Does this library contain any domain-specific logic?
+
+No. This library is **domain-agnostic**. It contains zero business logic and can be reused across any domain (e-commerce, healthcare, finance, etc.).
+
+### Can I use only parts of the library?
+
+Yes. The library is divided into separate NuGet packages. Install only what you need:
+- **Kernel** - DDD building blocks (always recommended)
+- **Application** - Execution context abstractions
+- **Infrastructure** - DateTime provider and other utilities
+- **Api** - Controllers, middleware, error handling
+- **Observability** - OpenTelemetry integration
+- **Extensions** - DI registration helpers
+
+### How do I add custom value objects?
+
+Value objects in this library must meet strict criteria (see [VALUE_OBJECTS_POLICY.md](VALUE_OBJECTS_POLICY.md)). For domain-specific value objects (like ProductSKU, OrderNumber), create them in your service's domain layer, not in this shared library.
+
+### Can I customize correlation ID header name?
+
+Yes, but not recommended. The library uses the standard `X-Correlation-Id` header. If you need a custom header, modify `HttpContextConstants.CorrelationIdHeaderName`.
+
+### What if I don't use OpenTelemetry?
+
+Simply don't call `AddSharedObservability()`. The rest of the library works independently. However, we strongly recommend using observability in production.
+
+### Can I use this with MediatR?
+
+Yes. Register shared services **before** MediatR:
+```csharp
+builder.Services
+    .AddSharedApplication(configuration)
+    .AddSharedInfrastructure()
+    .AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
+```
+
+### Does this work with Entity Framework Core?
+
+Yes. The `Entity<TId>` base class handles EF Core proxies correctly. The library includes EF Core instrumentation in OpenTelemetry tracing.
+
+### How do I upgrade to future versions?
+
+We follow **semantic versioning**:
+- **Patch** (1.0.x) - Bug fixes, backward compatible
+- **Minor** (1.x.0) - New features, backward compatible
+- **Major** (x.0.0) - Breaking changes (includes migration guide)
+
+### What about API versioning?
+
+This library doesn't include API versioning. Use [Asp.Versioning](https://github.com/dotnet/aspnet-api-versioning) or similar libraries.
+
+---
+
+## 🚨 Important Notes
+
+### Metadata Usage Warning
+
+`ExecutionContextMetadata` is for **technical context only** (correlation, debugging). Never store:
+- ❌ Business rules or decisions
+- ❌ User preferences or settings
+- ❌ Entity state or domain data
+- ❌ Authorization decisions
+
+Use proper domain objects for business data.
+
+### Value Object Growth
+
+This library includes only **universal** value objects:
+- ✅ Email (RFC 5322 standard)
+- ✅ Money (ISO 4217 standard)
+- ✅ PhoneNumber (ITU-T E.164 standard)
+
+Domain-specific value objects (Address, CreditCard, SKU) belong in your service's domain layer, not here.
+
+### Static State
+
+This library contains **zero static state**. Everything is injectable via DI for maximum testability.
+
+---
+
+## 📚 Additional Resources
+
+- [CHANGELOG.md](CHANGELOG.md) - Version history and release notes
+- [VALUE_OBJECTS_POLICY.md](VALUE_OBJECTS_POLICY.md) - Guidelines for adding value objects
+- [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) - Robert C. Martin
+- [OpenTelemetry .NET](https://opentelemetry.io/docs/languages/net/) - Official documentation
+- [Railway Oriented Programming](https://fsharpforfunandprofit.com/rop/) - Result pattern explained
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please:
+
+1. Follow existing code style and patterns
+2. Add XML documentation to all public APIs
+3. Include unit tests for new features
+4. Update README.md if adding user-facing features
+5. Ensure all tests pass before submitting PR
+
+**Before adding new features**, please open an issue to discuss whether it fits the library's scope (domain-agnostic, reusable, production-ready).
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 💬 Support
+
+For questions or issues:
+1. Check the [FAQ](#-faq) section
+2. Search existing [GitHub Issues](https://github.com/your-org/taksiapp-shared/issues)
+3. Open a new issue with detailed description and code samples
+
+---
+
+**Built with ❤️ for the ASP.NET Core community**
+================================================================================

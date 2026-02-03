@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TaksiApp.Shared.Api\TaksiApp.Shared.Api.csproj" />
+    <ProjectReference Include="..\TaksiApp.Shared.Application\TaksiApp.Shared.Application.csproj" />
+    <ProjectReference Include="..\TaksiApp.Shared.Infrastructure\TaksiApp.Shared.Infrastructure.csproj" />
+    <ProjectReference Include="..\TaksiApp.Shared.Kernel\TaksiApp.Shared.Kernel.csproj" />
+    <ProjectReference Include="..\TaksiApp.Shared.Observability\TaksiApp.Shared.Observability.csproj" />
+  </ItemGroup>
+
+</Project>
