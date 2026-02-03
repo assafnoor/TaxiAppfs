@@ -1,10 +1,17 @@
-﻿
-using TaksiApp.Shared.Observability.Tracing;
+﻿using TaksiApp.Shared.Observability.Tracing;
 
 namespace TaksiApp.Shared.Observability.Logging.Enrichers;
-// TaksiApp.Shared.Observability/Logging/Enrichers/TraceContextEnricher.cs
+
+/// <summary>
+/// Enriches log events with tracing information from the current <see cref="Activity"/>.
+/// </summary>
+/// <remarks>
+/// Adds TraceId, SpanId, and ParentSpanId (if available) to the log event properties.
+/// Useful for distributed tracing and observability in microservices.
+/// </remarks>
 public sealed class TraceContextEnricher : ILogEventEnricher
 {
+    /// <inheritdoc />
     public void Enrich(LogEvent logEvent, ILogEventPropertyFactory propertyFactory)
     {
         var activity = Activity.Current;
@@ -30,4 +37,3 @@ public sealed class TraceContextEnricher : ILogEventEnricher
         }
     }
 }
-
