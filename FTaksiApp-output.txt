@@ -5,8 +5,8 @@ PROJECT EXPORT FOR LLMs
 PROJECT INFORMATION:
 --------------------------------------------------
 Project Name: FTaksiApp
-Generated On: 2026-02-03 20:14:28 (Europe/Moscow / GMT+03:00)
-Total Files Processed: 203
+Generated On: 2026-02-04 20:16:41 (Europe/Moscow / GMT+03:00)
+Total Files Processed: 122
 Export Tool: Easy Whole Project to Single Text File for LLMs v1.1.0
 Tool Author: Jota / José Guilherme Pandolfi
 
@@ -22,911 +22,232 @@ Custom File Name Pattern: {workspaceName}-output
 ================================================================================
 PROJECT STRUCTURE
 ================================================================================
-└── 📁 src/
-    └── 📁 shared/
-        ├── 📁 TaksiApp.Shared.Api/
-        │   ├── 📁 bin/
-        │   │   └── 📁 Debug/
-        │   │       └── 📁 net10.0/
-        │   │           ├── 📄 TaksiApp.Shared.Api.deps.json (19.83 KB)
-        │   │           ├── 📄 TaksiApp.Shared.Api.dll (13.5 KB)
-        │   │           ├── 📄 TaksiApp.Shared.Api.pdb (24.92 KB)
-        │   │           ├── 📄 TaksiApp.Shared.Application.dll (7 KB)
-        │   │           ├── 📄 TaksiApp.Shared.Application.pdb (11.87 KB)
-        │   │           ├── 📄 TaksiApp.Shared.Infrastructure.dll (4.5 KB)
-        │   │           ├── 📄 TaksiApp.Shared.Infrastructure.pdb (11.63 KB)
-        │   │           ├── 📄 TaksiApp.Shared.Kernel.dll (27 KB)
-        │   │           ├── 📄 TaksiApp.Shared.Kernel.pdb (17.03 KB)
-        │   │           ├── 📄 TaksiApp.Shared.Observability.dll (11 KB)
-        │   │           └── 📄 TaksiApp.Shared.Observability.pdb (24.63 KB)
-        │   ├── 📁 Constants/
-        │   │   └── 📄 HttpContextConstants.cs (1.2 KB)
-        │   ├── 📁 Controllers/
-        │   │   └── 📄 ApiControllerBase.cs (2.87 KB)
-        │   ├── 📁 Factories/
-        │   │   └── 📄 SharedProblemDetailsFactory.cs (3.06 KB)
-        │   ├── 📁 Middleware/
-        │   │   ├── 📄 CorrelationIdDelegatingHandler.cs (2.07 KB)
-        │   │   ├── 📄 CorrelationIdMiddleware.cs (3.63 KB)
-        │   │   └── 📄 ExecutionContextExtensions.cs (1.37 KB)
-        │   ├── 📁 obj/
-        │   │   ├── 📁 Debug/
-        │   │   │   └── 📁 net10.0/
-        │   │   │       ├── 📁 ref/
-        │   │   │       │   └── 📄 TaksiApp.Shared.Api.dll (8 KB)
-        │   │   │       ├── 📁 refint/
-        │   │   │       │   └── 📄 TaksiApp.Shared.Api.dll (8 KB)
-        │   │   │       ├── 📄 TaksiApp.B8AABE34.Up2Date
-        │   │   │       ├── 📄 TaksiApp.Shared.Api.AssemblyInfo.cs (1.01 KB)
-        │   │   │       ├── 📄 TaksiApp.Shared.Api.AssemblyInfoInputs.cache (66 B)
-        │   │   │       ├── 📄 TaksiApp.Shared.Api.assets.cache (29 KB)
-        │   │   │       ├── 📄 TaksiApp.Shared.Api.csproj.AssemblyReference.cache (19.5 KB)
-        │   │   │       ├── 📄 TaksiApp.Shared.Api.csproj.CoreCompileInputs.cache (66 B)
-        │   │   │       ├── 📄 TaksiApp.Shared.Api.csproj.FileListAbsolute.txt (2.62 KB)
-        │   │   │       ├── 📄 TaksiApp.Shared.Api.dll (13.5 KB)
-        │   │   │       ├── 📄 TaksiApp.Shared.Api.GeneratedMSBuildEditorConfig.editorconfig (824 B)
-        │   │   │       ├── 📄 TaksiApp.Shared.Api.GlobalUsings.g.cs (239 B)
-        │   │   │       ├── 📄 TaksiApp.Shared.Api.pdb (24.92 KB)
-        │   │   │       └── 📄 TaksiApp.Shared.Api.sourcelink.json (162 B)
-        │   │   ├── 📄 project.assets.json (114.81 KB)
-        │   │   ├── 📄 project.nuget.cache (6.44 KB)
-        │   │   ├── 📄 TaksiApp.Shared.Api.csproj.nuget.dgspec.json (110.44 KB)
-        │   │   ├── 📄 TaksiApp.Shared.Api.csproj.nuget.g.props (1.27 KB)
-        │   │   └── 📄 TaksiApp.Shared.Api.csproj.nuget.g.targets (1.18 KB)
-        │   └── 📄 TaksiApp.Shared.Api.csproj (550 B)
-        ├── 📁 TaksiApp.Shared.Application/
-        │   ├── 📁 Abstractions/
-        │   │   ├── 📄 ExecutionContextMetadata.cs (5.16 KB)
-        │   │   ├── 📄 ICommand.cs (451 B)
-        │   │   ├── 📄 ICommandHandler.cs (1.86 KB)
-        │   │   ├── 📄 IDateTimeProvider.cs (429 B)
-        │   │   ├── 📄 IExecutionContext.cs (1.25 KB)
-        │   │   ├── 📄 IQuery.cs (323 B)
-        │   │   └── 📄 IQueryHandler.cs (1.06 KB)
-        │   ├── 📁 Behaviors/
-        │   │   ├── 📄 LoggingBehavior.cs (4.7 KB)
-        │   │   ├── 📄 TracingBehavior.cs (3.46 KB)
-        │   │   └── 📄 ValidationBehavior.cs (4.9 KB)
-        │   ├── 📁 bin/
-        │   │   └── 📁 Debug/
-        │   │       └── 📁 net10.0/
-        │   │           ├── 📄 TaksiApp.Shared.Application.deps.json (475 B)
-        │   │           ├── 📄 TaksiApp.Shared.Application.dll (7 KB)
-        │   │           └── 📄 TaksiApp.Shared.Application.pdb (11.87 KB)
-        │   ├── 📁 Context/
-        │   │   └── 📄 ExecutionContext.cs (2.13 KB)
-        │   ├── 📁 obj/
-        │   │   ├── 📁 Debug/
-        │   │   │   └── 📁 net10.0/
-        │   │   │       ├── 📁 ref/
-        │   │   │       │   └── 📄 TaksiApp.Shared.Application.dll (6.5 KB)
-        │   │   │       ├── 📁 refint/
-        │   │   │       │   └── 📄 TaksiApp.Shared.Application.dll (6.5 KB)
-        │   │   │       ├── 📄 TaksiApp.Shared.Application.AssemblyInfo.cs (1.03 KB)
-        │   │   │       ├── 📄 TaksiApp.Shared.Application.AssemblyInfoInputs.cache (66 B)
-        │   │   │       ├── 📄 TaksiApp.Shared.Application.assets.cache (6 KB)
-        │   │   │       ├── 📄 TaksiApp.Shared.Application.csproj.AssemblyReference.cache (6.13 KB)
-        │   │   │       ├── 📄 TaksiApp.Shared.Application.csproj.CoreCompileInputs.cache (66 B)
-        │   │   │       ├── 📄 TaksiApp.Shared.Application.csproj.FileListAbsolute.txt (1.49 KB)
-        │   │   │       ├── 📄 TaksiApp.Shared.Application.dll (7 KB)
-        │   │   │       ├── 📄 TaksiApp.Shared.Application.GeneratedMSBuildEditorConfig.editorconfig (840 B)
-        │   │   │       ├── 📄 TaksiApp.Shared.Application.GlobalUsings.g.cs (239 B)
-        │   │   │       └── 📄 TaksiApp.Shared.Application.pdb (11.87 KB)
-        │   │   ├── 📄 project.assets.json (40.54 KB)
-        │   │   ├── 📄 project.nuget.cache (1.43 KB)
-        │   │   ├── 📄 TaksiApp.Shared.Application.csproj.nuget.dgspec.json (43.42 KB)
-        │   │   ├── 📄 TaksiApp.Shared.Application.csproj.nuget.g.props (1.27 KB)
-        │   │   └── 📄 TaksiApp.Shared.Application.csproj.nuget.g.targets (583 B)
-        │   └── 📄 TaksiApp.Shared.Application.csproj (493 B)
-        ├── 📁 TaksiApp.Shared.Extensions/
-        │   ├── 📁 bin/
-        │   │   └── 📁 Debug/
-        │   │       └── 📁 net10.0/
-        │   │           ├── 📄 TaksiApp.Shared.Api.dll (13.5 KB)
-        │   │           ├── 📄 TaksiApp.Shared.Api.pdb (24.92 KB)
-        │   │           ├── 📄 TaksiApp.Shared.Application.dll (7 KB)
-        │   │           ├── 📄 TaksiApp.Shared.Application.pdb (11.87 KB)
-        │   │           ├── 📄 TaksiApp.Shared.Extensions.deps.json (20.46 KB)
-        │   │           ├── 📄 TaksiApp.Shared.Extensions.dll (15.5 KB)
-        │   │           ├── 📄 TaksiApp.Shared.Extensions.pdb (25.32 KB)
-        │   │           ├── 📄 TaksiApp.Shared.Infrastructure.dll (4.5 KB)
-        │   │           ├── 📄 TaksiApp.Shared.Infrastructure.pdb (11.63 KB)
-        │   │           ├── 📄 TaksiApp.Shared.Kernel.dll (27 KB)
-        │   │           ├── 📄 TaksiApp.Shared.Kernel.pdb (17.03 KB)
-        │   │           ├── 📄 TaksiApp.Shared.Observability.dll (11 KB)
-        │   │           └── 📄 TaksiApp.Shared.Observability.pdb (24.63 KB)
-        │   ├── 📁 Configuration/
-        │   │   └── 📄 ObservabilityOptions.cs (1.62 KB)
-        │   ├── 📁 DependencyInjection/
-        │   │   ├── 📄 ApplicationExtensions.cs (3.46 KB)
-        │   │   ├── 📄 InfrastructureExtensions.cs (2.35 KB)
-        │   │   ├── 📄 MediatRExtensions.cs (2.48 KB)
-        │   │   ├── 📄 MiddlewareExtensions.cs (3.02 KB)
-        │   │   └── 📄 ObservabilityExtensions.cs (4.12 KB)
-        │   ├── 📁 obj/
-        │   │   ├── 📁 Debug/
-        │   │   │   └── 📁 net10.0/
-        │   │   │       ├── 📁 ref/
-        │   │   │       │   └── 📄 TaksiApp.Shared.Extensions.dll (8.5 KB)
-        │   │   │       ├── 📁 refint/
-        │   │   │       │   └── 📄 TaksiApp.Shared.Extensions.dll (8.5 KB)
-        │   │   │       ├── 📄 TaksiApp.03EEAE25.Up2Date
-        │   │   │       ├── 📄 TaksiApp.Shared.Extensions.AssemblyInfo.cs (1.03 KB)
-        │   │   │       ├── 📄 TaksiApp.Shared.Extensions.AssemblyInfoInputs.cache (66 B)
-        │   │   │       ├── 📄 TaksiApp.Shared.Extensions.assets.cache (28.88 KB)
-        │   │   │       ├── 📄 TaksiApp.Shared.Extensions.csproj.AssemblyReference.cache (20.84 KB)
-        │   │   │       ├── 📄 TaksiApp.Shared.Extensions.csproj.CoreCompileInputs.cache (66 B)
-        │   │   │       ├── 📄 TaksiApp.Shared.Extensions.csproj.FileListAbsolute.txt (3.09 KB)
-        │   │   │       ├── 📄 TaksiApp.Shared.Extensions.dll (15.5 KB)
-        │   │   │       ├── 📄 TaksiApp.Shared.Extensions.GeneratedMSBuildEditorConfig.editorconfig (838 B)
-        │   │   │       ├── 📄 TaksiApp.Shared.Extensions.GlobalUsings.g.cs (239 B)
-        │   │   │       ├── 📄 TaksiApp.Shared.Extensions.pdb (25.32 KB)
-        │   │   │       └── 📄 TaksiApp.Shared.Extensions.sourcelink.json (162 B)
-        │   │   ├── 📄 project.assets.json (116.2 KB)
-        │   │   ├── 📄 project.nuget.cache (6.46 KB)
-        │   │   ├── 📄 TaksiApp.Shared.Extensions.csproj.nuget.dgspec.json (133.3 KB)
-        │   │   ├── 📄 TaksiApp.Shared.Extensions.csproj.nuget.g.props (1.27 KB)
-        │   │   └── 📄 TaksiApp.Shared.Extensions.csproj.nuget.g.targets (1.18 KB)
-        │   └── 📄 TaksiApp.Shared.Extensions.csproj (746 B)
-        ├── 📁 TaksiApp.Shared.Infrastructure/
-        │   ├── 📁 bin/
-        │   │   └── 📁 Debug/
-        │   │       └── 📁 net10.0/
-        │   │           ├── 📄 TaksiApp.Shared.Application.dll (7 KB)
-        │   │           ├── 📄 TaksiApp.Shared.Application.pdb (11.87 KB)
-        │   │           ├── 📄 TaksiApp.Shared.Infrastructure.deps.json (931 B)
-        │   │           ├── 📄 TaksiApp.Shared.Infrastructure.dll (4.5 KB)
-        │   │           └── 📄 TaksiApp.Shared.Infrastructure.pdb (11.63 KB)
-        │   ├── 📁 obj/
-        │   │   ├── 📁 Debug/
-        │   │   │   └── 📁 net10.0/
-        │   │   │       ├── 📁 ref/
-        │   │   │       │   └── 📄 TaksiApp.Shared.Infrastructure.dll (5.5 KB)
-        │   │   │       ├── 📁 refint/
-        │   │   │       │   └── 📄 TaksiApp.Shared.Infrastructure.dll (5.5 KB)
-        │   │   │       ├── 📄 TaksiApp.F7E0E454.Up2Date
-        │   │   │       ├── 📄 TaksiApp.Shared.Infrastructure.AssemblyInfo.cs (1.04 KB)
-        │   │   │       ├── 📄 TaksiApp.Shared.Infrastructure.AssemblyInfoInputs.cache (66 B)
-        │   │   │       ├── 📄 TaksiApp.Shared.Infrastructure.assets.cache (5.83 KB)
-        │   │   │       ├── 📄 TaksiApp.Shared.Infrastructure.csproj.AssemblyReference.cache (6.57 KB)
-        │   │   │       ├── 📄 TaksiApp.Shared.Infrastructure.csproj.CoreCompileInputs.cache (66 B)
-        │   │   │       ├── 📄 TaksiApp.Shared.Infrastructure.csproj.FileListAbsolute.txt (2.23 KB)
-        │   │   │       ├── 📄 TaksiApp.Shared.Infrastructure.dll (4.5 KB)
-        │   │   │       ├── 📄 TaksiApp.Shared.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig (846 B)
-        │   │   │       ├── 📄 TaksiApp.Shared.Infrastructure.GlobalUsings.g.cs (239 B)
-        │   │   │       ├── 📄 TaksiApp.Shared.Infrastructure.pdb (11.63 KB)
-        │   │   │       └── 📄 TaksiApp.Shared.Infrastructure.sourcelink.json (162 B)
-        │   │   ├── 📄 project.assets.json (40.99 KB)
-        │   │   ├── 📄 project.nuget.cache (1.44 KB)
-        │   │   ├── 📄 TaksiApp.Shared.Infrastructure.csproj.nuget.dgspec.json (65.11 KB)
-        │   │   ├── 📄 TaksiApp.Shared.Infrastructure.csproj.nuget.g.props (1.27 KB)
-        │   │   └── 📄 TaksiApp.Shared.Infrastructure.csproj.nuget.g.targets (583 B)
-        │   ├── 📁 Time/
-        │   │   └── 📄 UtcDateTimeProvider.cs (219 B)
-        │   └── 📄 TaksiApp.Shared.Infrastructure.csproj (354 B)
-        ├── 📁 TaksiApp.Shared.Kernel/
-        │   ├── 📁 Abstractions/
-        │   │   ├── 📄 IAggregateRoot.cs (616 B)
-        │   │   └── 📄 IDomainEvent.cs (579 B)
-        │   ├── 📁 bin/
-        │   │   └── 📁 Debug/
-        │   │       └── 📁 net10.0/
-        │   │           ├── 📄 TaksiApp.Shared.Kernel.deps.json (460 B)
-        │   │           ├── 📄 TaksiApp.Shared.Kernel.dll (27 KB)
-        │   │           └── 📄 TaksiApp.Shared.Kernel.pdb (17.03 KB)
-        │   ├── 📁 Common/
-        │   │   ├── 📄 AggregateRoot.cs (651 B)
-        │   │   ├── 📄 Entity.cs (3.04 KB)
-        │   │   └── 📄 ValueObject.cs (3.7 KB)
-        │   ├── 📁 Events/
-        │   │   └── 📄 DomainEventBase.cs (291 B)
-        │   ├── 📁 Guards/
-        │   │   └── 📄 Guard.cs (7.44 KB)
-        │   ├── 📁 obj/
-        │   │   ├── 📁 Debug/
-        │   │   │   └── 📁 net10.0/
-        │   │   │       ├── 📁 ref/
-        │   │   │       │   └── 📄 TaksiApp.Shared.Kernel.dll (14 KB)
-        │   │   │       ├── 📁 refint/
-        │   │   │       │   └── 📄 TaksiApp.Shared.Kernel.dll (14 KB)
-        │   │   │       ├── 📄 TaksiApp.Shared.Kernel.AssemblyInfo.cs (1.02 KB)
-        │   │   │       ├── 📄 TaksiApp.Shared.Kernel.AssemblyInfoInputs.cache (66 B)
-        │   │   │       ├── 📄 TaksiApp.Shared.Kernel.assets.cache (227 B)
-        │   │   │       ├── 📄 TaksiApp.Shared.Kernel.csproj.CoreCompileInputs.cache (66 B)
-        │   │   │       ├── 📄 TaksiApp.Shared.Kernel.csproj.FileListAbsolute.txt (1.38 KB)
-        │   │   │       ├── 📄 TaksiApp.Shared.Kernel.dll (27 KB)
-        │   │   │       ├── 📄 TaksiApp.Shared.Kernel.GeneratedMSBuildEditorConfig.editorconfig (830 B)
-        │   │   │       ├── 📄 TaksiApp.Shared.Kernel.GlobalUsings.g.cs (239 B)
-        │   │   │       └── 📄 TaksiApp.Shared.Kernel.pdb (17.03 KB)
-        │   │   ├── 📄 project.assets.json (20.84 KB)
-        │   │   ├── 📄 project.nuget.cache (255 B)
-        │   │   ├── 📄 TaksiApp.Shared.Kernel.csproj.nuget.dgspec.json (21.48 KB)
-        │   │   ├── 📄 TaksiApp.Shared.Kernel.csproj.nuget.g.props (1.27 KB)
-        │   │   └── 📄 TaksiApp.Shared.Kernel.csproj.nuget.g.targets (150 B)
-        │   ├── 📁 Results/
-        │   │   ├── 📄 Error.cs (8.03 KB)
-        │   │   ├── 📄 ErrorType.cs (220 B)
-        │   │   ├── 📄 Result.cs (1.87 KB)
-        │   │   └── 📄 Result{T}.cs (2.65 KB)
-        │   ├── 📁 ValueObjects/
-        │   │   ├── 📄 Email.cs (4.51 KB)
-        │   │   ├── 📄 Money.cs (3.97 KB)
-        │   │   └── 📄 PhoneNumber.cs (4.33 KB)
-        │   └── 📄 TaksiApp.Shared.Kernel.csproj (219 B)
-        ├── 📁 TaksiApp.Shared.Observability/
-        │   ├── 📁 bin/
-        │   │   └── 📁 Debug/
-        │   │       └── 📁 net10.0/
-        │   │           ├── 📄 TaksiApp.Shared.Application.dll (7 KB)
-        │   │           ├── 📄 TaksiApp.Shared.Application.pdb (11.87 KB)
-        │   │           ├── 📄 TaksiApp.Shared.Observability.deps.json (18.54 KB)
-        │   │           ├── 📄 TaksiApp.Shared.Observability.dll (11 KB)
-        │   │           └── 📄 TaksiApp.Shared.Observability.pdb (24.63 KB)
-        │   ├── 📁 HealthChecks/
-        │   │   └── 📄 ApplicationHealthCheck.cs (1.44 KB)
-        │   ├── 📁 Logging/
-        │   │   └── 📁 Enrichers/
-        │   │       ├── 📄 CorrelationIdEnricher.cs (1.2 KB)
-        │   │       └── 📄 TraceContextEnricher.cs (1.06 KB)
-        │   ├── 📁 Metrics/
-        │   │   ├── 📁 Meters/
-        │   │   │   └── 📄 ApplicationMetrics.cs (6.21 KB)
-        │   │   ├── 📄 MeterProvider.cs (2.55 KB)
-        │   │   └── 📄 MetricsConstants.cs (1.52 KB)
-        │   ├── 📁 obj/
-        │   │   ├── 📁 Debug/
-        │   │   │   └── 📁 net10.0/
-        │   │   │       ├── 📁 ref/
-        │   │   │       │   └── 📄 TaksiApp.Shared.Observability.dll (8.5 KB)
-        │   │   │       ├── 📁 refint/
-        │   │   │       │   └── 📄 TaksiApp.Shared.Observability.dll (8.5 KB)
-        │   │   │       ├── 📄 TaksiApp.B81D2761.Up2Date
-        │   │   │       ├── 📄 TaksiApp.Shared.Observability.AssemblyInfo.cs (1.04 KB)
-        │   │   │       ├── 📄 TaksiApp.Shared.Observability.AssemblyInfoInputs.cache (66 B)
-        │   │   │       ├── 📄 TaksiApp.Shared.Observability.assets.cache (30.61 KB)
-        │   │   │       ├── 📄 TaksiApp.Shared.Observability.csproj.AssemblyReference.cache (17.62 KB)
-        │   │   │       ├── 📄 TaksiApp.Shared.Observability.csproj.CoreCompileInputs.cache (66 B)
-        │   │   │       ├── 📄 TaksiApp.Shared.Observability.csproj.FileListAbsolute.txt (2.2 KB)
-        │   │   │       ├── 📄 TaksiApp.Shared.Observability.dll (11 KB)
-        │   │   │       ├── 📄 TaksiApp.Shared.Observability.GeneratedMSBuildEditorConfig.editorconfig (844 B)
-        │   │   │       ├── 📄 TaksiApp.Shared.Observability.GlobalUsings.g.cs (239 B)
-        │   │   │       ├── 📄 TaksiApp.Shared.Observability.pdb (24.63 KB)
-        │   │   │       └── 📄 TaksiApp.Shared.Observability.sourcelink.json (162 B)
-        │   │   ├── 📄 project.assets.json (114.15 KB)
-        │   │   ├── 📄 project.nuget.cache (6.46 KB)
-        │   │   ├── 📄 TaksiApp.Shared.Observability.csproj.nuget.dgspec.json (66.56 KB)
-        │   │   ├── 📄 TaksiApp.Shared.Observability.csproj.nuget.g.props (1.27 KB)
-        │   │   └── 📄 TaksiApp.Shared.Observability.csproj.nuget.g.targets (1.18 KB)
-        │   ├── 📁 Tracing/
-        │   │   ├── 📄 ActivitySourceFactory.cs (1.25 KB)
-        │   │   └── 📄 TracingConstants.cs (954 B)
-        │   ├── 📄 GlobalUsings.cs (292 B)
-        │   └── 📄 TaksiApp.Shared.Observability.csproj (1.22 KB)
-        └── 📄 README.md (25.35 KB)
+├── 📁 src/
+│   └── 📁 shared/
+│       ├── 📁 TaksiApp.Shared.Api/
+│       │   ├── 📁 bin/
+│       │   │   └── 📁 Debug/
+│       │   │       └── 📁 net10.0/
+│       │   ├── 📁 Constants/
+│       │   │   └── 📄 HttpContextConstants.cs (1.2 KB)
+│       │   ├── 📁 Controllers/
+│       │   │   └── 📄 ApiControllerBase.cs (2.87 KB)
+│       │   ├── 📁 Factories/
+│       │   │   └── 📄 SharedProblemDetailsFactory.cs (3.06 KB)
+│       │   ├── 📁 Middleware/
+│       │   │   ├── 📄 CorrelationIdDelegatingHandler.cs (2.07 KB)
+│       │   │   ├── 📄 CorrelationIdMiddleware.cs (3.63 KB)
+│       │   │   └── 📄 ExecutionContextExtensions.cs (1.37 KB)
+│       │   ├── 📁 obj/
+│       │   │   ├── 📁 Debug/
+│       │   │   │   └── 📁 net10.0/
+│       │   │   │       ├── 📁 ref/
+│       │   │   │       ├── 📁 refint/
+│       │   │   │       ├── 📄 TaksiApp.Shared.Api.AssemblyInfo.cs (1.01 KB)
+│       │   │   │       ├── 📄 TaksiApp.Shared.Api.AssemblyInfoInputs.cache (66 B)
+│       │   │   │       ├── 📄 TaksiApp.Shared.Api.assets.cache (29 KB)
+│       │   │   │       ├── 📄 TaksiApp.Shared.Api.csproj.AssemblyReference.cache (15.91 KB)
+│       │   │   │       ├── 📄 TaksiApp.Shared.Api.csproj.FileListAbsolute.txt
+│       │   │   │       ├── 📄 TaksiApp.Shared.Api.GeneratedMSBuildEditorConfig.editorconfig (824 B)
+│       │   │   │       └── 📄 TaksiApp.Shared.Api.GlobalUsings.g.cs (239 B)
+│       │   │   ├── 📄 project.assets.json (114.81 KB)
+│       │   │   ├── 📄 project.nuget.cache (6.44 KB)
+│       │   │   ├── 📄 TaksiApp.Shared.Api.csproj.nuget.dgspec.json (110.44 KB)
+│       │   │   ├── 📄 TaksiApp.Shared.Api.csproj.nuget.g.props (1.27 KB)
+│       │   │   └── 📄 TaksiApp.Shared.Api.csproj.nuget.g.targets (1.18 KB)
+│       │   └── 📄 TaksiApp.Shared.Api.csproj (550 B)
+│       ├── 📁 TaksiApp.Shared.Application/
+│       │   ├── 📁 Abstractions/
+│       │   │   ├── 📄 ExecutionContextMetadata.cs (5.16 KB)
+│       │   │   ├── 📄 ICommand.cs (451 B)
+│       │   │   ├── 📄 ICommandHandler.cs (1.86 KB)
+│       │   │   ├── 📄 IDateTimeProvider.cs (429 B)
+│       │   │   ├── 📄 IExecutionContext.cs (1.25 KB)
+│       │   │   ├── 📄 IQuery.cs (323 B)
+│       │   │   └── 📄 IQueryHandler.cs (1.06 KB)
+│       │   ├── 📁 Behaviors/
+│       │   │   ├── 📄 LoggingBehavior.cs (4.7 KB)
+│       │   │   ├── 📄 TracingBehavior.cs (3.46 KB)
+│       │   │   └── 📄 ValidationBehavior.cs (4.9 KB)
+│       │   ├── 📁 bin/
+│       │   │   └── 📁 Debug/
+│       │   │       └── 📁 net10.0/
+│       │   ├── 📁 Context/
+│       │   │   └── 📄 ExecutionContext.cs (2.13 KB)
+│       │   ├── 📁 obj/
+│       │   │   ├── 📁 Debug/
+│       │   │   │   └── 📁 net10.0/
+│       │   │   │       ├── 📁 ref/
+│       │   │   │       ├── 📁 refint/
+│       │   │   │       ├── 📄 TaksiApp.Shared.Application.AssemblyInfo.cs (1.03 KB)
+│       │   │   │       ├── 📄 TaksiApp.Shared.Application.AssemblyInfoInputs.cache (66 B)
+│       │   │   │       ├── 📄 TaksiApp.Shared.Application.assets.cache (6 KB)
+│       │   │   │       ├── 📄 TaksiApp.Shared.Application.csproj.AssemblyReference.cache (4.39 KB)
+│       │   │   │       ├── 📄 TaksiApp.Shared.Application.csproj.FileListAbsolute.txt
+│       │   │   │       ├── 📄 TaksiApp.Shared.Application.GeneratedMSBuildEditorConfig.editorconfig (840 B)
+│       │   │   │       └── 📄 TaksiApp.Shared.Application.GlobalUsings.g.cs (239 B)
+│       │   │   ├── 📄 project.assets.json (40.54 KB)
+│       │   │   ├── 📄 project.nuget.cache (1.43 KB)
+│       │   │   ├── 📄 TaksiApp.Shared.Application.csproj.nuget.dgspec.json (43.42 KB)
+│       │   │   ├── 📄 TaksiApp.Shared.Application.csproj.nuget.g.props (1.27 KB)
+│       │   │   └── 📄 TaksiApp.Shared.Application.csproj.nuget.g.targets (583 B)
+│       │   └── 📄 TaksiApp.Shared.Application.csproj (493 B)
+│       ├── 📁 TaksiApp.Shared.Extensions/
+│       │   ├── 📁 bin/
+│       │   │   └── 📁 Debug/
+│       │   │       └── 📁 net10.0/
+│       │   ├── 📁 Configuration/
+│       │   │   └── 📄 ObservabilityOptions.cs (1.62 KB)
+│       │   ├── 📁 DependencyInjection/
+│       │   │   ├── 📄 ApplicationExtensions.cs (3.46 KB)
+│       │   │   ├── 📄 InfrastructureExtensions.cs (2.35 KB)
+│       │   │   ├── 📄 MediatRExtensions.cs (2.48 KB)
+│       │   │   ├── 📄 MiddlewareExtensions.cs (3.02 KB)
+│       │   │   └── 📄 ObservabilityExtensions.cs (4.12 KB)
+│       │   ├── 📁 obj/
+│       │   │   ├── 📁 Debug/
+│       │   │   │   └── 📁 net10.0/
+│       │   │   │       ├── 📁 ref/
+│       │   │   │       ├── 📁 refint/
+│       │   │   │       ├── 📄 TaksiApp.Shared.Extensions.AssemblyInfo.cs (1.07 KB)
+│       │   │   │       ├── 📄 TaksiApp.Shared.Extensions.AssemblyInfoInputs.cache (66 B)
+│       │   │   │       ├── 📄 TaksiApp.Shared.Extensions.assets.cache (28.88 KB)
+│       │   │   │       ├── 📄 TaksiApp.Shared.Extensions.csproj.AssemblyReference.cache (15.91 KB)
+│       │   │   │       ├── 📄 TaksiApp.Shared.Extensions.csproj.FileListAbsolute.txt
+│       │   │   │       ├── 📄 TaksiApp.Shared.Extensions.GeneratedMSBuildEditorConfig.editorconfig (838 B)
+│       │   │   │       └── 📄 TaksiApp.Shared.Extensions.GlobalUsings.g.cs (239 B)
+│       │   │   ├── 📄 project.assets.json (116.2 KB)
+│       │   │   ├── 📄 project.nuget.cache (6.46 KB)
+│       │   │   ├── 📄 TaksiApp.Shared.Extensions.csproj.nuget.dgspec.json (133.3 KB)
+│       │   │   ├── 📄 TaksiApp.Shared.Extensions.csproj.nuget.g.props (1.27 KB)
+│       │   │   └── 📄 TaksiApp.Shared.Extensions.csproj.nuget.g.targets (1.18 KB)
+│       │   └── 📄 TaksiApp.Shared.Extensions.csproj (746 B)
+│       ├── 📁 TaksiApp.Shared.Infrastructure/
+│       │   ├── 📁 bin/
+│       │   │   └── 📁 Debug/
+│       │   │       └── 📁 net10.0/
+│       │   ├── 📁 obj/
+│       │   │   ├── 📁 Debug/
+│       │   │   │   └── 📁 net10.0/
+│       │   │   │       ├── 📁 ref/
+│       │   │   │       ├── 📁 refint/
+│       │   │   │       ├── 📄 TaksiApp.Shared.Infrastructure.AssemblyInfo.cs (1.08 KB)
+│       │   │   │       ├── 📄 TaksiApp.Shared.Infrastructure.AssemblyInfoInputs.cache (66 B)
+│       │   │   │       ├── 📄 TaksiApp.Shared.Infrastructure.assets.cache (5.83 KB)
+│       │   │   │       ├── 📄 TaksiApp.Shared.Infrastructure.csproj.AssemblyReference.cache (5.47 KB)
+│       │   │   │       ├── 📄 TaksiApp.Shared.Infrastructure.csproj.FileListAbsolute.txt
+│       │   │   │       ├── 📄 TaksiApp.Shared.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig (846 B)
+│       │   │   │       └── 📄 TaksiApp.Shared.Infrastructure.GlobalUsings.g.cs (239 B)
+│       │   │   ├── 📄 project.assets.json (40.99 KB)
+│       │   │   ├── 📄 project.nuget.cache (1.44 KB)
+│       │   │   ├── 📄 TaksiApp.Shared.Infrastructure.csproj.nuget.dgspec.json (65.11 KB)
+│       │   │   ├── 📄 TaksiApp.Shared.Infrastructure.csproj.nuget.g.props (1.27 KB)
+│       │   │   └── 📄 TaksiApp.Shared.Infrastructure.csproj.nuget.g.targets (583 B)
+│       │   ├── 📁 Time/
+│       │   │   └── 📄 UtcDateTimeProvider.cs (219 B)
+│       │   └── 📄 TaksiApp.Shared.Infrastructure.csproj (354 B)
+│       ├── 📁 TaksiApp.Shared.Kernel/
+│       │   ├── 📁 Abstractions/
+│       │   │   ├── 📄 IAggregateRoot.cs (616 B)
+│       │   │   └── 📄 IDomainEvent.cs (579 B)
+│       │   ├── 📁 bin/
+│       │   │   └── 📁 Debug/
+│       │   │       └── 📁 net10.0/
+│       │   ├── 📁 Common/
+│       │   │   ├── 📄 AggregateRoot.cs (651 B)
+│       │   │   ├── 📄 Entity.cs (3.04 KB)
+│       │   │   └── 📄 ValueObject.cs (3.7 KB)
+│       │   ├── 📁 Events/
+│       │   │   └── 📄 DomainEventBase.cs (1.12 KB)
+│       │   ├── 📁 Guards/
+│       │   │   └── 📄 Guard.cs (7.44 KB)
+│       │   ├── 📁 obj/
+│       │   │   ├── 📁 Debug/
+│       │   │   │   └── 📁 net10.0/
+│       │   │   │       ├── 📁 ref/
+│       │   │   │       ├── 📁 refint/
+│       │   │   │       ├── 📄 TaksiApp.Shared.Kernel.AssemblyInfo.cs (1.02 KB)
+│       │   │   │       ├── 📄 TaksiApp.Shared.Kernel.AssemblyInfoInputs.cache (66 B)
+│       │   │   │       ├── 📄 TaksiApp.Shared.Kernel.assets.cache (227 B)
+│       │   │   │       ├── 📄 TaksiApp.Shared.Kernel.csproj.FileListAbsolute.txt
+│       │   │   │       ├── 📄 TaksiApp.Shared.Kernel.GeneratedMSBuildEditorConfig.editorconfig (830 B)
+│       │   │   │       └── 📄 TaksiApp.Shared.Kernel.GlobalUsings.g.cs (239 B)
+│       │   │   ├── 📄 project.assets.json (20.84 KB)
+│       │   │   ├── 📄 project.nuget.cache (255 B)
+│       │   │   ├── 📄 TaksiApp.Shared.Kernel.csproj.nuget.dgspec.json (21.48 KB)
+│       │   │   ├── 📄 TaksiApp.Shared.Kernel.csproj.nuget.g.props (1.27 KB)
+│       │   │   └── 📄 TaksiApp.Shared.Kernel.csproj.nuget.g.targets (150 B)
+│       │   ├── 📁 Results/
+│       │   │   ├── 📄 Error.cs (8.03 KB)
+│       │   │   ├── 📄 ErrorType.cs (1.23 KB)
+│       │   │   ├── 📄 Result.cs (4 KB)
+│       │   │   └── 📄 Result{T}.cs (4.53 KB)
+│       │   ├── 📁 ValueObjects/
+│       │   │   ├── 📄 Email.cs (4.51 KB)
+│       │   │   ├── 📄 Money.cs (3.97 KB)
+│       │   │   └── 📄 PhoneNumber.cs (4.33 KB)
+│       │   └── 📄 TaksiApp.Shared.Kernel.csproj (219 B)
+│       ├── 📁 TaksiApp.Shared.Observability/
+│       │   ├── 📁 bin/
+│       │   │   └── 📁 Debug/
+│       │   │       └── 📁 net10.0/
+│       │   ├── 📁 HealthChecks/
+│       │   │   └── 📄 ApplicationHealthCheck.cs (2.04 KB)
+│       │   ├── 📁 Logging/
+│       │   │   └── 📁 Enrichers/
+│       │   │       ├── 📄 CorrelationIdEnricher.cs (1.69 KB)
+│       │   │       └── 📄 TraceContextEnricher.cs (1.31 KB)
+│       │   ├── 📁 Metrics/
+│       │   │   ├── 📁 Meters/
+│       │   │   │   └── 📄 ApplicationMetrics.cs (6.21 KB)
+│       │   │   ├── 📄 MeterProvider.cs (2.55 KB)
+│       │   │   └── 📄 MetricsConstants.cs (1.52 KB)
+│       │   ├── 📁 obj/
+│       │   │   ├── 📁 Debug/
+│       │   │   │   └── 📁 net10.0/
+│       │   │   │       ├── 📁 ref/
+│       │   │   │       ├── 📁 refint/
+│       │   │   │       ├── 📄 TaksiApp.Shared.Observability.assets.cache (30.61 KB)
+│       │   │   │       ├── 📄 TaksiApp.Shared.Observability.csproj.FileListAbsolute.txt
+│       │   │   │       └── 📄 TaksiApp.Shared.Observability.GlobalUsings.g.cs (239 B)
+│       │   │   ├── 📄 project.assets.json (114.15 KB)
+│       │   │   ├── 📄 project.nuget.cache (6.46 KB)
+│       │   │   ├── 📄 TaksiApp.Shared.Observability.csproj.nuget.dgspec.json (66.56 KB)
+│       │   │   ├── 📄 TaksiApp.Shared.Observability.csproj.nuget.g.props (1.27 KB)
+│       │   │   └── 📄 TaksiApp.Shared.Observability.csproj.nuget.g.targets (1.18 KB)
+│       │   ├── 📁 Tracing/
+│       │   │   ├── 📄 ActivitySourceFactory.cs (1.25 KB)
+│       │   │   └── 📄 TracingConstants.cs (954 B)
+│       │   ├── 📄 GlobalUsings.cs (292 B)
+│       │   └── 📄 TaksiApp.Shared.Observability.csproj (1.22 KB)
+│       └── 📄 README.md (25.35 KB)
+└── 📄 TaxiApp.sln (8.36 KB)
 
 ================================================================================
 PROJECT STATISTICS
 ================================================================================
-Total Files: 203
+Total Files: 122
 Total Directories: 78
-Text Files: 88
-Binary Files: 115
-Total Size: 2.07 MB
+Text Files: 77
+Binary Files: 45
+Total Size: 1.21 MB
 
 FILE TYPES DISTRIBUTION:
 ------------------------------
-.cs             : 59
-.dll            : 35
-.cache          : 29
-.pdb            : 23
-.json           : 22
+.cs             : 58
+.cache          : 21
+.json           : 12
 .txt            : 6
-.editorconfig   : 6
 .props          : 6
 .targets        : 6
 .csproj         : 6
-.Up2Date        : 4
+.editorconfig   : 5
 .md             : 1
+.sln            : 1
 
 ================================================================================
 FILE CODE CONTENTS
 ================================================================================
-
-
-================================================================================
-FILE: src/shared/TaksiApp.Shared.Api/bin/Debug/net10.0/TaksiApp.Shared.Api.deps.json
-================================================================================
-
-FILE INFORMATION:
-----------------------------------------
-Size: 19.83 KB
-Extension: .json
-Language: json
-Location: src/shared/TaksiApp.Shared.Api/bin/Debug/net10.0/TaksiApp.Shared.Api.deps.json
-Relative Path: src/shared/TaksiApp.Shared.Api/bin/Debug/net10.0
-Created: 2026-02-03 19:23:59 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:49:39 (Europe/Moscow / GMT+03:00)
-MD5: 155d289bd445305f4a3dfd8dd4124eb5
-SHA256: 67f6d2a22b50945ff59beb83a4f0d135ba950334c9dff3a229fc5d836fb77d86
-Encoding: ASCII
-
-FILE CONTENT:
-----------------------------------------
-{
-  "runtimeTarget": {
-    "name": ".NETCoreApp,Version=v10.0",
-    "signature": ""
-  },
-  "compilationOptions": {},
-  "targets": {
-    ".NETCoreApp,Version=v10.0": {
-      "TaksiApp.Shared.Api/1.0.0": {
-        "dependencies": {
-          "TaksiApp.Shared.Infrastructure": "1.0.0",
-          "TaksiApp.Shared.Kernel": "1.0.0",
-          "TaksiApp.Shared.Observability": "1.0.0"
-        },
-        "runtime": {
-          "TaksiApp.Shared.Api.dll": {}
-        }
-      },
-      "Google.Protobuf/3.30.1": {
-        "runtime": {
-          "lib/net5.0/Google.Protobuf.dll": {
-            "assemblyVersion": "3.30.1.0",
-            "fileVersion": "3.30.1.0"
-          }
-        }
-      },
-      "Grpc.Core.Api/2.70.0": {
-        "runtime": {
-          "lib/netstandard2.1/Grpc.Core.Api.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.70.0.0"
-          }
-        }
-      },
-      "Grpc.Net.Client/2.70.0": {
-        "dependencies": {
-          "Grpc.Net.Common": "2.70.0"
-        },
-        "runtime": {
-          "lib/net8.0/Grpc.Net.Client.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.70.0.0"
-          }
-        }
-      },
-      "Grpc.Net.Common/2.70.0": {
-        "dependencies": {
-          "Grpc.Core.Api": "2.70.0"
-        },
-        "runtime": {
-          "lib/net8.0/Grpc.Net.Common.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.70.0.0"
-          }
-        }
-      },
-      "Microsoft.Extensions.DependencyModel/10.0.0": {
-        "runtime": {
-          "lib/net10.0/Microsoft.Extensions.DependencyModel.dll": {
-            "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.25.52411"
-          }
-        }
-      },
-      "OpenTelemetry/1.15.0": {
-        "dependencies": {
-          "OpenTelemetry.Api.ProviderBuilderExtensions": "1.15.0"
-        },
-        "runtime": {
-          "lib/net10.0/OpenTelemetry.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.15.0.1921"
-          }
-        }
-      },
-      "OpenTelemetry.Api/1.15.0": {
-        "runtime": {
-          "lib/net10.0/OpenTelemetry.Api.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.15.0.1921"
-          }
-        }
-      },
-      "OpenTelemetry.Api.ProviderBuilderExtensions/1.15.0": {
-        "dependencies": {
-          "OpenTelemetry.Api": "1.15.0"
-        },
-        "runtime": {
-          "lib/net10.0/OpenTelemetry.Api.ProviderBuilderExtensions.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.15.0.1921"
-          }
-        }
-      },
-      "OpenTelemetry.Exporter.OpenTelemetryProtocol/1.15.0": {
-        "dependencies": {
-          "OpenTelemetry": "1.15.0"
-        },
-        "runtime": {
-          "lib/net10.0/OpenTelemetry.Exporter.OpenTelemetryProtocol.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.15.0.1921"
-          }
-        }
-      },
-      "OpenTelemetry.Exporter.Prometheus.AspNetCore/1.7.0-rc.1": {
-        "dependencies": {
-          "OpenTelemetry": "1.15.0"
-        },
-        "runtime": {
-          "lib/net8.0/OpenTelemetry.Exporter.Prometheus.AspNetCore.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.7.0.1095"
-          }
-        }
-      },
-      "OpenTelemetry.Extensions.Hosting/1.15.0": {
-        "dependencies": {
-          "OpenTelemetry": "1.15.0"
-        },
-        "runtime": {
-          "lib/net10.0/OpenTelemetry.Extensions.Hosting.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.15.0.1921"
-          }
-        }
-      },
-      "OpenTelemetry.Instrumentation.AspNetCore/1.15.0": {
-        "dependencies": {
-          "OpenTelemetry.Api.ProviderBuilderExtensions": "1.15.0"
-        },
-        "runtime": {
-          "lib/net10.0/OpenTelemetry.Instrumentation.AspNetCore.dll": {
-            "assemblyVersion": "1.15.0.901",
-            "fileVersion": "1.15.0.901"
-          }
-        }
-      },
-      "OpenTelemetry.Instrumentation.EntityFrameworkCore/1.0.0-beta.9": {
-        "dependencies": {
-          "OpenTelemetry.Api.ProviderBuilderExtensions": "1.15.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/OpenTelemetry.Instrumentation.EntityFrameworkCore.dll": {
-            "assemblyVersion": "1.0.0.9",
-            "fileVersion": "1.0.0.9"
-          }
-        }
-      },
-      "OpenTelemetry.Instrumentation.Http/1.15.0": {
-        "dependencies": {
-          "OpenTelemetry.Api.ProviderBuilderExtensions": "1.15.0"
-        },
-        "runtime": {
-          "lib/net10.0/OpenTelemetry.Instrumentation.Http.dll": {
-            "assemblyVersion": "1.15.0.900",
-            "fileVersion": "1.15.0.900"
-          }
-        }
-      },
-      "OpenTelemetry.Instrumentation.Runtime/1.15.0": {
-        "dependencies": {
-          "OpenTelemetry.Api": "1.15.0"
-        },
-        "runtime": {
-          "lib/net10.0/OpenTelemetry.Instrumentation.Runtime.dll": {
-            "assemblyVersion": "1.15.0.899",
-            "fileVersion": "1.15.0.899"
-          }
-        }
-      },
-      "Serilog/4.3.0": {
-        "runtime": {
-          "lib/net9.0/Serilog.dll": {
-            "assemblyVersion": "4.3.0.0",
-            "fileVersion": "4.3.0.0"
-          }
-        }
-      },
-      "Serilog.AspNetCore/10.0.0": {
-        "dependencies": {
-          "Serilog": "4.3.0",
-          "Serilog.Extensions.Hosting": "10.0.0",
-          "Serilog.Formatting.Compact": "3.0.0",
-          "Serilog.Settings.Configuration": "10.0.0",
-          "Serilog.Sinks.Console": "6.1.1",
-          "Serilog.Sinks.Debug": "3.0.0",
-          "Serilog.Sinks.File": "7.0.0"
-        },
-        "runtime": {
-          "lib/net10.0/Serilog.AspNetCore.dll": {
-            "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.0.0"
-          }
-        }
-      },
-      "Serilog.Enrichers.Span/3.1.0": {
-        "dependencies": {
-          "Serilog": "4.3.0"
-        },
-        "runtime": {
-          "lib/net7.0/Serilog.Enrichers.Span.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.1.0.0"
-          }
-        }
-      },
-      "Serilog.Extensions.Hosting/10.0.0": {
-        "dependencies": {
-          "Serilog": "4.3.0",
-          "Serilog.Extensions.Logging": "10.0.0"
-        },
-        "runtime": {
-          "lib/net10.0/Serilog.Extensions.Hosting.dll": {
-            "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.0.0"
-          }
-        }
-      },
-      "Serilog.Extensions.Logging/10.0.0": {
-        "dependencies": {
-          "Serilog": "4.3.0"
-        },
-        "runtime": {
-          "lib/net10.0/Serilog.Extensions.Logging.dll": {
-            "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.0.0"
-          }
-        }
-      },
-      "Serilog.Formatting.Compact/3.0.0": {
-        "dependencies": {
-          "Serilog": "4.3.0"
-        },
-        "runtime": {
-          "lib/net8.0/Serilog.Formatting.Compact.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.0.0"
-          }
-        }
-      },
-      "Serilog.Settings.Configuration/10.0.0": {
-        "dependencies": {
-          "Microsoft.Extensions.DependencyModel": "10.0.0",
-          "Serilog": "4.3.0"
-        },
-        "runtime": {
-          "lib/net10.0/Serilog.Settings.Configuration.dll": {
-            "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.0.0"
-          }
-        }
-      },
-      "Serilog.Sinks.Console/6.1.1": {
-        "dependencies": {
-          "Serilog": "4.3.0"
-        },
-        "runtime": {
-          "lib/net8.0/Serilog.Sinks.Console.dll": {
-            "assemblyVersion": "6.1.1.0",
-            "fileVersion": "6.1.1.0"
-          }
-        }
-      },
-      "Serilog.Sinks.Debug/3.0.0": {
-        "dependencies": {
-          "Serilog": "4.3.0"
-        },
-        "runtime": {
-          "lib/net8.0/Serilog.Sinks.Debug.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.0.0"
-          }
-        }
-      },
-      "Serilog.Sinks.File/7.0.0": {
-        "dependencies": {
-          "Serilog": "4.3.0"
-        },
-        "runtime": {
-          "lib/net9.0/Serilog.Sinks.File.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.0.0"
-          }
-        }
-      },
-      "Serilog.Sinks.OpenTelemetry/4.2.0": {
-        "dependencies": {
-          "Google.Protobuf": "3.30.1",
-          "Grpc.Net.Client": "2.70.0",
-          "Serilog": "4.3.0"
-        },
-        "runtime": {
-          "lib/net9.0/Serilog.Sinks.OpenTelemetry.dll": {
-            "assemblyVersion": "4.2.0.0",
-            "fileVersion": "4.2.0.0"
-          }
-        }
-      },
-      "TaksiApp.Shared.Application/1.0.0": {
-        "runtime": {
-          "TaksiApp.Shared.Application.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "TaksiApp.Shared.Infrastructure/1.0.0": {
-        "dependencies": {
-          "TaksiApp.Shared.Application": "1.0.0"
-        },
-        "runtime": {
-          "TaksiApp.Shared.Infrastructure.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "TaksiApp.Shared.Kernel/1.0.0": {
-        "runtime": {
-          "TaksiApp.Shared.Kernel.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "TaksiApp.Shared.Observability/1.0.0": {
-        "dependencies": {
-          "OpenTelemetry.Exporter.OpenTelemetryProtocol": "1.15.0",
-          "OpenTelemetry.Exporter.Prometheus.AspNetCore": "1.7.0-rc.1",
-          "OpenTelemetry.Extensions.Hosting": "1.15.0",
-          "OpenTelemetry.Instrumentation.AspNetCore": "1.15.0",
-          "OpenTelemetry.Instrumentation.EntityFrameworkCore": "1.0.0-beta.9",
-          "OpenTelemetry.Instrumentation.Http": "1.15.0",
-          "OpenTelemetry.Instrumentation.Runtime": "1.15.0",
-          "Serilog.AspNetCore": "10.0.0",
-          "Serilog.Enrichers.Span": "3.1.0",
-          "Serilog.Sinks.OpenTelemetry": "4.2.0",
-          "TaksiApp.Shared.Application": "1.0.0"
-        },
-        "runtime": {
-          "TaksiApp.Shared.Observability.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      }
-    }
-  },
-  "libraries": {
-    "TaksiApp.Shared.Api/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Google.Protobuf/3.30.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-HeWXDQBabQn/sCGicbeLJ0HMunknfC4FdLrOQOsaMJHcpqx3HVIpyyJqTrqJlWnza870twhOb+rBcaTiC/TlNA==",
-      "path": "google.protobuf/3.30.1",
-      "hashPath": "google.protobuf.3.30.1.nupkg.sha512"
-    },
-    "Grpc.Core.Api/2.70.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-66UotvWcSIq41oiQhLWcQACyKPM4umxXNiht5DQTLZJfNwEswWOcS7Z0xIEHyNIBE7ZpjotH22bEjTkvhPxmVw==",
-      "path": "grpc.core.api/2.70.0",
-      "hashPath": "grpc.core.api.2.70.0.nupkg.sha512"
-    },
-    "Grpc.Net.Client/2.70.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-xNv0FFCVJa5S1beUtye82WFCxKThuE1jbN8DO1x1Rj8VSIWXLBUmfSID5a1fGzsU2R/EMfwPoWclJ2RMfQuGXw==",
-      "path": "grpc.net.client/2.70.0",
-      "hashPath": "grpc.net.client.2.70.0.nupkg.sha512"
-    },
-    "Grpc.Net.Common/2.70.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-rBdEUMyCwa+iB8mqC6JKyPbj3SBHHkReJj/yy/XKJI63GcG6w9DJMMGTVcYHqq4Ci2W4m0HT4jt2pFfFscar8g==",
-      "path": "grpc.net.common/2.70.0",
-      "hashPath": "grpc.net.common.2.70.0.nupkg.sha512"
-    },
-    "Microsoft.Extensions.DependencyModel/10.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-RFYJR7APio/BiqdQunRq6DB+nDB6nc2qhHr77mlvZ0q0BT8PubMXN7XicmfzCbrDE/dzhBnUKBRXLTcqUiZDGg==",
-      "path": "microsoft.extensions.dependencymodel/10.0.0",
-      "hashPath": "microsoft.extensions.dependencymodel.10.0.0.nupkg.sha512"
-    },
-    "OpenTelemetry/1.15.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-7mS/oZFF8S6xyqGQfMU1btp0nXJQUPWV535Vp/XMLYwRAUv36xQN+U4vufWBF1+z4HnRTOwuFHtUSGnHbyN6FQ==",
-      "path": "opentelemetry/1.15.0",
-      "hashPath": "opentelemetry.1.15.0.nupkg.sha512"
-    },
-    "OpenTelemetry.Api/1.15.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-vk5OGdf6K9kQScCWo3bRjhDWCv6Pqw92IpX4dlARZ8B1WL7/2NGTDtCkkw42eQf7UdwyoHKzVvMH/PtL8d6z7w==",
-      "path": "opentelemetry.api/1.15.0",
-      "hashPath": "opentelemetry.api.1.15.0.nupkg.sha512"
-    },
-    "OpenTelemetry.Api.ProviderBuilderExtensions/1.15.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-OnuSUlRpGvowkOzGFQfy+KZFu0cITfKfh2IYJJiZskxVJiOuexwOOuvfDAgpJdmTzVWAHjYdz2shcHZaJ06UjQ==",
-      "path": "opentelemetry.api.providerbuilderextensions/1.15.0",
-      "hashPath": "opentelemetry.api.providerbuilderextensions.1.15.0.nupkg.sha512"
-    },
-    "OpenTelemetry.Exporter.OpenTelemetryProtocol/1.15.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-VH8ANc/js9IRvfYt0Q2UaAxNCOWm+IU+vWrtoH7pfx4oWPVdISUt+9uWfBCFMWZg5WzQip5dhslyDjeyZXXfSQ==",
-      "path": "opentelemetry.exporter.opentelemetryprotocol/1.15.0",
-      "hashPath": "opentelemetry.exporter.opentelemetryprotocol.1.15.0.nupkg.sha512"
-    },
-    "OpenTelemetry.Exporter.Prometheus.AspNetCore/1.7.0-rc.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-tlA8oDOZoyFAkKA5StEPdzCyFf/6N/8y0Ymjae1dJYEfxPmNrcrtEHxuxtd0h5GwrIKnVpkb/hJMopHOErnSqQ==",
-      "path": "opentelemetry.exporter.prometheus.aspnetcore/1.7.0-rc.1",
-      "hashPath": "opentelemetry.exporter.prometheus.aspnetcore.1.7.0-rc.1.nupkg.sha512"
-    },
-    "OpenTelemetry.Extensions.Hosting/1.15.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-RixjKyB1pbYGhWdvPto4KJs+exdQknJsnjUO9WszdLles5Vcd0EYzxPNJdwmLjYfP+Jfbr4B5nktM4ZgeHSWtg==",
-      "path": "opentelemetry.extensions.hosting/1.15.0",
-      "hashPath": "opentelemetry.extensions.hosting.1.15.0.nupkg.sha512"
-    },
-    "OpenTelemetry.Instrumentation.AspNetCore/1.15.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-mte1nRYefxjed2syXgVWq3UCfMKO7MkebvTZmf0O1aLgVgCktLsVjQ6mftyjIbWGBBCHN0wg+Glxj8BSFS70pQ==",
-      "path": "opentelemetry.instrumentation.aspnetcore/1.15.0",
-      "hashPath": "opentelemetry.instrumentation.aspnetcore.1.15.0.nupkg.sha512"
-    },
-    "OpenTelemetry.Instrumentation.EntityFrameworkCore/1.0.0-beta.9": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-VaieBV6iZTGAh18D3pzElHGuGdZboUWFBoijIncN30PcQQYAalMcuosMYcZ0wWaDmxWM9YPRCdhP/Mazgmr3uw==",
-      "path": "opentelemetry.instrumentation.entityframeworkcore/1.0.0-beta.9",
-      "hashPath": "opentelemetry.instrumentation.entityframeworkcore.1.0.0-beta.9.nupkg.sha512"
-    },
-    "OpenTelemetry.Instrumentation.Http/1.15.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-uToc7bUp8IEdb0ny9mKsL6FrrYelINPzxxiSShJgOf4XmQc4Azww6S5RjRj24YhsOn2a1MABOrxfVTZXtDk4Eg==",
-      "path": "opentelemetry.instrumentation.http/1.15.0",
-      "hashPath": "opentelemetry.instrumentation.http.1.15.0.nupkg.sha512"
-    },
-    "OpenTelemetry.Instrumentation.Runtime/1.15.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-OOvpqR/j2Pb6+tWhHNODIbSJ53Or/MDtTiXEyrsWI02K2lLAgvBFcxUOrHggS/8015cYR3AdSaXv6NZrkz5yQA==",
-      "path": "opentelemetry.instrumentation.runtime/1.15.0",
-      "hashPath": "opentelemetry.instrumentation.runtime.1.15.0.nupkg.sha512"
-    },
-    "Serilog/4.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-+cDryFR0GRhsGOnZSKwaDzRRl4MupvJ42FhCE4zhQRVanX0Jpg6WuCBk59OVhVDPmab1bB+nRykAnykYELA9qQ==",
-      "path": "serilog/4.3.0",
-      "hashPath": "serilog.4.3.0.nupkg.sha512"
-    },
-    "Serilog.AspNetCore/10.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-a/cNa1mY4On1oJlfGG1wAvxjp5g7OEzk/Jf/nm7NF9cWoE7KlZw1GldrifUBWm9oKibHkR7Lg/l5jy3y7ACR8w==",
-      "path": "serilog.aspnetcore/10.0.0",
-      "hashPath": "serilog.aspnetcore.10.0.0.nupkg.sha512"
-    },
-    "Serilog.Enrichers.Span/3.1.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-xNxy5FxIuLLusRHBpJwJ/YqVw5S7Dtbt79NUsPQxDtu4+CYG4kJgjLs9fjZhKPMjZQL8GZRewT8brap9h2r+Vw==",
-      "path": "serilog.enrichers.span/3.1.0",
-      "hashPath": "serilog.enrichers.span.3.1.0.nupkg.sha512"
-    },
-    "Serilog.Extensions.Hosting/10.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-E7juuIc+gzoGxgzFooFgAV8g9BfiSXNKsUok9NmEpyAXg2odkcPsMa/Yo4axkJRlh0se7mkYQ1GXDaBemR+b6w==",
-      "path": "serilog.extensions.hosting/10.0.0",
-      "hashPath": "serilog.extensions.hosting.10.0.0.nupkg.sha512"
-    },
-    "Serilog.Extensions.Logging/10.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-vx0kABKl2dWbBhhqAfTOk53/i8aV/5VaT3a6il9gn72Wqs2pM7EK2OB6No6xdqK2IaY6Zf9gdjLuK9BVa2rT+Q==",
-      "path": "serilog.extensions.logging/10.0.0",
-      "hashPath": "serilog.extensions.logging.10.0.0.nupkg.sha512"
-    },
-    "Serilog.Formatting.Compact/3.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-wQsv14w9cqlfB5FX2MZpNsTawckN4a8dryuNGbebB/3Nh1pXnROHZov3swtu3Nj5oNG7Ba+xdu7Et/ulAUPanQ==",
-      "path": "serilog.formatting.compact/3.0.0",
-      "hashPath": "serilog.formatting.compact.3.0.0.nupkg.sha512"
-    },
-    "Serilog.Settings.Configuration/10.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-LNq+ibS1sbhTqPV1FIE69/9AJJbfaOhnaqkzcjFy95o+4U+STsta9mi97f1smgXsWYKICDeGUf8xUGzd/52/uA==",
-      "path": "serilog.settings.configuration/10.0.0",
-      "hashPath": "serilog.settings.configuration.10.0.0.nupkg.sha512"
-    },
-    "Serilog.Sinks.Console/6.1.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-8jbqgjUyZlfCuSTaJk6lOca465OndqOz3KZP6Cryt/IqZYybyBu7GP0fE/AXBzrrQB3EBmQntBFAvMVz1COvAA==",
-      "path": "serilog.sinks.console/6.1.1",
-      "hashPath": "serilog.sinks.console.6.1.1.nupkg.sha512"
-    },
-    "Serilog.Sinks.Debug/3.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-4BzXcdrgRX7wde9PmHuYd9U6YqycCC28hhpKonK7hx0wb19eiuRj16fPcPSVp0o/Y1ipJuNLYQ00R3q2Zs8FDA==",
-      "path": "serilog.sinks.debug/3.0.0",
-      "hashPath": "serilog.sinks.debug.3.0.0.nupkg.sha512"
-    },
-    "Serilog.Sinks.File/7.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-fKL7mXv7qaiNBUC71ssvn/dU0k9t0o45+qm2XgKAlSt19xF+ijjxyA3R6HmCgfKEKwfcfkwWjayuQtRueZFkYw==",
-      "path": "serilog.sinks.file/7.0.0",
-      "hashPath": "serilog.sinks.file.7.0.0.nupkg.sha512"
-    },
-    "Serilog.Sinks.OpenTelemetry/4.2.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-PzMCyE5G19tjr5IZEi5qg+4UU5QrxBEoBEMu/hhYybTrGKXqUDiSGWKZNUDBgelaVKqLADlsmlJVyKce5SyPrg==",
-      "path": "serilog.sinks.opentelemetry/4.2.0",
-      "hashPath": "serilog.sinks.opentelemetry.4.2.0.nupkg.sha512"
-    },
-    "TaksiApp.Shared.Application/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "TaksiApp.Shared.Infrastructure/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "TaksiApp.Shared.Kernel/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "TaksiApp.Shared.Observability/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    }
-  }
-}
-================================================================================
-
-
-================================================================================
-BINARY/EXCLUDED FILES (not included in text content)
-================================================================================
-- src/shared/TaksiApp.Shared.Api/bin/Debug/net10.0/TaksiApp.Shared.Api.dll
-- src/shared/TaksiApp.Shared.Api/bin/Debug/net10.0/TaksiApp.Shared.Api.pdb
-- src/shared/TaksiApp.Shared.Api/bin/Debug/net10.0/TaksiApp.Shared.Application.dll
-- src/shared/TaksiApp.Shared.Api/bin/Debug/net10.0/TaksiApp.Shared.Application.pdb
-- src/shared/TaksiApp.Shared.Api/bin/Debug/net10.0/TaksiApp.Shared.Infrastructure.dll
-- src/shared/TaksiApp.Shared.Api/bin/Debug/net10.0/TaksiApp.Shared.Infrastructure.pdb
-- src/shared/TaksiApp.Shared.Api/bin/Debug/net10.0/TaksiApp.Shared.Kernel.dll
-- src/shared/TaksiApp.Shared.Api/bin/Debug/net10.0/TaksiApp.Shared.Kernel.pdb
-- src/shared/TaksiApp.Shared.Api/bin/Debug/net10.0/TaksiApp.Shared.Observability.dll
-- src/shared/TaksiApp.Shared.Api/bin/Debug/net10.0/TaksiApp.Shared.Observability.pdb
 
 
 ================================================================================
@@ -1094,7 +415,7 @@ Language: csharp
 Location: src/shared/TaksiApp.Shared.Api/Factories/SharedProblemDetailsFactory.cs
 Relative Path: src/shared/TaksiApp.Shared.Api/Factories
 Created: 2026-02-01 12:25:33 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-02 19:17:46 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-04 20:16:41 (Europe/Moscow / GMT+03:00)
 MD5: 282804fb11c4e34196ceda2381206201
 SHA256: b771553c1b43b9367e5ee15fe1498fe6508b03058c951e8839380b191c21be97
 Encoding: UTF-8 (with BOM)
@@ -1457,18 +778,6 @@ public static class ExecutionContextExtensions
 
 
 ================================================================================
-BINARY/EXCLUDED FILES (not included in text content)
-================================================================================
-- src/shared/TaksiApp.Shared.Api/obj/Debug/net10.0/ref/TaksiApp.Shared.Api.dll
-
-
-================================================================================
-BINARY/EXCLUDED FILES (not included in text content)
-================================================================================
-- src/shared/TaksiApp.Shared.Api/obj/Debug/net10.0/refint/TaksiApp.Shared.Api.dll
-
-
-================================================================================
 FILE: src/shared/TaksiApp.Shared.Api/obj/Debug/net10.0/TaksiApp.Shared.Api.AssemblyInfo.cs
 ================================================================================
 
@@ -1479,10 +788,10 @@ Extension: .cs
 Language: csharp
 Location: src/shared/TaksiApp.Shared.Api/obj/Debug/net10.0/TaksiApp.Shared.Api.AssemblyInfo.cs
 Relative Path: src/shared/TaksiApp.Shared.Api/obj/Debug/net10.0
-Created: 2026-02-03 19:11:30 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:43:11 (Europe/Moscow / GMT+03:00)
-MD5: 3c2546dbcbe70afb4f5b2f2aef5d92e9
-SHA256: 062d490f48a9b602f83a85cb64f952f8775b7ba0793cd275a23b6c33997d8100
+Created: 2026-02-04 20:15:25 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-04 20:15:25 (Europe/Moscow / GMT+03:00)
+MD5: 94823cf2937fe7694020b66b3ffcbe75
+SHA256: 9347580e5b8f348f76eabe01be43bbe0d08103873ea6fc750e5cff1c6fb1e8db
 Encoding: ASCII
 
 FILE CONTENT:
@@ -1502,7 +811,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TaksiApp.Shared.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5b4d1752f13bf8e587ec871f82c980075996508b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb26a171e0d44af336747b6b2d367ff4c5268bb4")]
 [assembly: System.Reflection.AssemblyProductAttribute("TaksiApp.Shared.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TaksiApp.Shared.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -1519,41 +828,19 @@ FILE: src/shared/TaksiApp.Shared.Api/obj/Debug/net10.0/TaksiApp.Shared.Api.cspro
 
 FILE INFORMATION:
 ----------------------------------------
-Size: 2.62 KB
+Size: 0 B
 Extension: .txt
 Language: text
 Location: src/shared/TaksiApp.Shared.Api/obj/Debug/net10.0/TaksiApp.Shared.Api.csproj.FileListAbsolute.txt
 Relative Path: src/shared/TaksiApp.Shared.Api/obj/Debug/net10.0
-Created: 2026-02-03 19:23:59 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:49:39 (Europe/Moscow / GMT+03:00)
-MD5: 51ba0f86a67045e65a80ee5d94125ff5
-SHA256: 36e8e1c316eb6a4e3fff55d1aed1720726f3fe0e66c4c1872e57bacb2d4f559e
+Created: 2026-02-04 20:16:35 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-04 20:16:35 (Europe/Moscow / GMT+03:00)
+MD5: d41d8cd98f00b204e9800998ecf8427e
+SHA256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
 Encoding: ASCII
 
 FILE CONTENT:
 ----------------------------------------
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Api\bin\Debug\net10.0\TaksiApp.Shared.Api.deps.json
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Api\bin\Debug\net10.0\TaksiApp.Shared.Api.dll
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Api\bin\Debug\net10.0\TaksiApp.Shared.Api.pdb
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Api\bin\Debug\net10.0\TaksiApp.Shared.Application.dll
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Api\bin\Debug\net10.0\TaksiApp.Shared.Infrastructure.dll
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Api\bin\Debug\net10.0\TaksiApp.Shared.Kernel.dll
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Api\bin\Debug\net10.0\TaksiApp.Shared.Observability.dll
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Api\bin\Debug\net10.0\TaksiApp.Shared.Infrastructure.pdb
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Api\bin\Debug\net10.0\TaksiApp.Shared.Kernel.pdb
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Api\bin\Debug\net10.0\TaksiApp.Shared.Observability.pdb
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Api\bin\Debug\net10.0\TaksiApp.Shared.Application.pdb
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Api\obj\Debug\net10.0\TaksiApp.Shared.Api.csproj.AssemblyReference.cache
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Api\obj\Debug\net10.0\TaksiApp.Shared.Api.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Api\obj\Debug\net10.0\TaksiApp.Shared.Api.AssemblyInfoInputs.cache
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Api\obj\Debug\net10.0\TaksiApp.Shared.Api.AssemblyInfo.cs
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Api\obj\Debug\net10.0\TaksiApp.Shared.Api.csproj.CoreCompileInputs.cache
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Api\obj\Debug\net10.0\TaksiApp.B8AABE34.Up2Date
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Api\obj\Debug\net10.0\TaksiApp.Shared.Api.dll
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Api\obj\Debug\net10.0\refint\TaksiApp.Shared.Api.dll
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Api\obj\Debug\net10.0\TaksiApp.Shared.Api.pdb
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Api\obj\Debug\net10.0\ref\TaksiApp.Shared.Api.dll
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Api\obj\Debug\net10.0\TaksiApp.Shared.Api.sourcelink.json
 
 ================================================================================
 
@@ -1569,8 +856,8 @@ Extension: .cs
 Language: csharp
 Location: src/shared/TaksiApp.Shared.Api/obj/Debug/net10.0/TaksiApp.Shared.Api.GlobalUsings.g.cs
 Relative Path: src/shared/TaksiApp.Shared.Api/obj/Debug/net10.0
-Created: 2026-02-03 19:11:29 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:11:29 (Europe/Moscow / GMT+03:00)
+Created: 2026-02-04 20:15:23 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-04 20:15:23 (Europe/Moscow / GMT+03:00)
 MD5: 9706b2dbf69f7db452e8b0d5baf54dcf
 SHA256: a3c6048bb4d922b1799a9977f84362a3787b68810cac67aa86ac3aa23295f227
 Encoding: ASCII
@@ -1590,39 +877,12 @@ global using System.Threading.Tasks;
 
 
 ================================================================================
-FILE: src/shared/TaksiApp.Shared.Api/obj/Debug/net10.0/TaksiApp.Shared.Api.sourcelink.json
-================================================================================
-
-FILE INFORMATION:
-----------------------------------------
-Size: 162 B
-Extension: .json
-Language: json
-Location: src/shared/TaksiApp.Shared.Api/obj/Debug/net10.0/TaksiApp.Shared.Api.sourcelink.json
-Relative Path: src/shared/TaksiApp.Shared.Api/obj/Debug/net10.0
-Created: 2026-02-03 19:49:39 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:49:39 (Europe/Moscow / GMT+03:00)
-MD5: 9c6d812e365c80700f800f692d831784
-SHA256: f407dfdf4976c1b48c67a28bc35a9df96843372f202fb7b3ea91d54db14272d2
-Encoding: ASCII
-
-FILE CONTENT:
-----------------------------------------
-{"documents":{"C:\\Users\\Root\\Desktop\\micro\\FTaksiApp\\*":"https://raw.githubusercontent.com/assafnoor/TaxiAppfs/5b4d1752f13bf8e587ec871f82c980075996508b/*"}}
-================================================================================
-
-
-================================================================================
 BINARY/EXCLUDED FILES (not included in text content)
 ================================================================================
-- src/shared/TaksiApp.Shared.Api/obj/Debug/net10.0/TaksiApp.B8AABE34.Up2Date
 - src/shared/TaksiApp.Shared.Api/obj/Debug/net10.0/TaksiApp.Shared.Api.AssemblyInfoInputs.cache
 - src/shared/TaksiApp.Shared.Api/obj/Debug/net10.0/TaksiApp.Shared.Api.assets.cache
 - src/shared/TaksiApp.Shared.Api/obj/Debug/net10.0/TaksiApp.Shared.Api.csproj.AssemblyReference.cache
-- src/shared/TaksiApp.Shared.Api/obj/Debug/net10.0/TaksiApp.Shared.Api.csproj.CoreCompileInputs.cache
-- src/shared/TaksiApp.Shared.Api/obj/Debug/net10.0/TaksiApp.Shared.Api.dll
 - src/shared/TaksiApp.Shared.Api/obj/Debug/net10.0/TaksiApp.Shared.Api.GeneratedMSBuildEditorConfig.editorconfig
-- src/shared/TaksiApp.Shared.Api/obj/Debug/net10.0/TaksiApp.Shared.Api.pdb
 
 
 ================================================================================
@@ -1636,8 +896,8 @@ Extension: .json
 Language: json
 Location: src/shared/TaksiApp.Shared.Api/obj/project.assets.json
 Relative Path: src/shared/TaksiApp.Shared.Api/obj
-Created: 2026-02-03 19:11:27 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:55:12 (Europe/Moscow / GMT+03:00)
+Created: 2026-02-04 20:15:20 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-04 20:15:20 (Europe/Moscow / GMT+03:00)
 MD5: 18b45c3a96d354d017ec7b4922281bcc
 SHA256: 915765e02e25093244558c843cb2c7737ef472fb0b5301f5482f98e4dab61e10
 Encoding: ASCII
@@ -4213,8 +3473,8 @@ Extension: .json
 Language: json
 Location: src/shared/TaksiApp.Shared.Api/obj/TaksiApp.Shared.Api.csproj.nuget.dgspec.json
 Relative Path: src/shared/TaksiApp.Shared.Api/obj
-Created: 2026-02-03 19:11:27 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:55:12 (Europe/Moscow / GMT+03:00)
+Created: 2026-02-04 20:15:20 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-04 20:15:20 (Europe/Moscow / GMT+03:00)
 MD5: 8ffc40ed778ed7cd4c3d466c8099661b
 SHA256: f121ac5b3316d476623a7ef936ce2bd94ea614f38413e7bcd64b0f40d6cc89aa
 Encoding: ASCII
@@ -6918,58 +6178,6 @@ public sealed class ValidationBehavior<TRequest, TResponse>
 
 
 ================================================================================
-FILE: src/shared/TaksiApp.Shared.Application/bin/Debug/net10.0/TaksiApp.Shared.Application.deps.json
-================================================================================
-
-FILE INFORMATION:
-----------------------------------------
-Size: 475 B
-Extension: .json
-Language: json
-Location: src/shared/TaksiApp.Shared.Application/bin/Debug/net10.0/TaksiApp.Shared.Application.deps.json
-Relative Path: src/shared/TaksiApp.Shared.Application/bin/Debug/net10.0
-Created: 2026-02-03 19:11:32 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:25:00 (Europe/Moscow / GMT+03:00)
-MD5: 6f783f465a4d9fc2097c0b04e88a0b2e
-SHA256: eaddc4eab7c0a7d681c54015b1d2717ae18496385684cd0be351743e8b3140b1
-Encoding: ASCII
-
-FILE CONTENT:
-----------------------------------------
-{
-  "runtimeTarget": {
-    "name": ".NETCoreApp,Version=v10.0",
-    "signature": ""
-  },
-  "compilationOptions": {},
-  "targets": {
-    ".NETCoreApp,Version=v10.0": {
-      "TaksiApp.Shared.Application/1.0.0": {
-        "runtime": {
-          "TaksiApp.Shared.Application.dll": {}
-        }
-      }
-    }
-  },
-  "libraries": {
-    "TaksiApp.Shared.Application/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    }
-  }
-}
-================================================================================
-
-
-================================================================================
-BINARY/EXCLUDED FILES (not included in text content)
-================================================================================
-- src/shared/TaksiApp.Shared.Application/bin/Debug/net10.0/TaksiApp.Shared.Application.dll
-- src/shared/TaksiApp.Shared.Application/bin/Debug/net10.0/TaksiApp.Shared.Application.pdb
-
-
-================================================================================
 FILE: src/shared/TaksiApp.Shared.Application/Context/ExecutionContext.cs
 ================================================================================
 
@@ -7057,18 +6265,6 @@ public sealed class ExecutionContext : IExecutionContext
 
 
 ================================================================================
-BINARY/EXCLUDED FILES (not included in text content)
-================================================================================
-- src/shared/TaksiApp.Shared.Application/obj/Debug/net10.0/ref/TaksiApp.Shared.Application.dll
-
-
-================================================================================
-BINARY/EXCLUDED FILES (not included in text content)
-================================================================================
-- src/shared/TaksiApp.Shared.Application/obj/Debug/net10.0/refint/TaksiApp.Shared.Application.dll
-
-
-================================================================================
 FILE: src/shared/TaksiApp.Shared.Application/obj/Debug/net10.0/TaksiApp.Shared.Application.AssemblyInfo.cs
 ================================================================================
 
@@ -7079,10 +6275,10 @@ Extension: .cs
 Language: csharp
 Location: src/shared/TaksiApp.Shared.Application/obj/Debug/net10.0/TaksiApp.Shared.Application.AssemblyInfo.cs
 Relative Path: src/shared/TaksiApp.Shared.Application/obj/Debug/net10.0
-Created: 2026-02-03 19:11:28 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:43:11 (Europe/Moscow / GMT+03:00)
-MD5: d25dbd6754147aea59dbed72dfbe1039
-SHA256: 72aa7db42e503b754a7df720e67207bcef2f0bad38c3f97ff8ad6c1b03b59445
+Created: 2026-02-04 20:15:24 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-04 20:15:24 (Europe/Moscow / GMT+03:00)
+MD5: 3df73d8f9c49ae36c1aa4838fd669fd7
+SHA256: ed447f44256e56cc2d0a94bd5724e1085341f05d856f09e7e736d3e2e07a1903
 Encoding: ASCII
 
 FILE CONTENT:
@@ -7102,7 +6298,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TaksiApp.Shared.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5b4d1752f13bf8e587ec871f82c980075996508b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb26a171e0d44af336747b6b2d367ff4c5268bb4")]
 [assembly: System.Reflection.AssemblyProductAttribute("TaksiApp.Shared.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TaksiApp.Shared.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -7119,30 +6315,19 @@ FILE: src/shared/TaksiApp.Shared.Application/obj/Debug/net10.0/TaksiApp.Shared.A
 
 FILE INFORMATION:
 ----------------------------------------
-Size: 1.49 KB
+Size: 0 B
 Extension: .txt
 Language: text
 Location: src/shared/TaksiApp.Shared.Application/obj/Debug/net10.0/TaksiApp.Shared.Application.csproj.FileListAbsolute.txt
 Relative Path: src/shared/TaksiApp.Shared.Application/obj/Debug/net10.0
-Created: 2026-02-03 19:11:33 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:25:00 (Europe/Moscow / GMT+03:00)
-MD5: 8fde3d2651785e0a09983c364c6ca919
-SHA256: 04db6e4a2fbf3c9d10f6f6ce3b63b9e3812c3e76df0c7d26c41fadb9db63d10d
+Created: 2026-02-04 20:16:35 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-04 20:16:35 (Europe/Moscow / GMT+03:00)
+MD5: d41d8cd98f00b204e9800998ecf8427e
+SHA256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
 Encoding: ASCII
 
 FILE CONTENT:
 ----------------------------------------
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Application\bin\Debug\net10.0\TaksiApp.Shared.Application.deps.json
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Application\bin\Debug\net10.0\TaksiApp.Shared.Application.dll
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Application\bin\Debug\net10.0\TaksiApp.Shared.Application.pdb
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Application\obj\Debug\net10.0\TaksiApp.Shared.Application.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Application\obj\Debug\net10.0\TaksiApp.Shared.Application.AssemblyInfoInputs.cache
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Application\obj\Debug\net10.0\TaksiApp.Shared.Application.AssemblyInfo.cs
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Application\obj\Debug\net10.0\TaksiApp.Shared.Application.csproj.CoreCompileInputs.cache
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Application\obj\Debug\net10.0\TaksiApp.Shared.Application.dll
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Application\obj\Debug\net10.0\refint\TaksiApp.Shared.Application.dll
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Application\obj\Debug\net10.0\TaksiApp.Shared.Application.pdb
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Application\obj\Debug\net10.0\ref\TaksiApp.Shared.Application.dll
 
 ================================================================================
 
@@ -7158,8 +6343,8 @@ Extension: .cs
 Language: csharp
 Location: src/shared/TaksiApp.Shared.Application/obj/Debug/net10.0/TaksiApp.Shared.Application.GlobalUsings.g.cs
 Relative Path: src/shared/TaksiApp.Shared.Application/obj/Debug/net10.0
-Created: 2026-02-03 19:11:28 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:11:28 (Europe/Moscow / GMT+03:00)
+Created: 2026-02-04 20:15:23 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-04 20:15:23 (Europe/Moscow / GMT+03:00)
 MD5: 9706b2dbf69f7db452e8b0d5baf54dcf
 SHA256: a3c6048bb4d922b1799a9977f84362a3787b68810cac67aa86ac3aa23295f227
 Encoding: ASCII
@@ -7184,10 +6369,7 @@ BINARY/EXCLUDED FILES (not included in text content)
 - src/shared/TaksiApp.Shared.Application/obj/Debug/net10.0/TaksiApp.Shared.Application.AssemblyInfoInputs.cache
 - src/shared/TaksiApp.Shared.Application/obj/Debug/net10.0/TaksiApp.Shared.Application.assets.cache
 - src/shared/TaksiApp.Shared.Application/obj/Debug/net10.0/TaksiApp.Shared.Application.csproj.AssemblyReference.cache
-- src/shared/TaksiApp.Shared.Application/obj/Debug/net10.0/TaksiApp.Shared.Application.csproj.CoreCompileInputs.cache
-- src/shared/TaksiApp.Shared.Application/obj/Debug/net10.0/TaksiApp.Shared.Application.dll
 - src/shared/TaksiApp.Shared.Application/obj/Debug/net10.0/TaksiApp.Shared.Application.GeneratedMSBuildEditorConfig.editorconfig
-- src/shared/TaksiApp.Shared.Application/obj/Debug/net10.0/TaksiApp.Shared.Application.pdb
 
 
 ================================================================================
@@ -7201,8 +6383,8 @@ Extension: .json
 Language: json
 Location: src/shared/TaksiApp.Shared.Application/obj/project.assets.json
 Relative Path: src/shared/TaksiApp.Shared.Application/obj
-Created: 2026-02-03 19:11:27 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:55:12 (Europe/Moscow / GMT+03:00)
+Created: 2026-02-04 20:15:20 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-04 20:15:20 (Europe/Moscow / GMT+03:00)
 MD5: dd672bf46963751294f186bbeb16e6f1
 SHA256: ed795803631d83188815a4ac9b82f7a4329f86009a2d31835d738a35beb2ed3e
 Encoding: ASCII
@@ -8005,8 +7187,8 @@ Extension: .json
 Language: json
 Location: src/shared/TaksiApp.Shared.Application/obj/TaksiApp.Shared.Application.csproj.nuget.dgspec.json
 Relative Path: src/shared/TaksiApp.Shared.Application/obj
-Created: 2026-02-03 19:11:27 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:55:12 (Europe/Moscow / GMT+03:00)
+Created: 2026-02-04 20:15:20 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-04 20:15:20 (Europe/Moscow / GMT+03:00)
 MD5: 659ef9b465d3fbbcee36a86a004ed72b
 SHA256: a7e0b06a4e76f4d635e0280fe1294916c02cee6148d88d37b2b46ff80dc58446
 Encoding: ASCII
@@ -8731,624 +7913,6 @@ BINARY/EXCLUDED FILES (not included in text content)
 
 
 ================================================================================
-FILE: src/shared/TaksiApp.Shared.Extensions/bin/Debug/net10.0/TaksiApp.Shared.Extensions.deps.json
-================================================================================
-
-FILE INFORMATION:
-----------------------------------------
-Size: 20.46 KB
-Extension: .json
-Language: json
-Location: src/shared/TaksiApp.Shared.Extensions/bin/Debug/net10.0/TaksiApp.Shared.Extensions.deps.json
-Relative Path: src/shared/TaksiApp.Shared.Extensions/bin/Debug/net10.0
-Created: 2026-02-03 19:50:00 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:50:00 (Europe/Moscow / GMT+03:00)
-MD5: c5c80397edc53e948c8ea4209aa68dac
-SHA256: fd8f71ce702f61df142c2bae705b320b822b082cb0004bc23862a531607d6db8
-Encoding: ASCII
-
-FILE CONTENT:
-----------------------------------------
-{
-  "runtimeTarget": {
-    "name": ".NETCoreApp,Version=v10.0",
-    "signature": ""
-  },
-  "compilationOptions": {},
-  "targets": {
-    ".NETCoreApp,Version=v10.0": {
-      "TaksiApp.Shared.Extensions/1.0.0": {
-        "dependencies": {
-          "TaksiApp.Shared.Api": "1.0.0",
-          "TaksiApp.Shared.Application": "1.0.0",
-          "TaksiApp.Shared.Infrastructure": "1.0.0",
-          "TaksiApp.Shared.Kernel": "1.0.0",
-          "TaksiApp.Shared.Observability": "1.0.0"
-        },
-        "runtime": {
-          "TaksiApp.Shared.Extensions.dll": {}
-        }
-      },
-      "Google.Protobuf/3.30.1": {
-        "runtime": {
-          "lib/net5.0/Google.Protobuf.dll": {
-            "assemblyVersion": "3.30.1.0",
-            "fileVersion": "3.30.1.0"
-          }
-        }
-      },
-      "Grpc.Core.Api/2.70.0": {
-        "runtime": {
-          "lib/netstandard2.1/Grpc.Core.Api.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.70.0.0"
-          }
-        }
-      },
-      "Grpc.Net.Client/2.70.0": {
-        "dependencies": {
-          "Grpc.Net.Common": "2.70.0"
-        },
-        "runtime": {
-          "lib/net8.0/Grpc.Net.Client.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.70.0.0"
-          }
-        }
-      },
-      "Grpc.Net.Common/2.70.0": {
-        "dependencies": {
-          "Grpc.Core.Api": "2.70.0"
-        },
-        "runtime": {
-          "lib/net8.0/Grpc.Net.Common.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.70.0.0"
-          }
-        }
-      },
-      "Microsoft.Extensions.DependencyModel/10.0.0": {
-        "runtime": {
-          "lib/net10.0/Microsoft.Extensions.DependencyModel.dll": {
-            "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.25.52411"
-          }
-        }
-      },
-      "OpenTelemetry/1.15.0": {
-        "dependencies": {
-          "OpenTelemetry.Api.ProviderBuilderExtensions": "1.15.0"
-        },
-        "runtime": {
-          "lib/net10.0/OpenTelemetry.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.15.0.1921"
-          }
-        }
-      },
-      "OpenTelemetry.Api/1.15.0": {
-        "runtime": {
-          "lib/net10.0/OpenTelemetry.Api.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.15.0.1921"
-          }
-        }
-      },
-      "OpenTelemetry.Api.ProviderBuilderExtensions/1.15.0": {
-        "dependencies": {
-          "OpenTelemetry.Api": "1.15.0"
-        },
-        "runtime": {
-          "lib/net10.0/OpenTelemetry.Api.ProviderBuilderExtensions.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.15.0.1921"
-          }
-        }
-      },
-      "OpenTelemetry.Exporter.OpenTelemetryProtocol/1.15.0": {
-        "dependencies": {
-          "OpenTelemetry": "1.15.0"
-        },
-        "runtime": {
-          "lib/net10.0/OpenTelemetry.Exporter.OpenTelemetryProtocol.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.15.0.1921"
-          }
-        }
-      },
-      "OpenTelemetry.Exporter.Prometheus.AspNetCore/1.7.0-rc.1": {
-        "dependencies": {
-          "OpenTelemetry": "1.15.0"
-        },
-        "runtime": {
-          "lib/net8.0/OpenTelemetry.Exporter.Prometheus.AspNetCore.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.7.0.1095"
-          }
-        }
-      },
-      "OpenTelemetry.Extensions.Hosting/1.15.0": {
-        "dependencies": {
-          "OpenTelemetry": "1.15.0"
-        },
-        "runtime": {
-          "lib/net10.0/OpenTelemetry.Extensions.Hosting.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.15.0.1921"
-          }
-        }
-      },
-      "OpenTelemetry.Instrumentation.AspNetCore/1.15.0": {
-        "dependencies": {
-          "OpenTelemetry.Api.ProviderBuilderExtensions": "1.15.0"
-        },
-        "runtime": {
-          "lib/net10.0/OpenTelemetry.Instrumentation.AspNetCore.dll": {
-            "assemblyVersion": "1.15.0.901",
-            "fileVersion": "1.15.0.901"
-          }
-        }
-      },
-      "OpenTelemetry.Instrumentation.EntityFrameworkCore/1.0.0-beta.9": {
-        "dependencies": {
-          "OpenTelemetry.Api.ProviderBuilderExtensions": "1.15.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/OpenTelemetry.Instrumentation.EntityFrameworkCore.dll": {
-            "assemblyVersion": "1.0.0.9",
-            "fileVersion": "1.0.0.9"
-          }
-        }
-      },
-      "OpenTelemetry.Instrumentation.Http/1.15.0": {
-        "dependencies": {
-          "OpenTelemetry.Api.ProviderBuilderExtensions": "1.15.0"
-        },
-        "runtime": {
-          "lib/net10.0/OpenTelemetry.Instrumentation.Http.dll": {
-            "assemblyVersion": "1.15.0.900",
-            "fileVersion": "1.15.0.900"
-          }
-        }
-      },
-      "OpenTelemetry.Instrumentation.Runtime/1.15.0": {
-        "dependencies": {
-          "OpenTelemetry.Api": "1.15.0"
-        },
-        "runtime": {
-          "lib/net10.0/OpenTelemetry.Instrumentation.Runtime.dll": {
-            "assemblyVersion": "1.15.0.899",
-            "fileVersion": "1.15.0.899"
-          }
-        }
-      },
-      "Serilog/4.3.0": {
-        "runtime": {
-          "lib/net9.0/Serilog.dll": {
-            "assemblyVersion": "4.3.0.0",
-            "fileVersion": "4.3.0.0"
-          }
-        }
-      },
-      "Serilog.AspNetCore/10.0.0": {
-        "dependencies": {
-          "Serilog": "4.3.0",
-          "Serilog.Extensions.Hosting": "10.0.0",
-          "Serilog.Formatting.Compact": "3.0.0",
-          "Serilog.Settings.Configuration": "10.0.0",
-          "Serilog.Sinks.Console": "6.1.1",
-          "Serilog.Sinks.Debug": "3.0.0",
-          "Serilog.Sinks.File": "7.0.0"
-        },
-        "runtime": {
-          "lib/net10.0/Serilog.AspNetCore.dll": {
-            "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.0.0"
-          }
-        }
-      },
-      "Serilog.Enrichers.Span/3.1.0": {
-        "dependencies": {
-          "Serilog": "4.3.0"
-        },
-        "runtime": {
-          "lib/net7.0/Serilog.Enrichers.Span.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.1.0.0"
-          }
-        }
-      },
-      "Serilog.Extensions.Hosting/10.0.0": {
-        "dependencies": {
-          "Serilog": "4.3.0",
-          "Serilog.Extensions.Logging": "10.0.0"
-        },
-        "runtime": {
-          "lib/net10.0/Serilog.Extensions.Hosting.dll": {
-            "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.0.0"
-          }
-        }
-      },
-      "Serilog.Extensions.Logging/10.0.0": {
-        "dependencies": {
-          "Serilog": "4.3.0"
-        },
-        "runtime": {
-          "lib/net10.0/Serilog.Extensions.Logging.dll": {
-            "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.0.0"
-          }
-        }
-      },
-      "Serilog.Formatting.Compact/3.0.0": {
-        "dependencies": {
-          "Serilog": "4.3.0"
-        },
-        "runtime": {
-          "lib/net8.0/Serilog.Formatting.Compact.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.0.0"
-          }
-        }
-      },
-      "Serilog.Settings.Configuration/10.0.0": {
-        "dependencies": {
-          "Microsoft.Extensions.DependencyModel": "10.0.0",
-          "Serilog": "4.3.0"
-        },
-        "runtime": {
-          "lib/net10.0/Serilog.Settings.Configuration.dll": {
-            "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.0.0"
-          }
-        }
-      },
-      "Serilog.Sinks.Console/6.1.1": {
-        "dependencies": {
-          "Serilog": "4.3.0"
-        },
-        "runtime": {
-          "lib/net8.0/Serilog.Sinks.Console.dll": {
-            "assemblyVersion": "6.1.1.0",
-            "fileVersion": "6.1.1.0"
-          }
-        }
-      },
-      "Serilog.Sinks.Debug/3.0.0": {
-        "dependencies": {
-          "Serilog": "4.3.0"
-        },
-        "runtime": {
-          "lib/net8.0/Serilog.Sinks.Debug.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.0.0"
-          }
-        }
-      },
-      "Serilog.Sinks.File/7.0.0": {
-        "dependencies": {
-          "Serilog": "4.3.0"
-        },
-        "runtime": {
-          "lib/net9.0/Serilog.Sinks.File.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.0.0"
-          }
-        }
-      },
-      "Serilog.Sinks.OpenTelemetry/4.2.0": {
-        "dependencies": {
-          "Google.Protobuf": "3.30.1",
-          "Grpc.Net.Client": "2.70.0",
-          "Serilog": "4.3.0"
-        },
-        "runtime": {
-          "lib/net9.0/Serilog.Sinks.OpenTelemetry.dll": {
-            "assemblyVersion": "4.2.0.0",
-            "fileVersion": "4.2.0.0"
-          }
-        }
-      },
-      "TaksiApp.Shared.Api/1.0.0": {
-        "dependencies": {
-          "TaksiApp.Shared.Infrastructure": "1.0.0",
-          "TaksiApp.Shared.Kernel": "1.0.0",
-          "TaksiApp.Shared.Observability": "1.0.0"
-        },
-        "runtime": {
-          "TaksiApp.Shared.Api.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "TaksiApp.Shared.Application/1.0.0": {
-        "runtime": {
-          "TaksiApp.Shared.Application.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "TaksiApp.Shared.Infrastructure/1.0.0": {
-        "dependencies": {
-          "TaksiApp.Shared.Application": "1.0.0"
-        },
-        "runtime": {
-          "TaksiApp.Shared.Infrastructure.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "TaksiApp.Shared.Kernel/1.0.0": {
-        "runtime": {
-          "TaksiApp.Shared.Kernel.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "TaksiApp.Shared.Observability/1.0.0": {
-        "dependencies": {
-          "OpenTelemetry.Exporter.OpenTelemetryProtocol": "1.15.0",
-          "OpenTelemetry.Exporter.Prometheus.AspNetCore": "1.7.0-rc.1",
-          "OpenTelemetry.Extensions.Hosting": "1.15.0",
-          "OpenTelemetry.Instrumentation.AspNetCore": "1.15.0",
-          "OpenTelemetry.Instrumentation.EntityFrameworkCore": "1.0.0-beta.9",
-          "OpenTelemetry.Instrumentation.Http": "1.15.0",
-          "OpenTelemetry.Instrumentation.Runtime": "1.15.0",
-          "Serilog.AspNetCore": "10.0.0",
-          "Serilog.Enrichers.Span": "3.1.0",
-          "Serilog.Sinks.OpenTelemetry": "4.2.0",
-          "TaksiApp.Shared.Application": "1.0.0"
-        },
-        "runtime": {
-          "TaksiApp.Shared.Observability.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      }
-    }
-  },
-  "libraries": {
-    "TaksiApp.Shared.Extensions/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Google.Protobuf/3.30.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-HeWXDQBabQn/sCGicbeLJ0HMunknfC4FdLrOQOsaMJHcpqx3HVIpyyJqTrqJlWnza870twhOb+rBcaTiC/TlNA==",
-      "path": "google.protobuf/3.30.1",
-      "hashPath": "google.protobuf.3.30.1.nupkg.sha512"
-    },
-    "Grpc.Core.Api/2.70.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-66UotvWcSIq41oiQhLWcQACyKPM4umxXNiht5DQTLZJfNwEswWOcS7Z0xIEHyNIBE7ZpjotH22bEjTkvhPxmVw==",
-      "path": "grpc.core.api/2.70.0",
-      "hashPath": "grpc.core.api.2.70.0.nupkg.sha512"
-    },
-    "Grpc.Net.Client/2.70.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-xNv0FFCVJa5S1beUtye82WFCxKThuE1jbN8DO1x1Rj8VSIWXLBUmfSID5a1fGzsU2R/EMfwPoWclJ2RMfQuGXw==",
-      "path": "grpc.net.client/2.70.0",
-      "hashPath": "grpc.net.client.2.70.0.nupkg.sha512"
-    },
-    "Grpc.Net.Common/2.70.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-rBdEUMyCwa+iB8mqC6JKyPbj3SBHHkReJj/yy/XKJI63GcG6w9DJMMGTVcYHqq4Ci2W4m0HT4jt2pFfFscar8g==",
-      "path": "grpc.net.common/2.70.0",
-      "hashPath": "grpc.net.common.2.70.0.nupkg.sha512"
-    },
-    "Microsoft.Extensions.DependencyModel/10.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-RFYJR7APio/BiqdQunRq6DB+nDB6nc2qhHr77mlvZ0q0BT8PubMXN7XicmfzCbrDE/dzhBnUKBRXLTcqUiZDGg==",
-      "path": "microsoft.extensions.dependencymodel/10.0.0",
-      "hashPath": "microsoft.extensions.dependencymodel.10.0.0.nupkg.sha512"
-    },
-    "OpenTelemetry/1.15.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-7mS/oZFF8S6xyqGQfMU1btp0nXJQUPWV535Vp/XMLYwRAUv36xQN+U4vufWBF1+z4HnRTOwuFHtUSGnHbyN6FQ==",
-      "path": "opentelemetry/1.15.0",
-      "hashPath": "opentelemetry.1.15.0.nupkg.sha512"
-    },
-    "OpenTelemetry.Api/1.15.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-vk5OGdf6K9kQScCWo3bRjhDWCv6Pqw92IpX4dlARZ8B1WL7/2NGTDtCkkw42eQf7UdwyoHKzVvMH/PtL8d6z7w==",
-      "path": "opentelemetry.api/1.15.0",
-      "hashPath": "opentelemetry.api.1.15.0.nupkg.sha512"
-    },
-    "OpenTelemetry.Api.ProviderBuilderExtensions/1.15.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-OnuSUlRpGvowkOzGFQfy+KZFu0cITfKfh2IYJJiZskxVJiOuexwOOuvfDAgpJdmTzVWAHjYdz2shcHZaJ06UjQ==",
-      "path": "opentelemetry.api.providerbuilderextensions/1.15.0",
-      "hashPath": "opentelemetry.api.providerbuilderextensions.1.15.0.nupkg.sha512"
-    },
-    "OpenTelemetry.Exporter.OpenTelemetryProtocol/1.15.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-VH8ANc/js9IRvfYt0Q2UaAxNCOWm+IU+vWrtoH7pfx4oWPVdISUt+9uWfBCFMWZg5WzQip5dhslyDjeyZXXfSQ==",
-      "path": "opentelemetry.exporter.opentelemetryprotocol/1.15.0",
-      "hashPath": "opentelemetry.exporter.opentelemetryprotocol.1.15.0.nupkg.sha512"
-    },
-    "OpenTelemetry.Exporter.Prometheus.AspNetCore/1.7.0-rc.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-tlA8oDOZoyFAkKA5StEPdzCyFf/6N/8y0Ymjae1dJYEfxPmNrcrtEHxuxtd0h5GwrIKnVpkb/hJMopHOErnSqQ==",
-      "path": "opentelemetry.exporter.prometheus.aspnetcore/1.7.0-rc.1",
-      "hashPath": "opentelemetry.exporter.prometheus.aspnetcore.1.7.0-rc.1.nupkg.sha512"
-    },
-    "OpenTelemetry.Extensions.Hosting/1.15.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-RixjKyB1pbYGhWdvPto4KJs+exdQknJsnjUO9WszdLles5Vcd0EYzxPNJdwmLjYfP+Jfbr4B5nktM4ZgeHSWtg==",
-      "path": "opentelemetry.extensions.hosting/1.15.0",
-      "hashPath": "opentelemetry.extensions.hosting.1.15.0.nupkg.sha512"
-    },
-    "OpenTelemetry.Instrumentation.AspNetCore/1.15.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-mte1nRYefxjed2syXgVWq3UCfMKO7MkebvTZmf0O1aLgVgCktLsVjQ6mftyjIbWGBBCHN0wg+Glxj8BSFS70pQ==",
-      "path": "opentelemetry.instrumentation.aspnetcore/1.15.0",
-      "hashPath": "opentelemetry.instrumentation.aspnetcore.1.15.0.nupkg.sha512"
-    },
-    "OpenTelemetry.Instrumentation.EntityFrameworkCore/1.0.0-beta.9": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-VaieBV6iZTGAh18D3pzElHGuGdZboUWFBoijIncN30PcQQYAalMcuosMYcZ0wWaDmxWM9YPRCdhP/Mazgmr3uw==",
-      "path": "opentelemetry.instrumentation.entityframeworkcore/1.0.0-beta.9",
-      "hashPath": "opentelemetry.instrumentation.entityframeworkcore.1.0.0-beta.9.nupkg.sha512"
-    },
-    "OpenTelemetry.Instrumentation.Http/1.15.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-uToc7bUp8IEdb0ny9mKsL6FrrYelINPzxxiSShJgOf4XmQc4Azww6S5RjRj24YhsOn2a1MABOrxfVTZXtDk4Eg==",
-      "path": "opentelemetry.instrumentation.http/1.15.0",
-      "hashPath": "opentelemetry.instrumentation.http.1.15.0.nupkg.sha512"
-    },
-    "OpenTelemetry.Instrumentation.Runtime/1.15.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-OOvpqR/j2Pb6+tWhHNODIbSJ53Or/MDtTiXEyrsWI02K2lLAgvBFcxUOrHggS/8015cYR3AdSaXv6NZrkz5yQA==",
-      "path": "opentelemetry.instrumentation.runtime/1.15.0",
-      "hashPath": "opentelemetry.instrumentation.runtime.1.15.0.nupkg.sha512"
-    },
-    "Serilog/4.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-+cDryFR0GRhsGOnZSKwaDzRRl4MupvJ42FhCE4zhQRVanX0Jpg6WuCBk59OVhVDPmab1bB+nRykAnykYELA9qQ==",
-      "path": "serilog/4.3.0",
-      "hashPath": "serilog.4.3.0.nupkg.sha512"
-    },
-    "Serilog.AspNetCore/10.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-a/cNa1mY4On1oJlfGG1wAvxjp5g7OEzk/Jf/nm7NF9cWoE7KlZw1GldrifUBWm9oKibHkR7Lg/l5jy3y7ACR8w==",
-      "path": "serilog.aspnetcore/10.0.0",
-      "hashPath": "serilog.aspnetcore.10.0.0.nupkg.sha512"
-    },
-    "Serilog.Enrichers.Span/3.1.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-xNxy5FxIuLLusRHBpJwJ/YqVw5S7Dtbt79NUsPQxDtu4+CYG4kJgjLs9fjZhKPMjZQL8GZRewT8brap9h2r+Vw==",
-      "path": "serilog.enrichers.span/3.1.0",
-      "hashPath": "serilog.enrichers.span.3.1.0.nupkg.sha512"
-    },
-    "Serilog.Extensions.Hosting/10.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-E7juuIc+gzoGxgzFooFgAV8g9BfiSXNKsUok9NmEpyAXg2odkcPsMa/Yo4axkJRlh0se7mkYQ1GXDaBemR+b6w==",
-      "path": "serilog.extensions.hosting/10.0.0",
-      "hashPath": "serilog.extensions.hosting.10.0.0.nupkg.sha512"
-    },
-    "Serilog.Extensions.Logging/10.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-vx0kABKl2dWbBhhqAfTOk53/i8aV/5VaT3a6il9gn72Wqs2pM7EK2OB6No6xdqK2IaY6Zf9gdjLuK9BVa2rT+Q==",
-      "path": "serilog.extensions.logging/10.0.0",
-      "hashPath": "serilog.extensions.logging.10.0.0.nupkg.sha512"
-    },
-    "Serilog.Formatting.Compact/3.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-wQsv14w9cqlfB5FX2MZpNsTawckN4a8dryuNGbebB/3Nh1pXnROHZov3swtu3Nj5oNG7Ba+xdu7Et/ulAUPanQ==",
-      "path": "serilog.formatting.compact/3.0.0",
-      "hashPath": "serilog.formatting.compact.3.0.0.nupkg.sha512"
-    },
-    "Serilog.Settings.Configuration/10.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-LNq+ibS1sbhTqPV1FIE69/9AJJbfaOhnaqkzcjFy95o+4U+STsta9mi97f1smgXsWYKICDeGUf8xUGzd/52/uA==",
-      "path": "serilog.settings.configuration/10.0.0",
-      "hashPath": "serilog.settings.configuration.10.0.0.nupkg.sha512"
-    },
-    "Serilog.Sinks.Console/6.1.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-8jbqgjUyZlfCuSTaJk6lOca465OndqOz3KZP6Cryt/IqZYybyBu7GP0fE/AXBzrrQB3EBmQntBFAvMVz1COvAA==",
-      "path": "serilog.sinks.console/6.1.1",
-      "hashPath": "serilog.sinks.console.6.1.1.nupkg.sha512"
-    },
-    "Serilog.Sinks.Debug/3.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-4BzXcdrgRX7wde9PmHuYd9U6YqycCC28hhpKonK7hx0wb19eiuRj16fPcPSVp0o/Y1ipJuNLYQ00R3q2Zs8FDA==",
-      "path": "serilog.sinks.debug/3.0.0",
-      "hashPath": "serilog.sinks.debug.3.0.0.nupkg.sha512"
-    },
-    "Serilog.Sinks.File/7.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-fKL7mXv7qaiNBUC71ssvn/dU0k9t0o45+qm2XgKAlSt19xF+ijjxyA3R6HmCgfKEKwfcfkwWjayuQtRueZFkYw==",
-      "path": "serilog.sinks.file/7.0.0",
-      "hashPath": "serilog.sinks.file.7.0.0.nupkg.sha512"
-    },
-    "Serilog.Sinks.OpenTelemetry/4.2.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-PzMCyE5G19tjr5IZEi5qg+4UU5QrxBEoBEMu/hhYybTrGKXqUDiSGWKZNUDBgelaVKqLADlsmlJVyKce5SyPrg==",
-      "path": "serilog.sinks.opentelemetry/4.2.0",
-      "hashPath": "serilog.sinks.opentelemetry.4.2.0.nupkg.sha512"
-    },
-    "TaksiApp.Shared.Api/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "TaksiApp.Shared.Application/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "TaksiApp.Shared.Infrastructure/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "TaksiApp.Shared.Kernel/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "TaksiApp.Shared.Observability/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    }
-  }
-}
-================================================================================
-
-
-================================================================================
-BINARY/EXCLUDED FILES (not included in text content)
-================================================================================
-- src/shared/TaksiApp.Shared.Extensions/bin/Debug/net10.0/TaksiApp.Shared.Api.dll
-- src/shared/TaksiApp.Shared.Extensions/bin/Debug/net10.0/TaksiApp.Shared.Api.pdb
-- src/shared/TaksiApp.Shared.Extensions/bin/Debug/net10.0/TaksiApp.Shared.Application.dll
-- src/shared/TaksiApp.Shared.Extensions/bin/Debug/net10.0/TaksiApp.Shared.Application.pdb
-- src/shared/TaksiApp.Shared.Extensions/bin/Debug/net10.0/TaksiApp.Shared.Extensions.dll
-- src/shared/TaksiApp.Shared.Extensions/bin/Debug/net10.0/TaksiApp.Shared.Extensions.pdb
-- src/shared/TaksiApp.Shared.Extensions/bin/Debug/net10.0/TaksiApp.Shared.Infrastructure.dll
-- src/shared/TaksiApp.Shared.Extensions/bin/Debug/net10.0/TaksiApp.Shared.Infrastructure.pdb
-- src/shared/TaksiApp.Shared.Extensions/bin/Debug/net10.0/TaksiApp.Shared.Kernel.dll
-- src/shared/TaksiApp.Shared.Extensions/bin/Debug/net10.0/TaksiApp.Shared.Kernel.pdb
-- src/shared/TaksiApp.Shared.Extensions/bin/Debug/net10.0/TaksiApp.Shared.Observability.dll
-- src/shared/TaksiApp.Shared.Extensions/bin/Debug/net10.0/TaksiApp.Shared.Observability.pdb
-
-
-================================================================================
 FILE: src/shared/TaksiApp.Shared.Extensions/Configuration/ObservabilityOptions.cs
 ================================================================================
 
@@ -9935,32 +8499,20 @@ public static class ObservabilityExtensions
 
 
 ================================================================================
-BINARY/EXCLUDED FILES (not included in text content)
-================================================================================
-- src/shared/TaksiApp.Shared.Extensions/obj/Debug/net10.0/ref/TaksiApp.Shared.Extensions.dll
-
-
-================================================================================
-BINARY/EXCLUDED FILES (not included in text content)
-================================================================================
-- src/shared/TaksiApp.Shared.Extensions/obj/Debug/net10.0/refint/TaksiApp.Shared.Extensions.dll
-
-
-================================================================================
 FILE: src/shared/TaksiApp.Shared.Extensions/obj/Debug/net10.0/TaksiApp.Shared.Extensions.AssemblyInfo.cs
 ================================================================================
 
 FILE INFORMATION:
 ----------------------------------------
-Size: 1.03 KB
+Size: 1.07 KB
 Extension: .cs
 Language: csharp
 Location: src/shared/TaksiApp.Shared.Extensions/obj/Debug/net10.0/TaksiApp.Shared.Extensions.AssemblyInfo.cs
 Relative Path: src/shared/TaksiApp.Shared.Extensions/obj/Debug/net10.0
-Created: 2026-02-03 19:11:29 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:43:12 (Europe/Moscow / GMT+03:00)
-MD5: f8508c42ee8421e2331a075c9ddd7aad
-SHA256: deaaad6ab8840e678a1952ed4e534971c60f45e93a95cb712c07f54030441a6d
+Created: 2026-02-04 20:15:25 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-04 20:15:25 (Europe/Moscow / GMT+03:00)
+MD5: a845d2735f4691b2ece2f2c1892d3af4
+SHA256: ffa3d2350f8b0400992c251fe45aa402abb67dc865c2db5fff6f58c5d8bf419e
 Encoding: ASCII
 
 FILE CONTENT:
@@ -9968,6 +8520,7 @@ FILE CONTENT:
 //------------------------------------------------------------------------------
 // <auto-generated>
 //     This code was generated by a tool.
+//     Runtime Version:4.0.30319.42000
 //
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
@@ -9980,7 +8533,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TaksiApp.Shared.Extensions")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5b4d1752f13bf8e587ec871f82c980075996508b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb26a171e0d44af336747b6b2d367ff4c5268bb4")]
 [assembly: System.Reflection.AssemblyProductAttribute("TaksiApp.Shared.Extensions")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TaksiApp.Shared.Extensions")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -9997,43 +8550,19 @@ FILE: src/shared/TaksiApp.Shared.Extensions/obj/Debug/net10.0/TaksiApp.Shared.Ex
 
 FILE INFORMATION:
 ----------------------------------------
-Size: 3.09 KB
+Size: 0 B
 Extension: .txt
 Language: text
 Location: src/shared/TaksiApp.Shared.Extensions/obj/Debug/net10.0/TaksiApp.Shared.Extensions.csproj.FileListAbsolute.txt
 Relative Path: src/shared/TaksiApp.Shared.Extensions/obj/Debug/net10.0
-Created: 2026-02-03 19:11:43 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:50:00 (Europe/Moscow / GMT+03:00)
-MD5: fc676c39ac2f1d3b41f8c058871615e8
-SHA256: f48eca737100c703bc2884a988467ae57a503fb4926ef0565afb4872d1e78093
+Created: 2026-02-04 20:16:35 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-04 20:16:35 (Europe/Moscow / GMT+03:00)
+MD5: d41d8cd98f00b204e9800998ecf8427e
+SHA256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
 Encoding: ASCII
 
 FILE CONTENT:
 ----------------------------------------
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Extensions\obj\Debug\net10.0\TaksiApp.Shared.Extensions.csproj.AssemblyReference.cache
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Extensions\obj\Debug\net10.0\TaksiApp.Shared.Extensions.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Extensions\obj\Debug\net10.0\TaksiApp.Shared.Extensions.AssemblyInfoInputs.cache
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Extensions\obj\Debug\net10.0\TaksiApp.Shared.Extensions.AssemblyInfo.cs
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Extensions\obj\Debug\net10.0\TaksiApp.Shared.Extensions.csproj.CoreCompileInputs.cache
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Extensions\obj\Debug\net10.0\TaksiApp.Shared.Extensions.sourcelink.json
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Extensions\bin\Debug\net10.0\TaksiApp.Shared.Extensions.deps.json
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Extensions\bin\Debug\net10.0\TaksiApp.Shared.Extensions.dll
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Extensions\bin\Debug\net10.0\TaksiApp.Shared.Extensions.pdb
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Extensions\bin\Debug\net10.0\TaksiApp.Shared.Api.dll
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Extensions\bin\Debug\net10.0\TaksiApp.Shared.Application.dll
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Extensions\bin\Debug\net10.0\TaksiApp.Shared.Infrastructure.dll
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Extensions\bin\Debug\net10.0\TaksiApp.Shared.Kernel.dll
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Extensions\bin\Debug\net10.0\TaksiApp.Shared.Observability.dll
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Extensions\bin\Debug\net10.0\TaksiApp.Shared.Api.pdb
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Extensions\bin\Debug\net10.0\TaksiApp.Shared.Application.pdb
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Extensions\bin\Debug\net10.0\TaksiApp.Shared.Infrastructure.pdb
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Extensions\bin\Debug\net10.0\TaksiApp.Shared.Kernel.pdb
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Extensions\bin\Debug\net10.0\TaksiApp.Shared.Observability.pdb
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Extensions\obj\Debug\net10.0\TaksiApp.03EEAE25.Up2Date
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Extensions\obj\Debug\net10.0\TaksiApp.Shared.Extensions.dll
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Extensions\obj\Debug\net10.0\refint\TaksiApp.Shared.Extensions.dll
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Extensions\obj\Debug\net10.0\TaksiApp.Shared.Extensions.pdb
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Extensions\obj\Debug\net10.0\ref\TaksiApp.Shared.Extensions.dll
 
 ================================================================================
 
@@ -10049,8 +8578,8 @@ Extension: .cs
 Language: csharp
 Location: src/shared/TaksiApp.Shared.Extensions/obj/Debug/net10.0/TaksiApp.Shared.Extensions.GlobalUsings.g.cs
 Relative Path: src/shared/TaksiApp.Shared.Extensions/obj/Debug/net10.0
-Created: 2026-02-03 19:11:29 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:11:29 (Europe/Moscow / GMT+03:00)
+Created: 2026-02-04 20:15:23 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-04 20:15:23 (Europe/Moscow / GMT+03:00)
 MD5: 9706b2dbf69f7db452e8b0d5baf54dcf
 SHA256: a3c6048bb4d922b1799a9977f84362a3787b68810cac67aa86ac3aa23295f227
 Encoding: ASCII
@@ -10070,39 +8599,12 @@ global using System.Threading.Tasks;
 
 
 ================================================================================
-FILE: src/shared/TaksiApp.Shared.Extensions/obj/Debug/net10.0/TaksiApp.Shared.Extensions.sourcelink.json
-================================================================================
-
-FILE INFORMATION:
-----------------------------------------
-Size: 162 B
-Extension: .json
-Language: json
-Location: src/shared/TaksiApp.Shared.Extensions/obj/Debug/net10.0/TaksiApp.Shared.Extensions.sourcelink.json
-Relative Path: src/shared/TaksiApp.Shared.Extensions/obj/Debug/net10.0
-Created: 2026-02-03 19:49:40 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:49:40 (Europe/Moscow / GMT+03:00)
-MD5: 9c6d812e365c80700f800f692d831784
-SHA256: f407dfdf4976c1b48c67a28bc35a9df96843372f202fb7b3ea91d54db14272d2
-Encoding: ASCII
-
-FILE CONTENT:
-----------------------------------------
-{"documents":{"C:\\Users\\Root\\Desktop\\micro\\FTaksiApp\\*":"https://raw.githubusercontent.com/assafnoor/TaxiAppfs/5b4d1752f13bf8e587ec871f82c980075996508b/*"}}
-================================================================================
-
-
-================================================================================
 BINARY/EXCLUDED FILES (not included in text content)
 ================================================================================
-- src/shared/TaksiApp.Shared.Extensions/obj/Debug/net10.0/TaksiApp.03EEAE25.Up2Date
 - src/shared/TaksiApp.Shared.Extensions/obj/Debug/net10.0/TaksiApp.Shared.Extensions.AssemblyInfoInputs.cache
 - src/shared/TaksiApp.Shared.Extensions/obj/Debug/net10.0/TaksiApp.Shared.Extensions.assets.cache
 - src/shared/TaksiApp.Shared.Extensions/obj/Debug/net10.0/TaksiApp.Shared.Extensions.csproj.AssemblyReference.cache
-- src/shared/TaksiApp.Shared.Extensions/obj/Debug/net10.0/TaksiApp.Shared.Extensions.csproj.CoreCompileInputs.cache
-- src/shared/TaksiApp.Shared.Extensions/obj/Debug/net10.0/TaksiApp.Shared.Extensions.dll
 - src/shared/TaksiApp.Shared.Extensions/obj/Debug/net10.0/TaksiApp.Shared.Extensions.GeneratedMSBuildEditorConfig.editorconfig
-- src/shared/TaksiApp.Shared.Extensions/obj/Debug/net10.0/TaksiApp.Shared.Extensions.pdb
 
 
 ================================================================================
@@ -10116,8 +8618,8 @@ Extension: .json
 Language: json
 Location: src/shared/TaksiApp.Shared.Extensions/obj/project.assets.json
 Relative Path: src/shared/TaksiApp.Shared.Extensions/obj
-Created: 2026-02-03 19:11:27 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:55:12 (Europe/Moscow / GMT+03:00)
+Created: 2026-02-04 20:15:20 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-04 20:15:20 (Europe/Moscow / GMT+03:00)
 MD5: 00ae938876664f83f3fb05a54d19aa72
 SHA256: fa88c6caf9475f353b13428ed46ea0fa986f4d817838850ac97a6392cb7443ef
 Encoding: ASCII
@@ -12721,8 +11223,8 @@ Extension: .json
 Language: json
 Location: src/shared/TaksiApp.Shared.Extensions/obj/TaksiApp.Shared.Extensions.csproj.nuget.dgspec.json
 Relative Path: src/shared/TaksiApp.Shared.Extensions/obj
-Created: 2026-02-03 19:11:27 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:55:12 (Europe/Moscow / GMT+03:00)
+Created: 2026-02-04 20:15:20 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-04 20:15:20 (Europe/Moscow / GMT+03:00)
 MD5: 962040fdec86811131983d482b8928fc
 SHA256: 4304aff82c0cf2d011cc98c26adfeb7280591b8d0581676b32344e0ee01cef99
 Encoding: ASCII
@@ -14879,102 +13381,20 @@ BINARY/EXCLUDED FILES (not included in text content)
 
 
 ================================================================================
-FILE: src/shared/TaksiApp.Shared.Infrastructure/bin/Debug/net10.0/TaksiApp.Shared.Infrastructure.deps.json
-================================================================================
-
-FILE INFORMATION:
-----------------------------------------
-Size: 931 B
-Extension: .json
-Language: json
-Location: src/shared/TaksiApp.Shared.Infrastructure/bin/Debug/net10.0/TaksiApp.Shared.Infrastructure.deps.json
-Relative Path: src/shared/TaksiApp.Shared.Infrastructure/bin/Debug/net10.0
-Created: 2026-02-03 19:11:40 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:49:37 (Europe/Moscow / GMT+03:00)
-MD5: f03143cd2987698302d23c40768e96ec
-SHA256: 65a6bd9de37b00e4b6ae06f93907ecddf6f56b729b076a96c585aa5280e0f8b0
-Encoding: ASCII
-
-FILE CONTENT:
-----------------------------------------
-{
-  "runtimeTarget": {
-    "name": ".NETCoreApp,Version=v10.0",
-    "signature": ""
-  },
-  "compilationOptions": {},
-  "targets": {
-    ".NETCoreApp,Version=v10.0": {
-      "TaksiApp.Shared.Infrastructure/1.0.0": {
-        "dependencies": {
-          "TaksiApp.Shared.Application": "1.0.0"
-        },
-        "runtime": {
-          "TaksiApp.Shared.Infrastructure.dll": {}
-        }
-      },
-      "TaksiApp.Shared.Application/1.0.0": {
-        "runtime": {
-          "TaksiApp.Shared.Application.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      }
-    }
-  },
-  "libraries": {
-    "TaksiApp.Shared.Infrastructure/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "TaksiApp.Shared.Application/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    }
-  }
-}
-================================================================================
-
-
-================================================================================
-BINARY/EXCLUDED FILES (not included in text content)
-================================================================================
-- src/shared/TaksiApp.Shared.Infrastructure/bin/Debug/net10.0/TaksiApp.Shared.Application.dll
-- src/shared/TaksiApp.Shared.Infrastructure/bin/Debug/net10.0/TaksiApp.Shared.Application.pdb
-- src/shared/TaksiApp.Shared.Infrastructure/bin/Debug/net10.0/TaksiApp.Shared.Infrastructure.dll
-- src/shared/TaksiApp.Shared.Infrastructure/bin/Debug/net10.0/TaksiApp.Shared.Infrastructure.pdb
-
-
-================================================================================
-BINARY/EXCLUDED FILES (not included in text content)
-================================================================================
-- src/shared/TaksiApp.Shared.Infrastructure/obj/Debug/net10.0/ref/TaksiApp.Shared.Infrastructure.dll
-
-
-================================================================================
-BINARY/EXCLUDED FILES (not included in text content)
-================================================================================
-- src/shared/TaksiApp.Shared.Infrastructure/obj/Debug/net10.0/refint/TaksiApp.Shared.Infrastructure.dll
-
-
-================================================================================
 FILE: src/shared/TaksiApp.Shared.Infrastructure/obj/Debug/net10.0/TaksiApp.Shared.Infrastructure.AssemblyInfo.cs
 ================================================================================
 
 FILE INFORMATION:
 ----------------------------------------
-Size: 1.04 KB
+Size: 1.08 KB
 Extension: .cs
 Language: csharp
 Location: src/shared/TaksiApp.Shared.Infrastructure/obj/Debug/net10.0/TaksiApp.Shared.Infrastructure.AssemblyInfo.cs
 Relative Path: src/shared/TaksiApp.Shared.Infrastructure/obj/Debug/net10.0
-Created: 2026-02-03 19:11:29 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:43:11 (Europe/Moscow / GMT+03:00)
-MD5: 193d53d52cfaf47148ca801ae911a109
-SHA256: b392629497f5f4652efdbac70b8f9ca22baccf13eac448be343728bb514fcb57
+Created: 2026-02-04 20:15:22 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-04 20:15:22 (Europe/Moscow / GMT+03:00)
+MD5: 93f4675b63a8a4a336d4649bca24299f
+SHA256: 1329158e39426d23730e111ae5777bcecf33bed5774e92d7cf91c66628693d30
 Encoding: ASCII
 
 FILE CONTENT:
@@ -14982,6 +13402,7 @@ FILE CONTENT:
 //------------------------------------------------------------------------------
 // <auto-generated>
 //     This code was generated by a tool.
+//     Runtime Version:4.0.30319.42000
 //
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
@@ -14994,7 +13415,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TaksiApp.Shared.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5b4d1752f13bf8e587ec871f82c980075996508b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb26a171e0d44af336747b6b2d367ff4c5268bb4")]
 [assembly: System.Reflection.AssemblyProductAttribute("TaksiApp.Shared.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TaksiApp.Shared.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -15011,35 +13432,19 @@ FILE: src/shared/TaksiApp.Shared.Infrastructure/obj/Debug/net10.0/TaksiApp.Share
 
 FILE INFORMATION:
 ----------------------------------------
-Size: 2.23 KB
+Size: 0 B
 Extension: .txt
 Language: text
 Location: src/shared/TaksiApp.Shared.Infrastructure/obj/Debug/net10.0/TaksiApp.Shared.Infrastructure.csproj.FileListAbsolute.txt
 Relative Path: src/shared/TaksiApp.Shared.Infrastructure/obj/Debug/net10.0
-Created: 2026-02-03 19:11:40 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:49:37 (Europe/Moscow / GMT+03:00)
-MD5: 137a1d09e53a504ff8d1b9fa39a5aab6
-SHA256: b63d4711d647b5f74d62e2d05e87d8b76000efa3db7586f5308025a88e12810a
+Created: 2026-02-04 20:16:35 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-04 20:16:35 (Europe/Moscow / GMT+03:00)
+MD5: d41d8cd98f00b204e9800998ecf8427e
+SHA256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
 Encoding: ASCII
 
 FILE CONTENT:
 ----------------------------------------
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Infrastructure\bin\Debug\net10.0\TaksiApp.Shared.Infrastructure.deps.json
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Infrastructure\bin\Debug\net10.0\TaksiApp.Shared.Infrastructure.dll
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Infrastructure\bin\Debug\net10.0\TaksiApp.Shared.Infrastructure.pdb
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Infrastructure\bin\Debug\net10.0\TaksiApp.Shared.Application.dll
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Infrastructure\bin\Debug\net10.0\TaksiApp.Shared.Application.pdb
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Infrastructure\obj\Debug\net10.0\TaksiApp.Shared.Infrastructure.csproj.AssemblyReference.cache
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Infrastructure\obj\Debug\net10.0\TaksiApp.Shared.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Infrastructure\obj\Debug\net10.0\TaksiApp.Shared.Infrastructure.AssemblyInfoInputs.cache
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Infrastructure\obj\Debug\net10.0\TaksiApp.Shared.Infrastructure.AssemblyInfo.cs
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Infrastructure\obj\Debug\net10.0\TaksiApp.Shared.Infrastructure.csproj.CoreCompileInputs.cache
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Infrastructure\obj\Debug\net10.0\TaksiApp.F7E0E454.Up2Date
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Infrastructure\obj\Debug\net10.0\TaksiApp.Shared.Infrastructure.dll
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Infrastructure\obj\Debug\net10.0\refint\TaksiApp.Shared.Infrastructure.dll
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Infrastructure\obj\Debug\net10.0\TaksiApp.Shared.Infrastructure.pdb
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Infrastructure\obj\Debug\net10.0\ref\TaksiApp.Shared.Infrastructure.dll
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Infrastructure\obj\Debug\net10.0\TaksiApp.Shared.Infrastructure.sourcelink.json
 
 ================================================================================
 
@@ -15055,8 +13460,8 @@ Extension: .cs
 Language: csharp
 Location: src/shared/TaksiApp.Shared.Infrastructure/obj/Debug/net10.0/TaksiApp.Shared.Infrastructure.GlobalUsings.g.cs
 Relative Path: src/shared/TaksiApp.Shared.Infrastructure/obj/Debug/net10.0
-Created: 2026-02-03 19:11:29 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:11:29 (Europe/Moscow / GMT+03:00)
+Created: 2026-02-04 20:15:22 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-04 20:15:22 (Europe/Moscow / GMT+03:00)
 MD5: 9706b2dbf69f7db452e8b0d5baf54dcf
 SHA256: a3c6048bb4d922b1799a9977f84362a3787b68810cac67aa86ac3aa23295f227
 Encoding: ASCII
@@ -15076,39 +13481,12 @@ global using System.Threading.Tasks;
 
 
 ================================================================================
-FILE: src/shared/TaksiApp.Shared.Infrastructure/obj/Debug/net10.0/TaksiApp.Shared.Infrastructure.sourcelink.json
-================================================================================
-
-FILE INFORMATION:
-----------------------------------------
-Size: 162 B
-Extension: .json
-Language: json
-Location: src/shared/TaksiApp.Shared.Infrastructure/obj/Debug/net10.0/TaksiApp.Shared.Infrastructure.sourcelink.json
-Relative Path: src/shared/TaksiApp.Shared.Infrastructure/obj/Debug/net10.0
-Created: 2026-02-03 19:49:35 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:49:35 (Europe/Moscow / GMT+03:00)
-MD5: 9c6d812e365c80700f800f692d831784
-SHA256: f407dfdf4976c1b48c67a28bc35a9df96843372f202fb7b3ea91d54db14272d2
-Encoding: ASCII
-
-FILE CONTENT:
-----------------------------------------
-{"documents":{"C:\\Users\\Root\\Desktop\\micro\\FTaksiApp\\*":"https://raw.githubusercontent.com/assafnoor/TaxiAppfs/5b4d1752f13bf8e587ec871f82c980075996508b/*"}}
-================================================================================
-
-
-================================================================================
 BINARY/EXCLUDED FILES (not included in text content)
 ================================================================================
-- src/shared/TaksiApp.Shared.Infrastructure/obj/Debug/net10.0/TaksiApp.F7E0E454.Up2Date
 - src/shared/TaksiApp.Shared.Infrastructure/obj/Debug/net10.0/TaksiApp.Shared.Infrastructure.AssemblyInfoInputs.cache
 - src/shared/TaksiApp.Shared.Infrastructure/obj/Debug/net10.0/TaksiApp.Shared.Infrastructure.assets.cache
 - src/shared/TaksiApp.Shared.Infrastructure/obj/Debug/net10.0/TaksiApp.Shared.Infrastructure.csproj.AssemblyReference.cache
-- src/shared/TaksiApp.Shared.Infrastructure/obj/Debug/net10.0/TaksiApp.Shared.Infrastructure.csproj.CoreCompileInputs.cache
-- src/shared/TaksiApp.Shared.Infrastructure/obj/Debug/net10.0/TaksiApp.Shared.Infrastructure.dll
 - src/shared/TaksiApp.Shared.Infrastructure/obj/Debug/net10.0/TaksiApp.Shared.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
-- src/shared/TaksiApp.Shared.Infrastructure/obj/Debug/net10.0/TaksiApp.Shared.Infrastructure.pdb
 
 
 ================================================================================
@@ -15122,8 +13500,8 @@ Extension: .json
 Language: json
 Location: src/shared/TaksiApp.Shared.Infrastructure/obj/project.assets.json
 Relative Path: src/shared/TaksiApp.Shared.Infrastructure/obj
-Created: 2026-02-03 19:11:27 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:55:12 (Europe/Moscow / GMT+03:00)
+Created: 2026-02-04 20:15:20 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-04 20:15:20 (Europe/Moscow / GMT+03:00)
 MD5: a498b4770fe6acf39b479b26ed15a02b
 SHA256: 6f9027652c13fe18a4a55be197b057de9996e8f5409e8657249e29031b2e3349
 Encoding: ASCII
@@ -15934,8 +14312,8 @@ Extension: .json
 Language: json
 Location: src/shared/TaksiApp.Shared.Infrastructure/obj/TaksiApp.Shared.Infrastructure.csproj.nuget.dgspec.json
 Relative Path: src/shared/TaksiApp.Shared.Infrastructure/obj
-Created: 2026-02-03 19:11:27 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:55:12 (Europe/Moscow / GMT+03:00)
+Created: 2026-02-04 20:15:20 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-04 20:15:20 (Europe/Moscow / GMT+03:00)
 MD5: 17f3a0cd2b62cb1e27104ca93cf3f8b6
 SHA256: 0bd65eb550dab9d066a816e24bd7068b66cb56fd7faba1f6e6f4dd168c9d611f
 Encoding: ASCII
@@ -17118,58 +15496,6 @@ public interface IDomainEvent
 
 
 ================================================================================
-FILE: src/shared/TaksiApp.Shared.Kernel/bin/Debug/net10.0/TaksiApp.Shared.Kernel.deps.json
-================================================================================
-
-FILE INFORMATION:
-----------------------------------------
-Size: 460 B
-Extension: .json
-Language: json
-Location: src/shared/TaksiApp.Shared.Kernel/bin/Debug/net10.0/TaksiApp.Shared.Kernel.deps.json
-Relative Path: src/shared/TaksiApp.Shared.Kernel/bin/Debug/net10.0
-Created: 2026-02-03 19:11:32 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:25:00 (Europe/Moscow / GMT+03:00)
-MD5: e30bc9690cfadd4a383871fb382ac99d
-SHA256: 93e1cca8dc238a6c2d390c8c85e8a0139a5b7fbcf73148a824046f3ce4532169
-Encoding: ASCII
-
-FILE CONTENT:
-----------------------------------------
-{
-  "runtimeTarget": {
-    "name": ".NETCoreApp,Version=v10.0",
-    "signature": ""
-  },
-  "compilationOptions": {},
-  "targets": {
-    ".NETCoreApp,Version=v10.0": {
-      "TaksiApp.Shared.Kernel/1.0.0": {
-        "runtime": {
-          "TaksiApp.Shared.Kernel.dll": {}
-        }
-      }
-    }
-  },
-  "libraries": {
-    "TaksiApp.Shared.Kernel/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    }
-  }
-}
-================================================================================
-
-
-================================================================================
-BINARY/EXCLUDED FILES (not included in text content)
-================================================================================
-- src/shared/TaksiApp.Shared.Kernel/bin/Debug/net10.0/TaksiApp.Shared.Kernel.dll
-- src/shared/TaksiApp.Shared.Kernel/bin/Debug/net10.0/TaksiApp.Shared.Kernel.pdb
-
-
-================================================================================
 FILE: src/shared/TaksiApp.Shared.Kernel/Common/AggregateRoot.cs
 ================================================================================
 
@@ -17458,15 +15784,15 @@ FILE: src/shared/TaksiApp.Shared.Kernel/Events/DomainEventBase.cs
 
 FILE INFORMATION:
 ----------------------------------------
-Size: 291 B
+Size: 1.12 KB
 Extension: .cs
 Language: csharp
 Location: src/shared/TaksiApp.Shared.Kernel/Events/DomainEventBase.cs
 Relative Path: src/shared/TaksiApp.Shared.Kernel/Events
 Created: 2026-02-01 12:23:19 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-01 12:23:27 (Europe/Moscow / GMT+03:00)
-MD5: cc617835a7fac5232457f6336e72fcc4
-SHA256: 601865721f9329cc1b1ac39c5f7bbbdab4ad4f536fca6cfcf8539e0b6e8bbc00
+Modified: 2026-02-03 20:21:29 (Europe/Moscow / GMT+03:00)
+MD5: c4f19a773d2c1208a336903a1beb0a16
+SHA256: 5bfadae811c4f4d8b9ce2e48c32f35703e77abd766a09fb59485b567651ecf5e
 Encoding: UTF-8 (with BOM)
 
 FILE CONTENT:
@@ -17475,12 +15801,37 @@ FILE CONTENT:
 
 namespace TaksiApp.Shared.Kernel.Events;
 
-// Base implementation
+/// <summary>
+/// Represents the base class for all domain events in the system.
+/// </summary>
+/// <remarks>
+/// <para>
+/// A <see cref="DomainEventBase"/> captures a significant change or occurrence
+/// within the domain that other parts of the system might react to.
+/// </para>
+/// <para>
+/// Inherits from <see cref="IDomainEvent"/> and provides default
+/// implementation for common event properties such as <see cref="EventId"/>
+/// and <see cref="OccurredOnUtc"/>.
+/// </para>
+/// <para>
+/// Use this base class to create strongly-typed, immutable domain events
+/// for use in an event-driven architecture or CQRS patterns.
+/// </para>
+/// </remarks>
 public abstract record DomainEventBase : IDomainEvent
 {
+    /// <summary>
+    /// Gets the unique identifier for this domain event.
+    /// </summary>
     public Guid EventId { get; } = Guid.NewGuid();
+
+    /// <summary>
+    /// Gets the UTC date and time when this event occurred.
+    /// </summary>
     public DateTime OccurredOnUtc { get; } = DateTime.UtcNow;
 }
+
 ================================================================================
 
 
@@ -17689,18 +16040,6 @@ public static class Guard
 
 
 ================================================================================
-BINARY/EXCLUDED FILES (not included in text content)
-================================================================================
-- src/shared/TaksiApp.Shared.Kernel/obj/Debug/net10.0/ref/TaksiApp.Shared.Kernel.dll
-
-
-================================================================================
-BINARY/EXCLUDED FILES (not included in text content)
-================================================================================
-- src/shared/TaksiApp.Shared.Kernel/obj/Debug/net10.0/refint/TaksiApp.Shared.Kernel.dll
-
-
-================================================================================
 FILE: src/shared/TaksiApp.Shared.Kernel/obj/Debug/net10.0/TaksiApp.Shared.Kernel.AssemblyInfo.cs
 ================================================================================
 
@@ -17711,10 +16050,10 @@ Extension: .cs
 Language: csharp
 Location: src/shared/TaksiApp.Shared.Kernel/obj/Debug/net10.0/TaksiApp.Shared.Kernel.AssemblyInfo.cs
 Relative Path: src/shared/TaksiApp.Shared.Kernel/obj/Debug/net10.0
-Created: 2026-02-03 19:11:28 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:43:11 (Europe/Moscow / GMT+03:00)
-MD5: bcc14395ff24f237627db675e3b98eb6
-SHA256: a0f612c207cfbce6daa88e19a0f4324c555a3d74b6e7e2dbcb952e0c70683289
+Created: 2026-02-04 20:15:23 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-04 20:15:23 (Europe/Moscow / GMT+03:00)
+MD5: 3f89e10d2f2d70bc22d1a7a86c2d96c4
+SHA256: 4fdc7ba115b5286a45a04151b1d4641b485fd8b9d71658f618ca1a14af2610d3
 Encoding: ASCII
 
 FILE CONTENT:
@@ -17734,7 +16073,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TaksiApp.Shared.Kernel")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5b4d1752f13bf8e587ec871f82c980075996508b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb26a171e0d44af336747b6b2d367ff4c5268bb4")]
 [assembly: System.Reflection.AssemblyProductAttribute("TaksiApp.Shared.Kernel")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TaksiApp.Shared.Kernel")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
@@ -17751,30 +16090,19 @@ FILE: src/shared/TaksiApp.Shared.Kernel/obj/Debug/net10.0/TaksiApp.Shared.Kernel
 
 FILE INFORMATION:
 ----------------------------------------
-Size: 1.38 KB
+Size: 0 B
 Extension: .txt
 Language: text
 Location: src/shared/TaksiApp.Shared.Kernel/obj/Debug/net10.0/TaksiApp.Shared.Kernel.csproj.FileListAbsolute.txt
 Relative Path: src/shared/TaksiApp.Shared.Kernel/obj/Debug/net10.0
-Created: 2026-02-03 19:11:33 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:25:00 (Europe/Moscow / GMT+03:00)
-MD5: 8f590d71f10812c7202e4f852b1498ee
-SHA256: a90009d1a3fc324f3359f40d59fca745691c1407719d20f9b4d8ee515a652bed
+Created: 2026-02-04 20:16:35 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-04 20:16:35 (Europe/Moscow / GMT+03:00)
+MD5: d41d8cd98f00b204e9800998ecf8427e
+SHA256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
 Encoding: ASCII
 
 FILE CONTENT:
 ----------------------------------------
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Kernel\bin\Debug\net10.0\TaksiApp.Shared.Kernel.deps.json
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Kernel\bin\Debug\net10.0\TaksiApp.Shared.Kernel.dll
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Kernel\bin\Debug\net10.0\TaksiApp.Shared.Kernel.pdb
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Kernel\obj\Debug\net10.0\TaksiApp.Shared.Kernel.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Kernel\obj\Debug\net10.0\TaksiApp.Shared.Kernel.AssemblyInfoInputs.cache
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Kernel\obj\Debug\net10.0\TaksiApp.Shared.Kernel.AssemblyInfo.cs
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Kernel\obj\Debug\net10.0\TaksiApp.Shared.Kernel.csproj.CoreCompileInputs.cache
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Kernel\obj\Debug\net10.0\TaksiApp.Shared.Kernel.dll
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Kernel\obj\Debug\net10.0\refint\TaksiApp.Shared.Kernel.dll
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Kernel\obj\Debug\net10.0\TaksiApp.Shared.Kernel.pdb
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Kernel\obj\Debug\net10.0\ref\TaksiApp.Shared.Kernel.dll
 
 ================================================================================
 
@@ -17790,8 +16118,8 @@ Extension: .cs
 Language: csharp
 Location: src/shared/TaksiApp.Shared.Kernel/obj/Debug/net10.0/TaksiApp.Shared.Kernel.GlobalUsings.g.cs
 Relative Path: src/shared/TaksiApp.Shared.Kernel/obj/Debug/net10.0
-Created: 2026-02-03 19:11:28 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:11:28 (Europe/Moscow / GMT+03:00)
+Created: 2026-02-04 20:15:23 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-04 20:15:23 (Europe/Moscow / GMT+03:00)
 MD5: 9706b2dbf69f7db452e8b0d5baf54dcf
 SHA256: a3c6048bb4d922b1799a9977f84362a3787b68810cac67aa86ac3aa23295f227
 Encoding: ASCII
@@ -17815,10 +16143,7 @@ BINARY/EXCLUDED FILES (not included in text content)
 ================================================================================
 - src/shared/TaksiApp.Shared.Kernel/obj/Debug/net10.0/TaksiApp.Shared.Kernel.AssemblyInfoInputs.cache
 - src/shared/TaksiApp.Shared.Kernel/obj/Debug/net10.0/TaksiApp.Shared.Kernel.assets.cache
-- src/shared/TaksiApp.Shared.Kernel/obj/Debug/net10.0/TaksiApp.Shared.Kernel.csproj.CoreCompileInputs.cache
-- src/shared/TaksiApp.Shared.Kernel/obj/Debug/net10.0/TaksiApp.Shared.Kernel.dll
 - src/shared/TaksiApp.Shared.Kernel/obj/Debug/net10.0/TaksiApp.Shared.Kernel.GeneratedMSBuildEditorConfig.editorconfig
-- src/shared/TaksiApp.Shared.Kernel/obj/Debug/net10.0/TaksiApp.Shared.Kernel.pdb
 
 
 ================================================================================
@@ -17832,8 +16157,8 @@ Extension: .json
 Language: json
 Location: src/shared/TaksiApp.Shared.Kernel/obj/project.assets.json
 Relative Path: src/shared/TaksiApp.Shared.Kernel/obj
-Created: 2026-02-03 19:11:27 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:11:27 (Europe/Moscow / GMT+03:00)
+Created: 2026-02-04 20:15:20 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-04 20:15:20 (Europe/Moscow / GMT+03:00)
 MD5: dea33d692e9f5953f57aa19dc786a86f
 SHA256: d021103c8b89bebaee25b31504ff97a16a155d2669102f83a41972ebad048e22
 Encoding: ASCII
@@ -18207,8 +16532,8 @@ Extension: .json
 Language: json
 Location: src/shared/TaksiApp.Shared.Kernel/obj/TaksiApp.Shared.Kernel.csproj.nuget.dgspec.json
 Relative Path: src/shared/TaksiApp.Shared.Kernel/obj
-Created: 2026-02-03 19:11:27 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:49:33 (Europe/Moscow / GMT+03:00)
+Created: 2026-02-04 20:15:20 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-04 20:15:20 (Europe/Moscow / GMT+03:00)
 MD5: c4cac75fb199c4f14c58d970872b0fbf
 SHA256: 4dbb752e8d24e1a799fcd544fe601c2bd4c20c5dc58b38e32f202d7c9397dc93
 Encoding: ASCII
@@ -18819,29 +17144,64 @@ FILE: src/shared/TaksiApp.Shared.Kernel/Results/ErrorType.cs
 
 FILE INFORMATION:
 ----------------------------------------
-Size: 220 B
+Size: 1.23 KB
 Extension: .cs
 Language: csharp
 Location: src/shared/TaksiApp.Shared.Kernel/Results/ErrorType.cs
 Relative Path: src/shared/TaksiApp.Shared.Kernel/Results
 Created: 2026-02-01 12:23:19 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-01 12:23:27 (Europe/Moscow / GMT+03:00)
-MD5: 9a28a4a2fe0d4b3514f2e0bbc4f2aa0b
-SHA256: 0f87cc2d78f66a9583ddd44bf160d00c703959472a7ff94796a1bcc190f18c52
+Modified: 2026-02-04 20:12:17 (Europe/Moscow / GMT+03:00)
+MD5: ab647b59342d7a0f4183f13d7ed1b904
+SHA256: 8774755e9ee23dcb55023c4a6fff94bbb20890af8f25edc38cd4a599efd7a58e
 Encoding: UTF-8 (with BOM)
 
 FILE CONTENT:
 ----------------------------------------
-﻿// TaksiApp.Shared.Kernel/Results/ErrorType.cs
-namespace TaksiApp.Shared.Kernel.Results;
+﻿namespace TaksiApp.Shared.Kernel.Results;
 
+/// <summary>
+/// Represents the category of an error.
+/// </summary>
+/// <remarks>
+/// <para>
+/// <see cref="ErrorType"/> is used to classify errors in a consistent way
+/// across the application and infrastructure layers.
+/// </para>
+/// <para>
+/// Error types are commonly mapped to HTTP status codes
+/// at the API boundary (e.g., Validation → 400, Unauthorized → 401).
+/// </para>
+/// </remarks>
 public enum ErrorType
 {
+    /// <summary>
+    /// Indicates that the error was caused by invalid input or validation failure.
+    /// </summary>
     Validation,
+
+    /// <summary>
+    /// Indicates that a requested resource could not be found.
+    /// </summary>
     NotFound,
+
+    /// <summary>
+    /// Indicates a conflict with the current state of the system.
+    /// </summary>
     Conflict,
+
+    /// <summary>
+    /// Indicates an unexpected technical failure.
+    /// </summary>
     Failure,
+
+    /// <summary>
+    /// Indicates that authentication is required or has failed.
+    /// </summary>
     Unauthorized,
+
+    /// <summary>
+    /// Indicates that the caller is authenticated but lacks sufficient permissions.
+    /// </summary>
     Forbidden
 }
 
@@ -18854,29 +17214,54 @@ FILE: src/shared/TaksiApp.Shared.Kernel/Results/Result.cs
 
 FILE INFORMATION:
 ----------------------------------------
-Size: 1.87 KB
+Size: 4 KB
 Extension: .cs
 Language: csharp
 Location: src/shared/TaksiApp.Shared.Kernel/Results/Result.cs
 Relative Path: src/shared/TaksiApp.Shared.Kernel/Results
 Created: 2026-02-01 12:23:19 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-01 12:23:27 (Europe/Moscow / GMT+03:00)
-MD5: 2c2c4f9fbea7ea82cf963c3a933a6c4e
-SHA256: bdb120a036193e4a602ff95ef9ff27145fcbdc71c4e488e2e24efbf5c7483993
+Modified: 2026-02-03 20:19:32 (Europe/Moscow / GMT+03:00)
+MD5: 2d00c05a43fa039095709708f2692481
+SHA256: cb28788fdef583abb3bdf2382d536ea1dffb72c8787ae5e8a95a368e17803b79
 Encoding: UTF-8 (with BOM)
 
 FILE CONTENT:
 ----------------------------------------
-﻿// TaksiApp.Shared.Kernel/Results/Result.cs
-namespace TaksiApp.Shared.Kernel.Results;
+﻿namespace TaksiApp.Shared.Kernel.Results;
 
+/// <summary>
+/// Represents the outcome of an operation that does not return a value.
+/// </summary>
+/// <remarks>
+/// <para>
+/// This type implements the Result pattern to model success or failure
+/// without relying on exceptions for control flow.
+/// </para>
+/// <para>
+/// A successful result contains no data, while a failure result
+/// contains an <see cref="Error"/> describing the failure.
+/// </para>
+/// </remarks>
 public readonly struct Result
 {
     private readonly Error? _error;
 
+    /// <summary>
+    /// Gets a value indicating whether the operation was successful.
+    /// </summary>
     public bool IsSuccess { get; }
+
+    /// <summary>
+    /// Gets a value indicating whether the operation failed.
+    /// </summary>
     public bool IsFailure => !IsSuccess;
 
+    /// <summary>
+    /// Gets the error associated with a failed result.
+    /// </summary>
+    /// <exception cref="InvalidOperationException">
+    /// Thrown when accessing <see cref="Error"/> on a successful result.
+    /// </exception>
     public Error Error => IsSuccess
         ? throw new InvalidOperationException("Cannot access Error on success result")
         : _error!.Value;
@@ -18892,18 +17277,39 @@ public readonly struct Result
         _error = error;
     }
 
+    /// <summary>
+    /// Creates a successful result.
+    /// </summary>
     public static Result Success() => new(true);
+
+    /// <summary>
+    /// Creates a failed result with the specified error.
+    /// </summary>
+    /// <param name="error">The error describing the failure.</param>
     public static Result Failure(Error error) => new(false, error);
 
+    /// <summary>
+    /// Creates a successful <see cref="Result{T}"/> with the specified value.
+    /// </summary>
     public static Result<T> Success<T>(T value) => Result<T>.Success(value);
+
+    /// <summary>
+    /// Creates a failed <see cref="Result{T}"/> with the specified error.
+    /// </summary>
     public static Result<T> Failure<T>(Error error) => Result<T>.Failure(error);
 
-    // Pattern matching
+    /// <summary>
+    /// Executes one of the provided functions depending on the result state
+    /// and returns the produced value.
+    /// </summary>
     public TResult Match<TResult>(
         Func<TResult> onSuccess,
         Func<Error, TResult> onFailure) =>
         IsSuccess ? onSuccess() : onFailure(Error);
 
+    /// <summary>
+    /// Executes one of the provided actions depending on the result state.
+    /// </summary>
     public void Match(Action onSuccess, Action<Error> onFailure)
     {
         if (IsSuccess)
@@ -18911,6 +17317,10 @@ public readonly struct Result
         else
             onFailure(Error);
     }
+
+    /// <summary>
+    /// Executes the specified action if the result is successful.
+    /// </summary>
     public Result Tap(Action action)
     {
         if (IsSuccess)
@@ -18918,13 +17328,24 @@ public readonly struct Result
         return this;
     }
 
+    /// <summary>
+    /// Executes the specified asynchronous action if the result is successful.
+    /// </summary>
     public async Task<Result> TapAsync(Func<Task> action)
     {
         if (IsSuccess)
             await action().ConfigureAwait(false);
         return this;
     }
-    // Ensure
+
+    /// <summary>
+    /// Ensures that a condition holds true for a successful result.
+    /// </summary>
+    /// <param name="predicate">The condition to evaluate.</param>
+    /// <param name="error">The error to return if the condition fails.</param>
+    /// <returns>
+    /// The same result if the condition passes; otherwise, a failure result.
+    /// </returns>
     public Result Ensure(Func<bool> predicate, Error error)
     {
         if (IsFailure)
@@ -18943,35 +17364,66 @@ FILE: src/shared/TaksiApp.Shared.Kernel/Results/Result{T}.cs
 
 FILE INFORMATION:
 ----------------------------------------
-Size: 2.65 KB
+Size: 4.53 KB
 Extension: .cs
 Language: csharp
 Location: src/shared/TaksiApp.Shared.Kernel/Results/Result{T}.cs
 Relative Path: src/shared/TaksiApp.Shared.Kernel/Results
 Created: 2026-02-01 12:23:19 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-01 12:23:27 (Europe/Moscow / GMT+03:00)
-MD5: 76660ab43534028e7c1e1f1b4534004c
-SHA256: fdb1d5fa72142bba67c752fb5c513ed73f0824bff6116816f549a90ca08d3e97
+Modified: 2026-02-03 20:19:24 (Europe/Moscow / GMT+03:00)
+MD5: c964a0697343db28fe7d4866212de67f
+SHA256: 1e5e483f56bb62688916dda0f60726000f9a0b9dd6c7055e9f823136f469755d
 Encoding: UTF-8 (with BOM)
 
 FILE CONTENT:
 ----------------------------------------
-﻿
-// TaksiApp.Shared.Kernel/Results/Result{T}.cs
-namespace TaksiApp.Shared.Kernel.Results;
+﻿namespace TaksiApp.Shared.Kernel.Results;
 
+/// <summary>
+/// Represents the outcome of an operation that returns a value.
+/// </summary>
+/// <typeparam name="T">The type of the value returned on success.</typeparam>
+/// <remarks>
+/// <para>
+/// <see cref="Result{T}"/> models success or failure explicitly,
+/// avoiding exception-driven control flow.
+/// </para>
+/// <para>
+/// On success, the result contains a value of type <typeparamref name="T"/>.
+/// On failure, it contains an <see cref="Error"/>.
+/// </para>
+/// </remarks>
 public readonly struct Result<T>
 {
     private readonly T? _value;
     private readonly Error? _error;
 
+    /// <summary>
+    /// Gets a value indicating whether the operation was successful.
+    /// </summary>
     public bool IsSuccess { get; }
+
+    /// <summary>
+    /// Gets a value indicating whether the operation failed.
+    /// </summary>
     public bool IsFailure => !IsSuccess;
 
+    /// <summary>
+    /// Gets the value associated with a successful result.
+    /// </summary>
+    /// <exception cref="InvalidOperationException">
+    /// Thrown when accessing <see cref="Value"/> on a failed result.
+    /// </exception>
     public T Value => IsSuccess
         ? _value!
         : throw new InvalidOperationException("Cannot access Value on failure result");
 
+    /// <summary>
+    /// Gets the error associated with a failed result.
+    /// </summary>
+    /// <exception cref="InvalidOperationException">
+    /// Thrown when accessing <see cref="Error"/> on a successful result.
+    /// </exception>
     public Error Error => IsSuccess
         ? throw new InvalidOperationException("Cannot access Error on success result")
         : _error!.Value;
@@ -18982,31 +17434,39 @@ public readonly struct Result<T>
             throw new ArgumentException("Success result cannot have error");
         if (!isSuccess && !error.HasValue)
             throw new ArgumentException("Failure result must have error");
-        
-        // Note: We don't check for null here because:
-        // 1. For nullable types (T?), null is a valid value
-        // 2. For non-nullable reference types, the compiler will warn
-        // 3. For value types, null is not possible
-        // If null is passed for a non-nullable type, it's a programming error
-        // that should be caught at compile time with nullable reference types enabled
 
         IsSuccess = isSuccess;
         _value = value;
         _error = error;
     }
 
+    /// <summary>
+    /// Creates a successful result with the specified value.
+    /// </summary>
     public static Result<T> Success(T value) => new(true, value);
+
+    /// <summary>
+    /// Creates a failed result with the specified error.
+    /// </summary>
     public static Result<T> Failure(Error error) => new(false, default, error);
 
-    // Implicit conversion from T
+    /// <summary>
+    /// Implicitly converts a value into a successful <see cref="Result{T}"/>.
+    /// </summary>
     public static implicit operator Result<T>(T value) => Success(value);
 
-    // Pattern matching
+    /// <summary>
+    /// Executes one of the provided functions depending on the result state
+    /// and returns the produced value.
+    /// </summary>
     public TResult Match<TResult>(
         Func<T, TResult> onSuccess,
         Func<Error, TResult> onFailure) =>
         IsSuccess ? onSuccess(Value) : onFailure(Error);
 
+    /// <summary>
+    /// Executes one of the provided actions depending on the result state.
+    /// </summary>
     public void Match(Action<T> onSuccess, Action<Error> onFailure)
     {
         if (IsSuccess)
@@ -19015,13 +17475,21 @@ public readonly struct Result<T>
             onFailure(Error);
     }
 
-    // Monadic operations
+    /// <summary>
+    /// Chains another result-producing operation.
+    /// </summary>
     public Result<TNext> Bind<TNext>(Func<T, Result<TNext>> func) =>
         IsSuccess ? func(Value) : Result<TNext>.Failure(Error);
 
+    /// <summary>
+    /// Maps the value of a successful result to a new value.
+    /// </summary>
     public Result<TNext> Map<TNext>(Func<T, TNext> func) =>
         IsSuccess ? Result<TNext>.Success(func(Value)) : Result<TNext>.Failure(Error);
 
+    /// <summary>
+    /// Executes the specified action if the result is successful.
+    /// </summary>
     public Result<T> Tap(Action<T> action)
     {
         if (IsSuccess)
@@ -19029,6 +17497,14 @@ public readonly struct Result<T>
         return this;
     }
 
+    /// <summary>
+    /// Ensures that a condition holds true for the successful value.
+    /// </summary>
+    /// <param name="predicate">The condition to evaluate.</param>
+    /// <param name="error">The error to return if the condition fails.</param>
+    /// <returns>
+    /// The same result if the condition passes; otherwise, a failure result.
+    /// </returns>
     public Result<T> Ensure(Func<T, bool> predicate, Error error)
     {
         if (IsFailure)
@@ -19037,6 +17513,7 @@ public readonly struct Result<T>
         return predicate(Value) ? this : Failure(error);
     }
 }
+
 ================================================================================
 
 
@@ -19435,577 +17912,46 @@ BINARY/EXCLUDED FILES (not included in text content)
 
 
 ================================================================================
-FILE: src/shared/TaksiApp.Shared.Observability/bin/Debug/net10.0/TaksiApp.Shared.Observability.deps.json
-================================================================================
-
-FILE INFORMATION:
-----------------------------------------
-Size: 18.54 KB
-Extension: .json
-Language: json
-Location: src/shared/TaksiApp.Shared.Observability/bin/Debug/net10.0/TaksiApp.Shared.Observability.deps.json
-Relative Path: src/shared/TaksiApp.Shared.Observability/bin/Debug/net10.0
-Created: 2026-02-03 19:11:40 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:49:37 (Europe/Moscow / GMT+03:00)
-MD5: 0ea8e547f8c9164c30a8d5588b6d111c
-SHA256: d4152a6955cab2d9ac943fee9b4cbdc7e4e5b7a800d1556b649ce1b414918b99
-Encoding: ASCII
-
-FILE CONTENT:
-----------------------------------------
-{
-  "runtimeTarget": {
-    "name": ".NETCoreApp,Version=v10.0",
-    "signature": ""
-  },
-  "compilationOptions": {},
-  "targets": {
-    ".NETCoreApp,Version=v10.0": {
-      "TaksiApp.Shared.Observability/1.0.0": {
-        "dependencies": {
-          "OpenTelemetry.Exporter.OpenTelemetryProtocol": "1.15.0",
-          "OpenTelemetry.Exporter.Prometheus.AspNetCore": "1.7.0-rc.1",
-          "OpenTelemetry.Extensions.Hosting": "1.15.0",
-          "OpenTelemetry.Instrumentation.AspNetCore": "1.15.0",
-          "OpenTelemetry.Instrumentation.EntityFrameworkCore": "1.0.0-beta.9",
-          "OpenTelemetry.Instrumentation.Http": "1.15.0",
-          "OpenTelemetry.Instrumentation.Runtime": "1.15.0",
-          "Serilog.AspNetCore": "10.0.0",
-          "Serilog.Enrichers.Span": "3.1.0",
-          "Serilog.Sinks.OpenTelemetry": "4.2.0",
-          "TaksiApp.Shared.Application": "1.0.0"
-        },
-        "runtime": {
-          "TaksiApp.Shared.Observability.dll": {}
-        }
-      },
-      "Google.Protobuf/3.30.1": {
-        "runtime": {
-          "lib/net5.0/Google.Protobuf.dll": {
-            "assemblyVersion": "3.30.1.0",
-            "fileVersion": "3.30.1.0"
-          }
-        }
-      },
-      "Grpc.Core.Api/2.70.0": {
-        "runtime": {
-          "lib/netstandard2.1/Grpc.Core.Api.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.70.0.0"
-          }
-        }
-      },
-      "Grpc.Net.Client/2.70.0": {
-        "dependencies": {
-          "Grpc.Net.Common": "2.70.0"
-        },
-        "runtime": {
-          "lib/net8.0/Grpc.Net.Client.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.70.0.0"
-          }
-        }
-      },
-      "Grpc.Net.Common/2.70.0": {
-        "dependencies": {
-          "Grpc.Core.Api": "2.70.0"
-        },
-        "runtime": {
-          "lib/net8.0/Grpc.Net.Common.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.70.0.0"
-          }
-        }
-      },
-      "Microsoft.Extensions.DependencyModel/10.0.0": {
-        "runtime": {
-          "lib/net10.0/Microsoft.Extensions.DependencyModel.dll": {
-            "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.25.52411"
-          }
-        }
-      },
-      "OpenTelemetry/1.15.0": {
-        "dependencies": {
-          "OpenTelemetry.Api.ProviderBuilderExtensions": "1.15.0"
-        },
-        "runtime": {
-          "lib/net10.0/OpenTelemetry.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.15.0.1921"
-          }
-        }
-      },
-      "OpenTelemetry.Api/1.15.0": {
-        "runtime": {
-          "lib/net10.0/OpenTelemetry.Api.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.15.0.1921"
-          }
-        }
-      },
-      "OpenTelemetry.Api.ProviderBuilderExtensions/1.15.0": {
-        "dependencies": {
-          "OpenTelemetry.Api": "1.15.0"
-        },
-        "runtime": {
-          "lib/net10.0/OpenTelemetry.Api.ProviderBuilderExtensions.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.15.0.1921"
-          }
-        }
-      },
-      "OpenTelemetry.Exporter.OpenTelemetryProtocol/1.15.0": {
-        "dependencies": {
-          "OpenTelemetry": "1.15.0"
-        },
-        "runtime": {
-          "lib/net10.0/OpenTelemetry.Exporter.OpenTelemetryProtocol.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.15.0.1921"
-          }
-        }
-      },
-      "OpenTelemetry.Exporter.Prometheus.AspNetCore/1.7.0-rc.1": {
-        "dependencies": {
-          "OpenTelemetry": "1.15.0"
-        },
-        "runtime": {
-          "lib/net8.0/OpenTelemetry.Exporter.Prometheus.AspNetCore.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.7.0.1095"
-          }
-        }
-      },
-      "OpenTelemetry.Extensions.Hosting/1.15.0": {
-        "dependencies": {
-          "OpenTelemetry": "1.15.0"
-        },
-        "runtime": {
-          "lib/net10.0/OpenTelemetry.Extensions.Hosting.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.15.0.1921"
-          }
-        }
-      },
-      "OpenTelemetry.Instrumentation.AspNetCore/1.15.0": {
-        "dependencies": {
-          "OpenTelemetry.Api.ProviderBuilderExtensions": "1.15.0"
-        },
-        "runtime": {
-          "lib/net10.0/OpenTelemetry.Instrumentation.AspNetCore.dll": {
-            "assemblyVersion": "1.15.0.901",
-            "fileVersion": "1.15.0.901"
-          }
-        }
-      },
-      "OpenTelemetry.Instrumentation.EntityFrameworkCore/1.0.0-beta.9": {
-        "dependencies": {
-          "OpenTelemetry.Api.ProviderBuilderExtensions": "1.15.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/OpenTelemetry.Instrumentation.EntityFrameworkCore.dll": {
-            "assemblyVersion": "1.0.0.9",
-            "fileVersion": "1.0.0.9"
-          }
-        }
-      },
-      "OpenTelemetry.Instrumentation.Http/1.15.0": {
-        "dependencies": {
-          "OpenTelemetry.Api.ProviderBuilderExtensions": "1.15.0"
-        },
-        "runtime": {
-          "lib/net10.0/OpenTelemetry.Instrumentation.Http.dll": {
-            "assemblyVersion": "1.15.0.900",
-            "fileVersion": "1.15.0.900"
-          }
-        }
-      },
-      "OpenTelemetry.Instrumentation.Runtime/1.15.0": {
-        "dependencies": {
-          "OpenTelemetry.Api": "1.15.0"
-        },
-        "runtime": {
-          "lib/net10.0/OpenTelemetry.Instrumentation.Runtime.dll": {
-            "assemblyVersion": "1.15.0.899",
-            "fileVersion": "1.15.0.899"
-          }
-        }
-      },
-      "Serilog/4.3.0": {
-        "runtime": {
-          "lib/net9.0/Serilog.dll": {
-            "assemblyVersion": "4.3.0.0",
-            "fileVersion": "4.3.0.0"
-          }
-        }
-      },
-      "Serilog.AspNetCore/10.0.0": {
-        "dependencies": {
-          "Serilog": "4.3.0",
-          "Serilog.Extensions.Hosting": "10.0.0",
-          "Serilog.Formatting.Compact": "3.0.0",
-          "Serilog.Settings.Configuration": "10.0.0",
-          "Serilog.Sinks.Console": "6.1.1",
-          "Serilog.Sinks.Debug": "3.0.0",
-          "Serilog.Sinks.File": "7.0.0"
-        },
-        "runtime": {
-          "lib/net10.0/Serilog.AspNetCore.dll": {
-            "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.0.0"
-          }
-        }
-      },
-      "Serilog.Enrichers.Span/3.1.0": {
-        "dependencies": {
-          "Serilog": "4.3.0"
-        },
-        "runtime": {
-          "lib/net7.0/Serilog.Enrichers.Span.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.1.0.0"
-          }
-        }
-      },
-      "Serilog.Extensions.Hosting/10.0.0": {
-        "dependencies": {
-          "Serilog": "4.3.0",
-          "Serilog.Extensions.Logging": "10.0.0"
-        },
-        "runtime": {
-          "lib/net10.0/Serilog.Extensions.Hosting.dll": {
-            "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.0.0"
-          }
-        }
-      },
-      "Serilog.Extensions.Logging/10.0.0": {
-        "dependencies": {
-          "Serilog": "4.3.0"
-        },
-        "runtime": {
-          "lib/net10.0/Serilog.Extensions.Logging.dll": {
-            "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.0.0"
-          }
-        }
-      },
-      "Serilog.Formatting.Compact/3.0.0": {
-        "dependencies": {
-          "Serilog": "4.3.0"
-        },
-        "runtime": {
-          "lib/net8.0/Serilog.Formatting.Compact.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.0.0"
-          }
-        }
-      },
-      "Serilog.Settings.Configuration/10.0.0": {
-        "dependencies": {
-          "Microsoft.Extensions.DependencyModel": "10.0.0",
-          "Serilog": "4.3.0"
-        },
-        "runtime": {
-          "lib/net10.0/Serilog.Settings.Configuration.dll": {
-            "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.0.0"
-          }
-        }
-      },
-      "Serilog.Sinks.Console/6.1.1": {
-        "dependencies": {
-          "Serilog": "4.3.0"
-        },
-        "runtime": {
-          "lib/net8.0/Serilog.Sinks.Console.dll": {
-            "assemblyVersion": "6.1.1.0",
-            "fileVersion": "6.1.1.0"
-          }
-        }
-      },
-      "Serilog.Sinks.Debug/3.0.0": {
-        "dependencies": {
-          "Serilog": "4.3.0"
-        },
-        "runtime": {
-          "lib/net8.0/Serilog.Sinks.Debug.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.0.0"
-          }
-        }
-      },
-      "Serilog.Sinks.File/7.0.0": {
-        "dependencies": {
-          "Serilog": "4.3.0"
-        },
-        "runtime": {
-          "lib/net9.0/Serilog.Sinks.File.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.0.0"
-          }
-        }
-      },
-      "Serilog.Sinks.OpenTelemetry/4.2.0": {
-        "dependencies": {
-          "Google.Protobuf": "3.30.1",
-          "Grpc.Net.Client": "2.70.0",
-          "Serilog": "4.3.0"
-        },
-        "runtime": {
-          "lib/net9.0/Serilog.Sinks.OpenTelemetry.dll": {
-            "assemblyVersion": "4.2.0.0",
-            "fileVersion": "4.2.0.0"
-          }
-        }
-      },
-      "TaksiApp.Shared.Application/1.0.0": {
-        "runtime": {
-          "TaksiApp.Shared.Application.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      }
-    }
-  },
-  "libraries": {
-    "TaksiApp.Shared.Observability/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Google.Protobuf/3.30.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-HeWXDQBabQn/sCGicbeLJ0HMunknfC4FdLrOQOsaMJHcpqx3HVIpyyJqTrqJlWnza870twhOb+rBcaTiC/TlNA==",
-      "path": "google.protobuf/3.30.1",
-      "hashPath": "google.protobuf.3.30.1.nupkg.sha512"
-    },
-    "Grpc.Core.Api/2.70.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-66UotvWcSIq41oiQhLWcQACyKPM4umxXNiht5DQTLZJfNwEswWOcS7Z0xIEHyNIBE7ZpjotH22bEjTkvhPxmVw==",
-      "path": "grpc.core.api/2.70.0",
-      "hashPath": "grpc.core.api.2.70.0.nupkg.sha512"
-    },
-    "Grpc.Net.Client/2.70.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-xNv0FFCVJa5S1beUtye82WFCxKThuE1jbN8DO1x1Rj8VSIWXLBUmfSID5a1fGzsU2R/EMfwPoWclJ2RMfQuGXw==",
-      "path": "grpc.net.client/2.70.0",
-      "hashPath": "grpc.net.client.2.70.0.nupkg.sha512"
-    },
-    "Grpc.Net.Common/2.70.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-rBdEUMyCwa+iB8mqC6JKyPbj3SBHHkReJj/yy/XKJI63GcG6w9DJMMGTVcYHqq4Ci2W4m0HT4jt2pFfFscar8g==",
-      "path": "grpc.net.common/2.70.0",
-      "hashPath": "grpc.net.common.2.70.0.nupkg.sha512"
-    },
-    "Microsoft.Extensions.DependencyModel/10.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-RFYJR7APio/BiqdQunRq6DB+nDB6nc2qhHr77mlvZ0q0BT8PubMXN7XicmfzCbrDE/dzhBnUKBRXLTcqUiZDGg==",
-      "path": "microsoft.extensions.dependencymodel/10.0.0",
-      "hashPath": "microsoft.extensions.dependencymodel.10.0.0.nupkg.sha512"
-    },
-    "OpenTelemetry/1.15.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-7mS/oZFF8S6xyqGQfMU1btp0nXJQUPWV535Vp/XMLYwRAUv36xQN+U4vufWBF1+z4HnRTOwuFHtUSGnHbyN6FQ==",
-      "path": "opentelemetry/1.15.0",
-      "hashPath": "opentelemetry.1.15.0.nupkg.sha512"
-    },
-    "OpenTelemetry.Api/1.15.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-vk5OGdf6K9kQScCWo3bRjhDWCv6Pqw92IpX4dlARZ8B1WL7/2NGTDtCkkw42eQf7UdwyoHKzVvMH/PtL8d6z7w==",
-      "path": "opentelemetry.api/1.15.0",
-      "hashPath": "opentelemetry.api.1.15.0.nupkg.sha512"
-    },
-    "OpenTelemetry.Api.ProviderBuilderExtensions/1.15.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-OnuSUlRpGvowkOzGFQfy+KZFu0cITfKfh2IYJJiZskxVJiOuexwOOuvfDAgpJdmTzVWAHjYdz2shcHZaJ06UjQ==",
-      "path": "opentelemetry.api.providerbuilderextensions/1.15.0",
-      "hashPath": "opentelemetry.api.providerbuilderextensions.1.15.0.nupkg.sha512"
-    },
-    "OpenTelemetry.Exporter.OpenTelemetryProtocol/1.15.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-VH8ANc/js9IRvfYt0Q2UaAxNCOWm+IU+vWrtoH7pfx4oWPVdISUt+9uWfBCFMWZg5WzQip5dhslyDjeyZXXfSQ==",
-      "path": "opentelemetry.exporter.opentelemetryprotocol/1.15.0",
-      "hashPath": "opentelemetry.exporter.opentelemetryprotocol.1.15.0.nupkg.sha512"
-    },
-    "OpenTelemetry.Exporter.Prometheus.AspNetCore/1.7.0-rc.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-tlA8oDOZoyFAkKA5StEPdzCyFf/6N/8y0Ymjae1dJYEfxPmNrcrtEHxuxtd0h5GwrIKnVpkb/hJMopHOErnSqQ==",
-      "path": "opentelemetry.exporter.prometheus.aspnetcore/1.7.0-rc.1",
-      "hashPath": "opentelemetry.exporter.prometheus.aspnetcore.1.7.0-rc.1.nupkg.sha512"
-    },
-    "OpenTelemetry.Extensions.Hosting/1.15.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-RixjKyB1pbYGhWdvPto4KJs+exdQknJsnjUO9WszdLles5Vcd0EYzxPNJdwmLjYfP+Jfbr4B5nktM4ZgeHSWtg==",
-      "path": "opentelemetry.extensions.hosting/1.15.0",
-      "hashPath": "opentelemetry.extensions.hosting.1.15.0.nupkg.sha512"
-    },
-    "OpenTelemetry.Instrumentation.AspNetCore/1.15.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-mte1nRYefxjed2syXgVWq3UCfMKO7MkebvTZmf0O1aLgVgCktLsVjQ6mftyjIbWGBBCHN0wg+Glxj8BSFS70pQ==",
-      "path": "opentelemetry.instrumentation.aspnetcore/1.15.0",
-      "hashPath": "opentelemetry.instrumentation.aspnetcore.1.15.0.nupkg.sha512"
-    },
-    "OpenTelemetry.Instrumentation.EntityFrameworkCore/1.0.0-beta.9": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-VaieBV6iZTGAh18D3pzElHGuGdZboUWFBoijIncN30PcQQYAalMcuosMYcZ0wWaDmxWM9YPRCdhP/Mazgmr3uw==",
-      "path": "opentelemetry.instrumentation.entityframeworkcore/1.0.0-beta.9",
-      "hashPath": "opentelemetry.instrumentation.entityframeworkcore.1.0.0-beta.9.nupkg.sha512"
-    },
-    "OpenTelemetry.Instrumentation.Http/1.15.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-uToc7bUp8IEdb0ny9mKsL6FrrYelINPzxxiSShJgOf4XmQc4Azww6S5RjRj24YhsOn2a1MABOrxfVTZXtDk4Eg==",
-      "path": "opentelemetry.instrumentation.http/1.15.0",
-      "hashPath": "opentelemetry.instrumentation.http.1.15.0.nupkg.sha512"
-    },
-    "OpenTelemetry.Instrumentation.Runtime/1.15.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-OOvpqR/j2Pb6+tWhHNODIbSJ53Or/MDtTiXEyrsWI02K2lLAgvBFcxUOrHggS/8015cYR3AdSaXv6NZrkz5yQA==",
-      "path": "opentelemetry.instrumentation.runtime/1.15.0",
-      "hashPath": "opentelemetry.instrumentation.runtime.1.15.0.nupkg.sha512"
-    },
-    "Serilog/4.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-+cDryFR0GRhsGOnZSKwaDzRRl4MupvJ42FhCE4zhQRVanX0Jpg6WuCBk59OVhVDPmab1bB+nRykAnykYELA9qQ==",
-      "path": "serilog/4.3.0",
-      "hashPath": "serilog.4.3.0.nupkg.sha512"
-    },
-    "Serilog.AspNetCore/10.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-a/cNa1mY4On1oJlfGG1wAvxjp5g7OEzk/Jf/nm7NF9cWoE7KlZw1GldrifUBWm9oKibHkR7Lg/l5jy3y7ACR8w==",
-      "path": "serilog.aspnetcore/10.0.0",
-      "hashPath": "serilog.aspnetcore.10.0.0.nupkg.sha512"
-    },
-    "Serilog.Enrichers.Span/3.1.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-xNxy5FxIuLLusRHBpJwJ/YqVw5S7Dtbt79NUsPQxDtu4+CYG4kJgjLs9fjZhKPMjZQL8GZRewT8brap9h2r+Vw==",
-      "path": "serilog.enrichers.span/3.1.0",
-      "hashPath": "serilog.enrichers.span.3.1.0.nupkg.sha512"
-    },
-    "Serilog.Extensions.Hosting/10.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-E7juuIc+gzoGxgzFooFgAV8g9BfiSXNKsUok9NmEpyAXg2odkcPsMa/Yo4axkJRlh0se7mkYQ1GXDaBemR+b6w==",
-      "path": "serilog.extensions.hosting/10.0.0",
-      "hashPath": "serilog.extensions.hosting.10.0.0.nupkg.sha512"
-    },
-    "Serilog.Extensions.Logging/10.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-vx0kABKl2dWbBhhqAfTOk53/i8aV/5VaT3a6il9gn72Wqs2pM7EK2OB6No6xdqK2IaY6Zf9gdjLuK9BVa2rT+Q==",
-      "path": "serilog.extensions.logging/10.0.0",
-      "hashPath": "serilog.extensions.logging.10.0.0.nupkg.sha512"
-    },
-    "Serilog.Formatting.Compact/3.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-wQsv14w9cqlfB5FX2MZpNsTawckN4a8dryuNGbebB/3Nh1pXnROHZov3swtu3Nj5oNG7Ba+xdu7Et/ulAUPanQ==",
-      "path": "serilog.formatting.compact/3.0.0",
-      "hashPath": "serilog.formatting.compact.3.0.0.nupkg.sha512"
-    },
-    "Serilog.Settings.Configuration/10.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-LNq+ibS1sbhTqPV1FIE69/9AJJbfaOhnaqkzcjFy95o+4U+STsta9mi97f1smgXsWYKICDeGUf8xUGzd/52/uA==",
-      "path": "serilog.settings.configuration/10.0.0",
-      "hashPath": "serilog.settings.configuration.10.0.0.nupkg.sha512"
-    },
-    "Serilog.Sinks.Console/6.1.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-8jbqgjUyZlfCuSTaJk6lOca465OndqOz3KZP6Cryt/IqZYybyBu7GP0fE/AXBzrrQB3EBmQntBFAvMVz1COvAA==",
-      "path": "serilog.sinks.console/6.1.1",
-      "hashPath": "serilog.sinks.console.6.1.1.nupkg.sha512"
-    },
-    "Serilog.Sinks.Debug/3.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-4BzXcdrgRX7wde9PmHuYd9U6YqycCC28hhpKonK7hx0wb19eiuRj16fPcPSVp0o/Y1ipJuNLYQ00R3q2Zs8FDA==",
-      "path": "serilog.sinks.debug/3.0.0",
-      "hashPath": "serilog.sinks.debug.3.0.0.nupkg.sha512"
-    },
-    "Serilog.Sinks.File/7.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-fKL7mXv7qaiNBUC71ssvn/dU0k9t0o45+qm2XgKAlSt19xF+ijjxyA3R6HmCgfKEKwfcfkwWjayuQtRueZFkYw==",
-      "path": "serilog.sinks.file/7.0.0",
-      "hashPath": "serilog.sinks.file.7.0.0.nupkg.sha512"
-    },
-    "Serilog.Sinks.OpenTelemetry/4.2.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-PzMCyE5G19tjr5IZEi5qg+4UU5QrxBEoBEMu/hhYybTrGKXqUDiSGWKZNUDBgelaVKqLADlsmlJVyKce5SyPrg==",
-      "path": "serilog.sinks.opentelemetry/4.2.0",
-      "hashPath": "serilog.sinks.opentelemetry.4.2.0.nupkg.sha512"
-    },
-    "TaksiApp.Shared.Application/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    }
-  }
-}
-================================================================================
-
-
-================================================================================
-BINARY/EXCLUDED FILES (not included in text content)
-================================================================================
-- src/shared/TaksiApp.Shared.Observability/bin/Debug/net10.0/TaksiApp.Shared.Application.dll
-- src/shared/TaksiApp.Shared.Observability/bin/Debug/net10.0/TaksiApp.Shared.Application.pdb
-- src/shared/TaksiApp.Shared.Observability/bin/Debug/net10.0/TaksiApp.Shared.Observability.dll
-- src/shared/TaksiApp.Shared.Observability/bin/Debug/net10.0/TaksiApp.Shared.Observability.pdb
-
-
-================================================================================
 FILE: src/shared/TaksiApp.Shared.Observability/HealthChecks/ApplicationHealthCheck.cs
 ================================================================================
 
 FILE INFORMATION:
 ----------------------------------------
-Size: 1.44 KB
+Size: 2.04 KB
 Extension: .cs
 Language: csharp
 Location: src/shared/TaksiApp.Shared.Observability/HealthChecks/ApplicationHealthCheck.cs
 Relative Path: src/shared/TaksiApp.Shared.Observability/HealthChecks
 Created: 2026-01-31 21:01:43 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-01 12:12:02 (Europe/Moscow / GMT+03:00)
-MD5: 38748d0b7abbd865cb224992b357309b
-SHA256: 69672f82fe65733cdfc24e476998687d955e8a0c854055b7a48fee621e894bd8
+Modified: 2026-02-03 20:22:58 (Europe/Moscow / GMT+03:00)
+MD5: 4441dc684630980d88421995b012b0c1
+SHA256: 080c456b34be720fbf9aafdbd54abc2fff71e74c30349e8a4b9e7cfeaf6e760c
 Encoding: UTF-8 (with BOM)
 
 FILE CONTENT:
 ----------------------------------------
-﻿
-using TaksiApp.Shared.Application.Abstractions;
+﻿using TaksiApp.Shared.Application.Abstractions;
 
 namespace TaksiApp.Shared.Observability.HealthChecks;
-// TaksiApp.Shared.Observability/HealthChecks/ApplicationHealthCheck.cs
+
+/// <summary>
+/// Performs a health check on the core application services.
+/// </summary>
+/// <remarks>
+/// Checks basic operational health of the application using <see cref="IDateTimeProvider"/>.
+/// Logs any exceptions encountered during the health check and returns
+/// a <see cref="HealthCheckResult"/> indicating success or failure.
+/// </remarks>
 public sealed class ApplicationHealthCheck : IHealthCheck
 {
     private readonly ILogger<ApplicationHealthCheck> _logger;
     private readonly IDateTimeProvider _dateTimeProvider;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ApplicationHealthCheck"/> class.
+    /// </summary>
+    /// <param name="logger">The logger to capture health check failures.</param>
+    /// <param name="dateTimeProvider">Provides current UTC time for health status.</param>
     public ApplicationHealthCheck(
         ILogger<ApplicationHealthCheck> logger,
         IDateTimeProvider dateTimeProvider)
@@ -20014,6 +17960,7 @@ public sealed class ApplicationHealthCheck : IHealthCheck
         _dateTimeProvider = dateTimeProvider;
     }
 
+    /// <inheritdoc />
     public Task<HealthCheckResult> CheckHealthAsync(
         HealthCheckContext context,
         CancellationToken cancellationToken = default)
@@ -20042,6 +17989,7 @@ public sealed class ApplicationHealthCheck : IHealthCheck
         }
     }
 }
+
 ================================================================================
 
 
@@ -20051,34 +17999,44 @@ FILE: src/shared/TaksiApp.Shared.Observability/Logging/Enrichers/CorrelationIdEn
 
 FILE INFORMATION:
 ----------------------------------------
-Size: 1.2 KB
+Size: 1.69 KB
 Extension: .cs
 Language: csharp
 Location: src/shared/TaksiApp.Shared.Observability/Logging/Enrichers/CorrelationIdEnricher.cs
 Relative Path: src/shared/TaksiApp.Shared.Observability/Logging/Enrichers
 Created: 2026-01-31 21:01:43 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-01 12:12:03 (Europe/Moscow / GMT+03:00)
-MD5: b228126094601e591f74e870da661190
-SHA256: 8142680bcc893fdcc43bb7e0d450ba4a1259efe993a72e80b05cd278952c7e27
+Modified: 2026-02-03 20:22:49 (Europe/Moscow / GMT+03:00)
+MD5: 49c27d928a2e12749bd442e2ef8c9e68
+SHA256: 81fce2ed43585e659cfe897ad5e6e770550472e886a1f01620a492d445e01092
 Encoding: UTF-8 (with BOM)
 
 FILE CONTENT:
 ----------------------------------------
-﻿
-
-using TaksiApp.Shared.Application.Abstractions;
+﻿using TaksiApp.Shared.Application.Abstractions;
 
 namespace TaksiApp.Shared.Observability.Logging.Enrichers;
-// TaksiApp.Shared.Observability/Logging/Enrichers/CorrelationIdEnricher.cs
+
+/// <summary>
+/// Enriches log events with correlation information from the current execution context.
+/// </summary>
+/// <remarks>
+/// Adds correlation_id, user_id, and tenant_id (if available) to the log event properties.
+/// Useful for tracing requests across services and associating logs with users or tenants.
+/// </remarks>
 public sealed class CorrelationIdEnricher : ILogEventEnricher
 {
     private readonly IExecutionContext _executionContext;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="CorrelationIdEnricher"/> class.
+    /// </summary>
+    /// <param name="executionContext">The execution context providing correlation information.</param>
     public CorrelationIdEnricher(IExecutionContext executionContext)
     {
         _executionContext = executionContext;
     }
 
+    /// <inheritdoc />
     public void Enrich(LogEvent logEvent, ILogEventPropertyFactory propertyFactory)
     {
         logEvent.AddPropertyIfAbsent(
@@ -20102,9 +18060,8 @@ public sealed class CorrelationIdEnricher : ILogEventEnricher
                     _executionContext.TenantId));
         }
     }
-
-
 }
+
 ================================================================================
 
 
@@ -20114,26 +18071,33 @@ FILE: src/shared/TaksiApp.Shared.Observability/Logging/Enrichers/TraceContextEnr
 
 FILE INFORMATION:
 ----------------------------------------
-Size: 1.06 KB
+Size: 1.31 KB
 Extension: .cs
 Language: csharp
 Location: src/shared/TaksiApp.Shared.Observability/Logging/Enrichers/TraceContextEnricher.cs
 Relative Path: src/shared/TaksiApp.Shared.Observability/Logging/Enrichers
 Created: 2026-01-31 21:01:43 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-01 12:12:03 (Europe/Moscow / GMT+03:00)
-MD5: 0e22560d2a7cc39771125545c279683d
-SHA256: 74705ec8ef7f3e97ca6c22ad9a30af861f80437ef3698cd8ddedd9e46ab77632
+Modified: 2026-02-03 20:23:25 (Europe/Moscow / GMT+03:00)
+MD5: 0e3c91f986ea92dae30a700f6091b0f8
+SHA256: 1d3a8f22713be8b30e5fe66ba00fffb7f1f0b859f579fd79d029ce7cf8847919
 Encoding: UTF-8 (with BOM)
 
 FILE CONTENT:
 ----------------------------------------
-﻿
-using TaksiApp.Shared.Observability.Tracing;
+﻿using TaksiApp.Shared.Observability.Tracing;
 
 namespace TaksiApp.Shared.Observability.Logging.Enrichers;
-// TaksiApp.Shared.Observability/Logging/Enrichers/TraceContextEnricher.cs
+
+/// <summary>
+/// Enriches log events with tracing information from the current <see cref="Activity"/>.
+/// </summary>
+/// <remarks>
+/// Adds TraceId, SpanId, and ParentSpanId (if available) to the log event properties.
+/// Useful for distributed tracing and observability in microservices.
+/// </remarks>
 public sealed class TraceContextEnricher : ILogEventEnricher
 {
+    /// <inheritdoc />
     public void Enrich(LogEvent logEvent, ILogEventPropertyFactory propertyFactory)
     {
         var activity = Activity.Current;
@@ -20159,7 +18123,6 @@ public sealed class TraceContextEnricher : ILogEventEnricher
         }
     }
 }
-
 
 ================================================================================
 
@@ -20519,97 +18482,24 @@ public static class MetricsConstants
 
 
 ================================================================================
-BINARY/EXCLUDED FILES (not included in text content)
-================================================================================
-- src/shared/TaksiApp.Shared.Observability/obj/Debug/net10.0/ref/TaksiApp.Shared.Observability.dll
-
-
-================================================================================
-BINARY/EXCLUDED FILES (not included in text content)
-================================================================================
-- src/shared/TaksiApp.Shared.Observability/obj/Debug/net10.0/refint/TaksiApp.Shared.Observability.dll
-
-
-================================================================================
-FILE: src/shared/TaksiApp.Shared.Observability/obj/Debug/net10.0/TaksiApp.Shared.Observability.AssemblyInfo.cs
-================================================================================
-
-FILE INFORMATION:
-----------------------------------------
-Size: 1.04 KB
-Extension: .cs
-Language: csharp
-Location: src/shared/TaksiApp.Shared.Observability/obj/Debug/net10.0/TaksiApp.Shared.Observability.AssemblyInfo.cs
-Relative Path: src/shared/TaksiApp.Shared.Observability/obj/Debug/net10.0
-Created: 2026-02-03 19:11:29 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:43:12 (Europe/Moscow / GMT+03:00)
-MD5: b4ec5b9366942531b31e065512c3d966
-SHA256: 4a55af880b7a2c44452a56b4ac5202c1e2ec75a18bdf27ec563f443911ddf3b9
-Encoding: ASCII
-
-FILE CONTENT:
-----------------------------------------
-//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-using System;
-using System.Reflection;
-
-[assembly: System.Reflection.AssemblyCompanyAttribute("TaksiApp.Shared.Observability")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5b4d1752f13bf8e587ec871f82c980075996508b")]
-[assembly: System.Reflection.AssemblyProductAttribute("TaksiApp.Shared.Observability")]
-[assembly: System.Reflection.AssemblyTitleAttribute("TaksiApp.Shared.Observability")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
-
-// Generated by the MSBuild WriteCodeFragment class.
-
-
-================================================================================
-
-
-================================================================================
 FILE: src/shared/TaksiApp.Shared.Observability/obj/Debug/net10.0/TaksiApp.Shared.Observability.csproj.FileListAbsolute.txt
 ================================================================================
 
 FILE INFORMATION:
 ----------------------------------------
-Size: 2.2 KB
+Size: 0 B
 Extension: .txt
 Language: text
 Location: src/shared/TaksiApp.Shared.Observability/obj/Debug/net10.0/TaksiApp.Shared.Observability.csproj.FileListAbsolute.txt
 Relative Path: src/shared/TaksiApp.Shared.Observability/obj/Debug/net10.0
 Created: 2026-02-03 19:11:40 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:49:37 (Europe/Moscow / GMT+03:00)
-MD5: 3c153c56c369ad171cfafb87580c6b49
-SHA256: a8c5156c47d493c315fbb86faf4ecaf50c767ebbf169ee7f1a9c8da585ee192c
+Modified: 2026-02-04 20:16:35 (Europe/Moscow / GMT+03:00)
+MD5: d41d8cd98f00b204e9800998ecf8427e
+SHA256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
 Encoding: ASCII
 
 FILE CONTENT:
 ----------------------------------------
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Observability\bin\Debug\net10.0\TaksiApp.Shared.Observability.deps.json
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Observability\bin\Debug\net10.0\TaksiApp.Shared.Observability.dll
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Observability\bin\Debug\net10.0\TaksiApp.Shared.Observability.pdb
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Observability\bin\Debug\net10.0\TaksiApp.Shared.Application.dll
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Observability\bin\Debug\net10.0\TaksiApp.Shared.Application.pdb
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Observability\obj\Debug\net10.0\TaksiApp.Shared.Observability.csproj.AssemblyReference.cache
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Observability\obj\Debug\net10.0\TaksiApp.Shared.Observability.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Observability\obj\Debug\net10.0\TaksiApp.Shared.Observability.AssemblyInfoInputs.cache
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Observability\obj\Debug\net10.0\TaksiApp.Shared.Observability.AssemblyInfo.cs
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Observability\obj\Debug\net10.0\TaksiApp.Shared.Observability.csproj.CoreCompileInputs.cache
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Observability\obj\Debug\net10.0\TaksiApp.B81D2761.Up2Date
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Observability\obj\Debug\net10.0\TaksiApp.Shared.Observability.dll
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Observability\obj\Debug\net10.0\refint\TaksiApp.Shared.Observability.dll
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Observability\obj\Debug\net10.0\TaksiApp.Shared.Observability.pdb
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Observability\obj\Debug\net10.0\ref\TaksiApp.Shared.Observability.dll
-C:\Users\Root\Desktop\micro\FTaksiApp\src\shared\TaksiApp.Shared.Observability\obj\Debug\net10.0\TaksiApp.Shared.Observability.sourcelink.json
 
 ================================================================================
 
@@ -20646,39 +18536,9 @@ global using System.Threading.Tasks;
 
 
 ================================================================================
-FILE: src/shared/TaksiApp.Shared.Observability/obj/Debug/net10.0/TaksiApp.Shared.Observability.sourcelink.json
-================================================================================
-
-FILE INFORMATION:
-----------------------------------------
-Size: 162 B
-Extension: .json
-Language: json
-Location: src/shared/TaksiApp.Shared.Observability/obj/Debug/net10.0/TaksiApp.Shared.Observability.sourcelink.json
-Relative Path: src/shared/TaksiApp.Shared.Observability/obj/Debug/net10.0
-Created: 2026-02-03 19:49:35 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:49:35 (Europe/Moscow / GMT+03:00)
-MD5: 9c6d812e365c80700f800f692d831784
-SHA256: f407dfdf4976c1b48c67a28bc35a9df96843372f202fb7b3ea91d54db14272d2
-Encoding: ASCII
-
-FILE CONTENT:
-----------------------------------------
-{"documents":{"C:\\Users\\Root\\Desktop\\micro\\FTaksiApp\\*":"https://raw.githubusercontent.com/assafnoor/TaxiAppfs/5b4d1752f13bf8e587ec871f82c980075996508b/*"}}
-================================================================================
-
-
-================================================================================
 BINARY/EXCLUDED FILES (not included in text content)
 ================================================================================
-- src/shared/TaksiApp.Shared.Observability/obj/Debug/net10.0/TaksiApp.B81D2761.Up2Date
-- src/shared/TaksiApp.Shared.Observability/obj/Debug/net10.0/TaksiApp.Shared.Observability.AssemblyInfoInputs.cache
 - src/shared/TaksiApp.Shared.Observability/obj/Debug/net10.0/TaksiApp.Shared.Observability.assets.cache
-- src/shared/TaksiApp.Shared.Observability/obj/Debug/net10.0/TaksiApp.Shared.Observability.csproj.AssemblyReference.cache
-- src/shared/TaksiApp.Shared.Observability/obj/Debug/net10.0/TaksiApp.Shared.Observability.csproj.CoreCompileInputs.cache
-- src/shared/TaksiApp.Shared.Observability/obj/Debug/net10.0/TaksiApp.Shared.Observability.dll
-- src/shared/TaksiApp.Shared.Observability/obj/Debug/net10.0/TaksiApp.Shared.Observability.GeneratedMSBuildEditorConfig.editorconfig
-- src/shared/TaksiApp.Shared.Observability/obj/Debug/net10.0/TaksiApp.Shared.Observability.pdb
 
 
 ================================================================================
@@ -23268,7 +21128,7 @@ Language: json
 Location: src/shared/TaksiApp.Shared.Observability/obj/TaksiApp.Shared.Observability.csproj.nuget.dgspec.json
 Relative Path: src/shared/TaksiApp.Shared.Observability/obj
 Created: 2026-02-03 19:11:27 (Europe/Moscow / GMT+03:00)
-Modified: 2026-02-03 19:55:12 (Europe/Moscow / GMT+03:00)
+Modified: 2026-02-04 20:08:20 (Europe/Moscow / GMT+03:00)
 MD5: 811907effdec9406ea4349d16fe06770
 SHA256: df591fadae29616f50042050f5c7fe2e4ed5fa39d1388ffc4214c0d16c6e59bd
 Encoding: ASCII
@@ -25420,3 +23280,9 @@ For questions or issues:
 
 **Built with ❤️ for the ASP.NET Core community**
 ================================================================================
+
+
+================================================================================
+BINARY/EXCLUDED FILES (not included in text content)
+================================================================================
+- TaxiApp.sln

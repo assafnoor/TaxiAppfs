@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using TaksiApp.Shared.Api.Constants;
 using TaksiApp.Shared.Application.Abstractions;
 
 namespace TaksiApp.Shared.Api.Middleware;
@@ -8,7 +9,6 @@ namespace TaksiApp.Shared.Api.Middleware;
 /// </summary>
 public static class ExecutionContextExtensions
 {
-    private const string ExecutionContextKey = "ExecutionContext";
 
     /// <summary>
     /// Retrieves the execution context for the current HTTP request.
@@ -24,7 +24,7 @@ public static class ExecutionContextExtensions
     /// </remarks>
     public static IExecutionContext GetExecutionContext(this HttpContext context)
     {
-        if (context.Items.TryGetValue(ExecutionContextKey, out var value) &&
+        if (context.Items.TryGetValue(HttpContextConstants.ExecutionContextKey, out var value) &&
             value is IExecutionContext executionContext)
         {
             return executionContext;

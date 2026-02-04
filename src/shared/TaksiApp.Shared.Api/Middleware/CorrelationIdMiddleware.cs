@@ -72,6 +72,7 @@ public sealed class CorrelationIdMiddleware
         // Add correlation ID to response headers
         if (!context.Response.HasStarted)
         {
+            //TODO: Handle potential failure to add header
             context.Response.Headers.TryAdd(
                HttpContextConstants.CorrelationIdHeaderName,
                 correlationId);

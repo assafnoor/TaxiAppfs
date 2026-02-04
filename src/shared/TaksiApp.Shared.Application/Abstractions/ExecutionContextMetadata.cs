@@ -93,6 +93,7 @@ public sealed class ExecutionContextMetadata
         }
         catch
         {
+            //TODO: Consider logging the conversion failure for debugging purposes.
             return default;
         }
     }
