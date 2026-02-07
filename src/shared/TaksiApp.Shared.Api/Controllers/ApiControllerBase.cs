@@ -19,7 +19,7 @@ public abstract class ApiControllerBase : ControllerBase
     /// <returns>IActionResult with ProblemDetails body</returns>
     protected IActionResult Problem(Error error)
     {
-        ArgumentNullException.ThrowIfNull(error);
+        // Error is a struct, so no null check needed
         var statusCode = error.Type switch
         {
             ErrorType.Validation => StatusCodes.Status400BadRequest,
