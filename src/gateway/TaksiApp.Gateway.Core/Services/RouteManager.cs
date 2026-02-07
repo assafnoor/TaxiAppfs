@@ -6,145 +6,168 @@ using TaksiApp.Shared.Application.Abstractions;
 using TaksiApp.Shared.Kernel.Results;
 using Error = TaksiApp.Shared.Kernel.Results.Error;
 
-namespace TaksiApp.Gateway.Core.Services;
-
-/// <summary>
-/// Implementation of route manager with thread-safe operations
-/// </summary>
-public sealed class RouteManager : IRouteManager
+namespace TaksiApp.Gateway.Core.Services
 {
-    private readonly ILogger<RouteManager> _logger;
-    private readonly IExecutionContext _executionContext;
-    private readonly IOptionsMonitor<GatewayOptions> _options;
-    private readonly SemaphoreSlim _lock = new(1, 1);
-    private Dictionary<string, SmartRoute> _routes = new();
-
-    public RouteManager(
-        ILogger<RouteManager> logger,
-        IExecutionContext executionContext,
-        IOptionsMonitor<GatewayOptions> options)
+    /// <summary>
+    /// Manages routes with thread-safe operations and supports add, update, remove, and reload.
+    /// </summary>
+    public sealed class RouteManager : IRouteManager
     {
-        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-        _executionContext = executionContext ?? throw new ArgumentNullException(nameof(executionContext));
-        _options = options ?? throw new ArgumentNullException(nameof(options));
-    }
+        private readonly ILogger<RouteManager> _logger;
+        private readonly IExecutionContext _executionContext;
+        private readonly IOptionsMonitor<GatewayOptions> _options;
+        private readonly SemaphoreSlim _lock = new(1, 1);
+        private Dictionary<string, SmartRoute> _routes = new();
 
-    public IReadOnlyList<SmartRoute> GetRoutes()
-    {
-        return _routes.Values.OrderBy(r => r.Priority).ToList();
-    }
-
-    public Result<SmartRoute> GetRoute(string routeId)
-    {
-        if (string.IsNullOrWhiteSpace(routeId))
-            return Result.Failure<SmartRoute>(
-                Error.Validation("Route.InvalidId", "Route ID is required"));
-
-        if (_routes.TryGetValue(routeId, out var route))
-            return Result.Success(route);
-
-        return Result.Failure<SmartRoute>(
-            Error.NotFound("Route.NotFound", $"Route '{routeId}' not found"));
-    }
-
-    public async Task<Result> UpsertRouteAsync(SmartRoute route, CancellationToken cancellationToken = default)
-    {
-        ArgumentNullException.ThrowIfNull(route);
-
-        await _lock.WaitAsync(cancellationToken);
-        try
+        /// <summary>
+        /// Initializes a new instance of <see cref="RouteManager"/>.
+        /// </summary>
+        /// <param name="logger">Logger instance.</param>
+        /// <param name="executionContext">Execution context providing correlation ID.</param>
+        /// <param name="options">Gateway configuration options.</param>
+        public RouteManager(
+            ILogger<RouteManager> logger,
+            IExecutionContext executionContext,
+            IOptionsMonitor<GatewayOptions> options)
         {
-            var isUpdate = _routes.ContainsKey(route.RouteId);
-            _routes[route.RouteId] = route;
-
-            _logger.LogInformation(
-                "Route {RouteId} {Action} successfully. CorrelationId: {CorrelationId}",
-                route.RouteId,
-                isUpdate ? "updated" : "added",
-                _executionContext.CorrelationId);
-
-            return Result.Success();
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _executionContext = executionContext ?? throw new ArgumentNullException(nameof(executionContext));
+            _options = options ?? throw new ArgumentNullException(nameof(options));
         }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex,
-                "Failed to upsert route {RouteId}. CorrelationId: {CorrelationId}",
-                route.RouteId,
-                _executionContext.CorrelationId);
 
-            return Result.Failure(
-                Error.Failure("Route.UpsertFailed", "Failed to upsert route"));
+        /// <summary>
+        /// Gets all registered routes, ordered by priority.
+        /// </summary>
+        /// <returns>Read-only list of routes.</returns>
+        public IReadOnlyList<SmartRoute> GetRoutes() => _routes.Values.OrderBy(r => r.Priority).ToList();
+
+        /// <summary>
+        /// Gets a route by its ID.
+        /// </summary>
+        /// <param name="routeId">The route ID.</param>
+        /// <returns>The route or failure if not found.</returns>
+        public Result<SmartRoute> GetRoute(string routeId)
+        {
+            if (string.IsNullOrWhiteSpace(routeId))
+                return Result.Failure<SmartRoute>(Error.Validation("Route.InvalidId", "Route ID is required"));
+
+            if (_routes.TryGetValue(routeId, out var route))
+                return Result.Success(route);
+
+            return Result.Failure<SmartRoute>(Error.NotFound("Route.NotFound", $"Route '{routeId}' not found"));
         }
-        finally
-        {
-            _lock.Release();
-        }
-    }
 
-    public async Task<Result> RemoveRouteAsync(string routeId, CancellationToken cancellationToken = default)
-    {
-        if (string.IsNullOrWhiteSpace(routeId))
-            return Result.Failure(
-                Error.Validation("Route.InvalidId", "Route ID is required"));
-
-        await _lock.WaitAsync(cancellationToken);
-        try
+        /// <summary>
+        /// Adds or updates a route in a thread-safe manner.
+        /// </summary>
+        /// <param name="route">The route to upsert.</param>
+        /// <param name="cancellationToken">Cancellation token.</param>
+        /// <returns>Result of the operation.</returns>
+        public async Task<Result> UpsertRouteAsync(SmartRoute route, CancellationToken cancellationToken = default)
         {
-            if (!_routes.Remove(routeId))
+            ArgumentNullException.ThrowIfNull(route);
+            await _lock.WaitAsync(cancellationToken);
+
+            try
             {
-                return Result.Failure(
-                    Error.NotFound("Route.NotFound", $"Route '{routeId}' not found"));
+                var isUpdate = _routes.ContainsKey(route.RouteId);
+                _routes[route.RouteId] = route;
+
+                _logger.LogInformation(
+                    "Route {RouteId} {Action} successfully. CorrelationId: {CorrelationId}",
+                    route.RouteId,
+                    isUpdate ? "updated" : "added",
+                    _executionContext.CorrelationId);
+
+                return Result.Success();
             }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex,
+                    "Failed to upsert route {RouteId}. CorrelationId: {CorrelationId}",
+                    route.RouteId,
+                    _executionContext.CorrelationId);
 
-            _logger.LogInformation(
-                "Route {RouteId} removed successfully. CorrelationId: {CorrelationId}",
-                routeId,
-                _executionContext.CorrelationId);
-
-            return Result.Success();
+                return Result.Failure(Error.Failure("Route.UpsertFailed", "Failed to upsert route"));
+            }
+            finally
+            {
+                _lock.Release();
+            }
         }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex,
-                "Failed to remove route {RouteId}. CorrelationId: {CorrelationId}",
-                routeId,
-                _executionContext.CorrelationId);
 
-            return Result.Failure(
-                Error.Failure("Route.RemoveFailed", "Failed to remove route"));
-        }
-        finally
+        /// <summary>
+        /// Removes a route by ID in a thread-safe manner.
+        /// </summary>
+        /// <param name="routeId">The route ID.</param>
+        /// <param name="cancellationToken">Cancellation token.</param>
+        /// <returns>Result of the operation.</returns>
+        public async Task<Result> RemoveRouteAsync(string routeId, CancellationToken cancellationToken = default)
         {
-            _lock.Release();
-        }
-    }
+            if (string.IsNullOrWhiteSpace(routeId))
+                return Result.Failure(Error.Validation("Route.InvalidId", "Route ID is required"));
 
-    public async Task<Result> ReloadRoutesAsync(CancellationToken cancellationToken = default)
-    {
-        await _lock.WaitAsync(cancellationToken);
-        try
-        {
-            // This would typically load from a configuration source
-            // For now, it's a placeholder for hot reload functionality
-            _logger.LogInformation(
-                "Routes reloaded. Total routes: {Count}. CorrelationId: {CorrelationId}",
-                _routes.Count,
-                _executionContext.CorrelationId);
+            await _lock.WaitAsync(cancellationToken);
 
-            return Result.Success();
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex,
-                "Failed to reload routes. CorrelationId: {CorrelationId}",
-                _executionContext.CorrelationId);
+            try
+            {
+                if (!_routes.Remove(routeId))
+                {
+                    return Result.Failure(Error.NotFound("Route.NotFound", $"Route '{routeId}' not found"));
+                }
 
-            return Result.Failure(
-                Error.Failure("Route.ReloadFailed", "Failed to reload routes"));
+                _logger.LogInformation(
+                    "Route {RouteId} removed successfully. CorrelationId: {CorrelationId}",
+                    routeId,
+                    _executionContext.CorrelationId);
+
+                return Result.Success();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex,
+                    "Failed to remove route {RouteId}. CorrelationId: {CorrelationId}",
+                    routeId,
+                    _executionContext.CorrelationId);
+
+                return Result.Failure(Error.Failure("Route.RemoveFailed", "Failed to remove route"));
+            }
+            finally
+            {
+                _lock.Release();
+            }
         }
-        finally
+
+        /// <summary>
+        /// Reloads routes from configuration in a thread-safe manner.
+        /// </summary>
+        /// <param name="cancellationToken">Cancellation token.</param>
+        /// <returns>Result of the operation.</returns>
+        public async Task<Result> ReloadRoutesAsync(CancellationToken cancellationToken = default)
         {
-            _lock.Release();
+            await _lock.WaitAsync(cancellationToken);
+
+            try
+            {
+                _logger.LogInformation(
+                    "Routes reloaded. Total routes: {Count}. CorrelationId: {CorrelationId}",
+                    _routes.Count,
+                    _executionContext.CorrelationId);
+
+                return Result.Success();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex,
+                    "Failed to reload routes. CorrelationId: {CorrelationId}",
+                    _executionContext.CorrelationId);
+
+                return Result.Failure(Error.Failure("Route.ReloadFailed", "Failed to reload routes"));
+            }
+            finally
+            {
+                _lock.Release();
+            }
         }
     }
 }
