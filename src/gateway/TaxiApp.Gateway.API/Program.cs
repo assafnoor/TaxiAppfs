@@ -7,6 +7,7 @@ using TaksiApp.Gateway.Core.Configuration;
 using TaksiApp.Gateway.Core.Services;
 using TaksiApp.Shared.Api.Factories;
 using TaksiApp.Shared.Extensions.DependencyInjection;
+using TaxiApp.Gateway.Api.Extensions;
 using Yarp.ReverseProxy.Transforms;
 using LoadBalancer = TaksiApp.Gateway.Core.Services.LoadBalancer;
 
@@ -39,16 +40,27 @@ builder.Services.AddSharedObservability(
     "1.0.0");
 
 // ============================================================================
-// GATEWAY CONFIGURATION
+// GATEWAY CONFIGURATION WITH VALIDATION
 // ============================================================================
-builder.Services.Configure<GatewayOptions>(
-    builder.Configuration.GetSection("Gateway"));
-builder.Services.Configure<RateLimitOptions>(
-    builder.Configuration.GetSection("Gateway:RateLimit"));
-builder.Services.Configure<CircuitBreakerOptions>(
-    builder.Configuration.GetSection("Gateway:CircuitBreaker"));
-builder.Services.Configure<CacheOptions>(
-    builder.Configuration.GetSection("Gateway:Cache"));
+builder.Services.AddOptions<GatewayOptions>()
+    .Bind(builder.Configuration.GetSection("Gateway"))
+    .ValidateDataAnnotations()
+    .ValidateOnStart();
+
+builder.Services.AddOptions<RateLimitOptions>()
+    .Bind(builder.Configuration.GetSection("Gateway:RateLimit"))
+    .ValidateDataAnnotations()
+    .ValidateOnStart();
+
+builder.Services.AddOptions<CircuitBreakerOptions>()
+    .Bind(builder.Configuration.GetSection("Gateway:CircuitBreaker"))
+    .ValidateDataAnnotations()
+    .ValidateOnStart();
+
+builder.Services.AddOptions<CacheOptions>()
+    .Bind(builder.Configuration.GetSection("Gateway:Cache"))
+    .ValidateDataAnnotations()
+    .ValidateOnStart();
 
 // ============================================================================
 // GATEWAY SERVICES
@@ -56,6 +68,10 @@ builder.Services.Configure<CacheOptions>(
 builder.Services.AddSingleton<IRouteManager, RouteManager>();
 builder.Services.AddSingleton<IHealthMonitor, HealthMonitor>();
 builder.Services.AddSingleton<ILoadBalancer, LoadBalancer>();
+// ============================================================================
+// HTTP CLIENT FACTORY
+// ============================================================================
+builder.Services.AddHttpClient();
 
 // ============================================================================
 // HTTP CLIENT FOR HEALTH CHECKS
@@ -196,7 +212,7 @@ app.UseSerilogRequestLogging(options =>
 // CORS
 app.UseCors();
 
-// Custom middleware من الـ Shared
+// Custom middleware from shaerd
 app.UseCorrelationId(
     userIdExtractor: ctx => ctx.User?.Identity?.Name,
     tenantIdExtractor: ctx => ctx.User?.FindFirst("tenant_id")?.Value);
@@ -221,7 +237,7 @@ app.MapControllers();
 // YARP Reverse Proxy
 app.MapReverseProxy(proxyPipeline =>
 {
-    // Add custom middleware to proxy pipeline if needed
+    // Simplified - correlation ID is already handled by transform
     proxyPipeline.Use(async (context, next) =>
     {
         var loadBalancer = context.RequestServices.GetRequiredService<ILoadBalancer>();
@@ -232,7 +248,7 @@ app.MapReverseProxy(proxyPipeline =>
             await next();
 
             // Record successful completion
-            var destination = context.Request.Headers["X-Forwarded-Host"].FirstOrDefault();
+            var destination = context.GetProxiedDestination(); // Custom extension
             if (destination != null)
             {
                 loadBalancer.RecordCompletion(destination);
@@ -241,7 +257,7 @@ app.MapReverseProxy(proxyPipeline =>
         }
         catch
         {
-            var destination = context.Request.Headers["X-Forwarded-Host"].FirstOrDefault();
+            var destination = context.GetProxiedDestination();
             if (destination != null)
             {
                 loadBalancer.RecordCompletion(destination);

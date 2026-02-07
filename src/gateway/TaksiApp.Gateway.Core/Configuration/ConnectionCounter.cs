@@ -25,14 +25,28 @@ public sealed class ConnectionCounter
     /// Atomically decrements the counter by one.
     /// Ensures the counter never goes below zero.
     /// </summary>
+    /// <summary>
+    /// Atomically decrements the counter by one.
+    /// Ensures the counter never goes below zero using Compare-And-Swap (CAS).
+    /// </summary>
     public void Decrement()
     {
-        var newValue = Interlocked.Decrement(ref _value);
-
-        if (newValue < 0)
+        int current, newValue;
+        do
         {
-            // Defensive correction to avoid negative counts
-            Interlocked.Exchange(ref _value, 0);
-        }
+            current = Volatile.Read(ref _value);
+
+            // Don't decrement if already at zero
+            if (current <= 0)
+            {
+                // Defensively set to zero if somehow negative
+                if (current < 0)
+                    Interlocked.Exchange(ref _value, 0);
+                return;
+            }
+
+            newValue = current - 1;
+
+        } while (Interlocked.CompareExchange(ref _value, newValue, current) != current);
     }
 }

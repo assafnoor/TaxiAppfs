@@ -1,4 +1,6 @@
-﻿namespace TaksiApp.Gateway.Core.Configuration;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace TaksiApp.Gateway.Core.Configuration;
 
 /// <summary>
 /// Configuration options for the Smart Gateway
@@ -33,10 +35,13 @@ public sealed class GatewayOptions
     /// <summary>
     /// Default timeout for requests in seconds
     /// </summary>
+    [Range(1, 300)]
     public int DefaultTimeoutSeconds { get; set; } = 30;
 
     /// <summary>
     /// Maximum concurrent requests per route
     /// </summary>
+
+    [Range(1, 10000)]
     public int MaxConcurrentRequests { get; set; } = 100;
 }

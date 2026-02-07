@@ -45,12 +45,15 @@ namespace TaksiApp.Gateway.Core.Services
             var circuit = _circuits.GetOrAdd(destination, _ => new CircuitState());
             var now = _dateTimeProvider.UtcNow;
 
+            // Get current state atomically
+            var (currentState, lastChange) = circuit.GetStateSnapshot();
+
             // Check if circuit is open
-            if (circuit.State == CircuitBreakerState.Open)
+            if (currentState == CircuitBreakerState.Open)
             {
-                if (now - circuit.LastStateChange > TimeSpan.FromSeconds(30))
+                if (now - lastChange > TimeSpan.FromSeconds(30))
                 {
-                    circuit.State = CircuitBreakerState.HalfOpen;
+                    circuit.SetState(CircuitBreakerState.HalfOpen, now);
                     _logger.LogInformation("Circuit for {Destination} moved to HalfOpen", destination);
                 }
                 else
@@ -73,10 +76,10 @@ namespace TaksiApp.Gateway.Core.Services
                 {
                     RecordSuccess(destination);
 
-                    if (circuit.State == CircuitBreakerState.HalfOpen)
+                    var (state, _) = circuit.GetStateSnapshot();
+                    if (state == CircuitBreakerState.HalfOpen)
                     {
-                        circuit.State = CircuitBreakerState.Closed;
-                        circuit.LastStateChange = now;
+                        circuit.SetState(CircuitBreakerState.Closed, now);
                         _logger.LogInformation("Circuit for {Destination} closed", destination);
                     }
 
@@ -94,15 +97,13 @@ namespace TaksiApp.Gateway.Core.Services
                 var stats = GetStats(destination);
                 if (stats.SuccessRate < 0.5 && stats.TotalRequests >= 10)
                 {
-                    circuit.State = CircuitBreakerState.Open;
-                    circuit.LastStateChange = now;
+                    circuit.SetState(CircuitBreakerState.Open, now);
                     _logger.LogWarning("Circuit for {Destination} opened", destination);
                 }
 
                 return false;
             }
         }
-
         /// <summary>
         /// Records a successful health check for a given destination.
         /// </summary>
