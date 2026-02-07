@@ -17,12 +17,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Using Include="Xunit" />
+    <ProjectReference Include="..\..\src\shared\TaksiApp.Shared.Kernel\TaksiApp.Shared.Kernel.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="UniteTetst\Kernal\" />
-    <Folder Include="UniteTetst\" />
+    <Using Include="Xunit" />
   </ItemGroup>
 
 </Project>
