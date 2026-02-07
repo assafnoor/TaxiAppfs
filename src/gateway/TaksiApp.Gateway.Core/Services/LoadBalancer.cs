@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using System.Collections.Concurrent;
+using TaksiApp.Gateway.Core.Configuration;
 using TaksiApp.Gateway.Core.Routes;
 using TaksiApp.Shared.Kernel.Results;
 
@@ -13,7 +14,7 @@ public sealed class LoadBalancer : ILoadBalancer
     private readonly ILogger<LoadBalancer> _logger;
     private readonly IHealthMonitor _healthMonitor;
     private readonly ConcurrentDictionary<string, int> _roundRobinCounters = new();
-    private readonly ConcurrentDictionary<string, int> _activeConnections = new();
+    private readonly ConcurrentDictionary<string, ConnectionCounter> _activeConnections = new();
     private readonly Random _random = new();
 
     public LoadBalancer(
@@ -59,22 +60,29 @@ public sealed class LoadBalancer : ILoadBalancer
             _ => SelectRoundRobin(route.RouteId, healthyDestinations)
         };
 
-        Interlocked.Increment(ref _activeConnections.GetOrAdd(destination, 0));
+        var counter = _activeConnections.GetOrAdd(
+            destination,
+            _ => new ConnectionCounter());
 
+        counter.Increment();
         return Result.Success(destination);
     }
 
     public void RecordCompletion(string destination)
     {
-        if (_activeConnections.TryGetValue(destination, out var count))
+        if (_activeConnections.TryGetValue(destination, out var counter))
         {
-            Interlocked.Decrement(ref count);
-            if (count < 0)
+            counter.Decrement();
+
+            if (counter.Value < 0)
             {
-                _activeConnections[destination] = 0;
+                // defensive fix
+                while (counter.Value < 0)
+                    counter.Increment();
             }
         }
     }
+
 
     private string SelectRoundRobin(string routeId, string[] destinations)
     {
@@ -89,9 +97,10 @@ public sealed class LoadBalancer : ILoadBalancer
     private string SelectLeastConnections(string[] destinations)
     {
         return destinations
-            .OrderBy(d => _activeConnections.GetOrAdd(d, 0))
+            .OrderBy(d => _activeConnections.GetOrAdd(d, _ => new ConnectionCounter()).Value)
             .First();
     }
+
 
     private string SelectRandom(string[] destinations)
     {
@@ -116,9 +125,13 @@ public sealed class LoadBalancer : ILoadBalancer
         var dest1 = destinations[index1];
         var dest2 = destinations[index2];
 
-        var connections1 = _activeConnections.GetOrAdd(dest1, 0);
-        var connections2 = _activeConnections.GetOrAdd(dest2, 0);
+        var connections1 =
+            _activeConnections.GetOrAdd(dest1, _ => new ConnectionCounter()).Value;
+
+        var connections2 =
+            _activeConnections.GetOrAdd(dest2, _ => new ConnectionCounter()).Value;
 
         return connections1 <= connections2 ? dest1 : dest2;
     }
+
 }
