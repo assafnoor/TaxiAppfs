@@ -1,4 +1,5 @@
-﻿using TaksiApp.Shared.Kernel.Common;
+﻿// TaksiApp.Auth.Domain/Entities/UserRole.cs
+using TaksiApp.Shared.Kernel.Common;
 
 namespace TaksiApp.Auth.Domain.Entities;
 
@@ -11,8 +12,8 @@ public sealed class UserRole : Entity<Guid>
     public Guid RoleId { get; private set; }
     public DateTime AssignedAtUtc { get; private set; }
 
-    public User User { get; private set; }
-    public Role Role { get; private set; }
+    public User User { get; private set; } = null!;
+    public Role Role { get; private set; } = null!;
 
     // Private constructor for EF Core
     private UserRole() { }
@@ -35,8 +36,8 @@ public sealed class RolePermission : Entity<Guid>
     public Guid PermissionId { get; private set; }
     public DateTime AssignedAtUtc { get; private set; }
 
-    public Role Role { get; private set; }
-    public Permission Permission { get; private set; }
+    public Role Role { get; private set; } = null!;
+    public Permission Permission { get; private set; } = null!;
 
     // Private constructor for EF Core
     private RolePermission() { }
