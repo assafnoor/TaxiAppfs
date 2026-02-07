@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using TaksiApp.Gateway.Core.Configuration;
 using TaksiApp.Gateway.Core.Routes;
@@ -14,7 +15,7 @@ namespace TaksiApp.Gateway.Core.Services
     public sealed class RouteManager : IRouteManager
     {
         private readonly ILogger<RouteManager> _logger;
-        private readonly IExecutionContext _executionContext;
+        private readonly IServiceProvider _serviceProvider;
         private readonly IOptionsMonitor<GatewayOptions> _options;
         private readonly SemaphoreSlim _lock = new(1, 1);
         private Dictionary<string, SmartRoute> _routes = new();
@@ -23,17 +24,25 @@ namespace TaksiApp.Gateway.Core.Services
         /// Initializes a new instance of <see cref="RouteManager"/>.
         /// </summary>
         /// <param name="logger">Logger instance.</param>
-        /// <param name="executionContext">Execution context providing correlation ID.</param>
+        /// <param name="serviceProvider">Service provider for resolving scoped services.</param>
         /// <param name="options">Gateway configuration options.</param>
         public RouteManager(
             ILogger<RouteManager> logger,
-            IExecutionContext executionContext,
+            IServiceProvider serviceProvider,
             IOptionsMonitor<GatewayOptions> options)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-            _executionContext = executionContext ?? throw new ArgumentNullException(nameof(executionContext));
+            _serviceProvider = serviceProvider ?? throw new ArgumentNullException(nameof(serviceProvider));
             _options = options ?? throw new ArgumentNullException(nameof(options));
         }
+
+        /// <summary>
+        /// Gets the current execution context from the service provider.
+        /// </summary>
+        private IExecutionContext GetExecutionContext() =>
+            _serviceProvider.GetService<IExecutionContext>()
+            ?? new TaksiApp.Shared.Application.Context.ExecutionContext(
+                Guid.NewGuid().ToString(), null, null);
 
         /// <summary>
         /// Gets all registered routes, ordered by priority.
@@ -77,7 +86,7 @@ namespace TaksiApp.Gateway.Core.Services
                     "Route {RouteId} {Action} successfully. CorrelationId: {CorrelationId}",
                     route.RouteId,
                     isUpdate ? "updated" : "added",
-                    _executionContext.CorrelationId);
+                    GetExecutionContext().CorrelationId);
 
                 return Result.Success();
             }
@@ -86,7 +95,7 @@ namespace TaksiApp.Gateway.Core.Services
                 _logger.LogError(ex,
                     "Failed to upsert route {RouteId}. CorrelationId: {CorrelationId}",
                     route.RouteId,
-                    _executionContext.CorrelationId);
+                    GetExecutionContext().CorrelationId);
 
                 return Result.Failure(Error.Failure("Route.UpsertFailed", "Failed to upsert route"));
             }
@@ -119,7 +128,7 @@ namespace TaksiApp.Gateway.Core.Services
                 _logger.LogInformation(
                     "Route {RouteId} removed successfully. CorrelationId: {CorrelationId}",
                     routeId,
-                    _executionContext.CorrelationId);
+                    GetExecutionContext().CorrelationId);
 
                 return Result.Success();
             }
@@ -128,7 +137,7 @@ namespace TaksiApp.Gateway.Core.Services
                 _logger.LogError(ex,
                     "Failed to remove route {RouteId}. CorrelationId: {CorrelationId}",
                     routeId,
-                    _executionContext.CorrelationId);
+                    GetExecutionContext().CorrelationId);
 
                 return Result.Failure(Error.Failure("Route.RemoveFailed", "Failed to remove route"));
             }
@@ -152,7 +161,7 @@ namespace TaksiApp.Gateway.Core.Services
                 _logger.LogInformation(
                     "Routes reloaded. Total routes: {Count}. CorrelationId: {CorrelationId}",
                     _routes.Count,
-                    _executionContext.CorrelationId);
+                    GetExecutionContext().CorrelationId);
 
                 return Result.Success();
             }
@@ -160,7 +169,7 @@ namespace TaksiApp.Gateway.Core.Services
             {
                 _logger.LogError(ex,
                     "Failed to reload routes. CorrelationId: {CorrelationId}",
-                    _executionContext.CorrelationId);
+                    GetExecutionContext().CorrelationId);
 
                 return Result.Failure(Error.Failure("Route.ReloadFailed", "Failed to reload routes"));
             }

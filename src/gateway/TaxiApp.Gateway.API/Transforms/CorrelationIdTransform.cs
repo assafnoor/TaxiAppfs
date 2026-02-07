@@ -38,9 +38,11 @@ public sealed class CorrelationIdTransform : RequestTransform
 /// </summary>
 public static class CorrelationIdTransformExtensions
 {
+    private static readonly CorrelationIdTransform _transform = new();
+
     public static TransformBuilderContext AddCorrelationId(this TransformBuilderContext context)
     {
-        context.AddRequestTransform<CorrelationIdTransform>();
+        context.AddRequestTransform(ctx => _transform.ApplyAsync(ctx));
         return context;
     }
 }

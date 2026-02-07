@@ -62,9 +62,11 @@ public sealed class AuthenticationTransform : RequestTransform
 /// </summary>
 public static class AuthenticationTransformExtensions
 {
+    private static readonly AuthenticationTransform _transform = new();
+
     public static TransformBuilderContext AddAuthentication(this TransformBuilderContext context)
     {
-        context.AddRequestTransform<AuthenticationTransform>();
+        context.AddRequestTransform(ctx => _transform.ApplyAsync(ctx));
         return context;
     }
 }
