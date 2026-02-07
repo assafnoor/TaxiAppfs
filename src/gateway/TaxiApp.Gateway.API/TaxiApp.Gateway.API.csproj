@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="10.1.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="10.1.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="10.1.2" />
+    <PackageReference Include="Yarp.ReverseProxy" Version="2.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\shared\TaksiApp.Shared.Api\TaksiApp.Shared.Api.csproj" />
+    <ProjectReference Include="..\..\shared\TaksiApp.Shared.Application\TaksiApp.Shared.Application.csproj" />
+    <ProjectReference Include="..\..\shared\TaksiApp.Shared.Extensions\TaksiApp.Shared.Extensions.csproj" />
+    <ProjectReference Include="..\..\shared\TaksiApp.Shared.Observability\TaksiApp.Shared.Observability.csproj" />
+    <ProjectReference Include="..\TaksiApp.Gateway.Core\TaksiApp.Gateway.Core.csproj" />
+  </ItemGroup>
+
+</Project>
